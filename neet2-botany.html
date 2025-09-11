@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botany Chapters</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #f9fafc);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      color: #2e7d32;
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    a.card {
+      display: block;
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    a.card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(76,175,80,0.05), rgba(139,195,74,0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    a.card:hover::before {
+      opacity: 1;
+    }
+
+    a.card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1b5e20;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      border-left: 4px solid #4caf50;
+    }
+
+    .card-info {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .card-info span {
+      margin-right: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .card-title {
+        font-size: 15px;
+      }
+      .card-info {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌿 Botany</h1>
+
+  <div class="grid">
+
+    <a href="SOON.html" class="card">
+      <div class="card-title">Ch 01 : Cell - The Unit of Life</div>
+      <div class="card-info">
+        <span>14 Videos</span> | 
+        <span>10 Exercises</span> | 
+        <span>24 Notes</span>
+      </div>
+    </a>
+
+    <a href="SOON.html" class="card">
+      <div class="card-title">Ch 02 : Cell Cycle and Cell Division</div>
+      <div class="card-info">
+        <span>8 Videos</span> | 
+        <span>7 Exercises</span> | 
+        <span>15 Notes</span>
+      </div>
+    </a>
+
+    <a href="SOON.html" class="card">
+      <div class="card-title">Ch 03 : The Living World</div>
+      <div class="card-info">
+        <span>4 Videos</span> | 
+        <span>2 Exercises</span> | 
+        <span>6 Notes</span>
+      </div>
+    </a>
+
+    <a href="SOON.html" class="card">
+      <div class="card-title">Ch 04 : Biological Classification</div>
+      <div class="card-info">
+        <span>8 Videos</span> | 
+        <span>6 Exercises</span> | 
+        <span>14 Notes</span>
+      </div>
+    </a>
+
+    <a href="SOON.html" class="card">
+      <div class="card-title">Ch 05 : Plant Kingdom</div>
+      <div class="card-info">
+        <span>2 Videos</span> | 
+        <span>2 Exercises</span> | 
+        <span>4 Notes</span>
+      </div>
+    </a>
+
+  </div>
+
+</body>
+</html>

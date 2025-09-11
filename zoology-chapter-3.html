@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-03 : Body Fluids and Circulation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 01 : Blood-1</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/m82cqqlELm8?si=xJ4LlbS76G4IY8i9" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4dfd1730-d51e-4410-aa51-e68ad4fde743.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0cf69f02-feb6-4353-bb2a-3da3f3c52d9f.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 02 : Blood-2 || (NO DPP)</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/c6b4dA_SEVw?si=aTnrpHs0WCxera73" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2c0f974c-b617-41ad-8501-d81143623be9.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 03 : Blood Grouping</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/5Myi7ZuPRLw?si=IiPQBQZt--S1zkwD" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/73c3fca3-329d-499f-9c69-6a66ee4dcb9e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cf8e7f01-3990-4eba-8fa8-3a27a75d90ea.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 04 : Erythroblastosis Foetalis</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/g5Rwk3WWwbk?si=pgsJ_8ZkpA0pW2QS" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6df5d211-3ea7-480d-93e5-184690b089f3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6d57916c-32b7-4fa7-b728-5a1f23f41129.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 05 : Lymph || Circulatory Pathways-1 || (NO DPP) || (Extra Lecture) || (Rescheduled 04:10 PM)</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/PkBALlPmdUM?si=8mTXvn49JBJwBuU-" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/60719ced-3c70-4d8f-9280-9d55ff9c423e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 06 : Heart</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/mlk5e5TeYFA?si=bGwGsFZz1IgjWenA" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/21477b59-906a-46c3-8618-82ef78566efb.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d4154399-ffed-4c8a-89a4-07d97eb80cd5.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 07 : Conducting System of Heart</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/Pp3oWwSxDEc?si=MHpZ6UHIn8-mh793" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/938e2477-5aa2-4db1-8b98-eb4a739cd8da.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/701208fa-15ff-4eef-82c7-5d7b6937cd1a.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 08 : Cardiac cycle</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/ulUQN8GWWp4?si=frl_nBmhisEFes7v" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f49da5e4-5328-4ca1-9899-148302dcb084.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9c1bafee-64f1-470e-8e93-716cfa607416.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 09 : ECG || (NO DPP)</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/-jPEDZ9Wah4?si=1lb_eQHjjhUZJz_W" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b1468146-acef-4332-b055-f0c54d2d594b.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 10 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 10 : Double Circulation || Regulation of Cardiac Activity</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/nL-fhEih2hU?si=Ba16ZWO4V8OnV5dd" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3f5bdee0-1e8e-40bd-9297-376d6830adf2.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/75a9af4c-42d9-4f73-b955-087bd0c8b4fb.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 11 -->
+<div class="lecture">
+  <h3>Body Fluids and Circulation 11 : Disorder || Tapasya</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/Ppi9n7z85Vg?si=ENiCp6HnMoy2tyf4" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0767a089-cc0d-449e-97d0-7fb88eed09b2.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5163da7a-030b-45d5-a85a-4751116ac468.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+

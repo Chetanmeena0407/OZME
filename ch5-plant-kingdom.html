@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-05 : Plant Kingdom</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Lec 01 : Classification of Angiosperms</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 8, 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/5EPA4Qc1abw" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7b12ebe9-1745-4c05-a764-5fe18c679fc0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/812e40fa-6984-4b03-89ce-5b990b54a9ce.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Lec 02 : Introduction to Algae</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 13, 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/IowWqb_s8UY" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/bd7b8269-f565-4b53-a154-b236a0460ed1.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/66e9f13c-e00e-43d4-a946-feb90d05cb6c.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Lec 03 : Classification of Algae <span style="color:red">(NO DPP)</span></h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 20, 2025</p>
+  <p class="duration">Duration: 00:48:31</p>
+  <div class="buttons">
+    <a href="https://youtu.be/R6H9urtVnqg" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8fb9d1c9-acc6-467e-8074-46a05ceef56f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Lec 04 : Chloroplasts in Green Algae</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/hHn0OP2X17U" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/749995a6-c9c5-45b0-ba3b-3922c36e545e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/594f3fc0-980e-4c49-8225-c5a4c5b584ca.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Lec 05 : Introduction to Bryophytes <span style="color:red">(NO DPP)</span></h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 29, 2025</p>
+  <p class="duration">Duration: 01:40:30</p>
+  <div class="buttons">
+    <a href="https://youtu.be/W1xpv-YpILk" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/289eadaf-e428-436b-adf2-b3157b398295.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Lec 06 : Life Cycle of Mosses</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 30, 2025</p>
+  <p class="duration">Duration: 01:43:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/dFAzn3_rIfM" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7e13a801-ccf8-4226-95b6-6b63453c587f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/532a9168-2923-4a8c-9e71-6cbf576321b7.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Lec 07 : Pteridophytes (Introduction)</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 30, 2025</p>
+  <p class="duration">Duration: 01:43:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/-0sdLNKs2-I?si=c9FQ8WczUZnp25bp" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4d7c2db2-c5e3-43c1-870e-e0a31afc6b02.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/532a9168-2923-4a8c-9e71-6cbf576321b7.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Lec 08 : Gymnosperms (Introduction)</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: August 30, 2025</p>
+  <p class="duration">Duration: 01:43:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/OflKa83nw4U" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a99c50d6-c404-42f2-afdd-279f36425361.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>

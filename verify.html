@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 40px; background: #f9fafb; }
+    .box { max-width: 400px; margin: auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { color: #6c63ff; }
+    a.btn { display: inline-block; margin-top: 20px; padding: 12px 20px; background: #6c63ff; color: #fff; text-decoration: none; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Verification Required</h2>
+    <p>Please verify once to continue. Ads will appear only once in 24 hours.</p>
+    <a id="verifyBtn" href="#" class="btn" target="_blank">Verify Now</a>
+  </div>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
+
+    const redirectPage = getParam("redirect");
+    const done = getParam("done");
+    const now = Date.now();
+    const lastVerified = localStorage.getItem("verifiedAt");
+
+    if (lastVerified && (now - parseInt(lastVerified)) < 24*60*60*1000) {
+      // Already verified → direct redirect
+      window.location.href = redirectPage;
+    } 
+    else if (done === "1") {
+      // Verification success → save & redirect
+      localStorage.setItem("verifiedAt", now);
+      window.location.href = redirectPage;
+    } 
+    else {
+      // Send to shortlink (lksfy)
+      const btn = document.getElementById("verifyBtn");
+      btn.href = "https://lksfy.com/ARJUNA-NEET";  
+    }
+  </script>
+</body>
+</html>

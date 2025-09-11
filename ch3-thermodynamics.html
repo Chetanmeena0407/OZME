@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-03 : Thermodynamics</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Thermodynamics 01 : Introduction || (NO DPP)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 2 Sep 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/64af7382-da9a-40d0-8fff-aa89db030ced.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Thermodynamics 02 : Work || (NO DPP)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  3 Sep 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/46e91949-d19e-4cc8-97dc-066aecc2a805.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Thermodynamics 03 : Heat <span style="color:red">(NO DPP)</span></h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 4 Sep 2025p>
+  <p class="duration">Duration: 00:48:31</p>
+  <div class="buttons">
+    <a href="https://youtu.be/R6H9urtVnqg" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0b64ccc9-5ce4-433e-9d4a-4620eea7cde9.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4b489d5f-c5f7-4974-98c0-ba3f20d6c318.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Thermodynamics 04 : First Law of Thermodynamics || (NO DPP) </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  8 Sep 2025p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/_iuTp1OCUng?si=volXchGjh62N4ThC" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/48ee6840-a157-45ee-ba2d-78f3752fd144.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Thermodynamics 05 : Types of Thermodynamic Processes </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  9 Sep 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/h-x1IBuq6Ek?si=8zOQ6TLLTflvThCM target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a5dbf182-eb01-4048-a05f-f091582f5044.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/aaf825bb-84d7-471b-8b7e-7706f2d68c4e.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Thermodynamics 06 : Enthalpy</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 10 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/m7duGHsJppw" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/accfb211-c82d-4095-a022-9d81daa000f5.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">NO DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Thermodynamics 07 : Workdone in Different Thermodynamic Processes</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 11 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/vhLwh78mVyM?si=1D8zFWaOKA4o2y2t" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/89dfcb8b-977a-4f34-9f43-d6a747333bd8.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/535ed8dd-50fa-4309-8a70-b874c9a0b8f4.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+

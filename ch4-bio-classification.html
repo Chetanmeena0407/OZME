@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-04 : Biological Classification</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<h2>Ch-04 : Biological Classification</h2>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lecture 01 -->
+<div class="lecture">
+  <h3>Lec 01 : 2 Kingdom System</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: July 17, 2025</p>
+  <p class="duration">Duration: 02:07:32</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a13ee215-a742-4752-89c8-d3edf6d6f4c4.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/006e91f2-18e4-4846-8272-9c85c53333a3.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 02 -->
+<div class="lecture">
+  <h3>Lec 02 : Kingdom Monera</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: July 18, 2025</p>
+  <p class="duration">Duration: 01:29:20</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a9a76800-85bf-4e05-bf6e-864845a0bfd0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/06dd3529-6f6f-479b-80eb-5fef8be3cbba.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 03 -->
+<div class="lecture">
+  <h3>Lec 03 : Heterotrophic Bacteria</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: July 24, 2025</p>
+  <p class="duration">Duration: 01:51:12</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9c359b71-9b5e-4524-8858-5f594f3d17a8.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/990d5d53-263d-4c07-af71-2562ea75a50f.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 04A -->
+<div class="lecture">
+  <h3>Lec 04A</h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: July 25, 2025</p>
+  <p class="duration">Duration: 01:45:07</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1a56e695-4f5f-4ccd-8662-fddb62354a7d.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/78aece89-84b1-42ae-aff3-52cc4c6e8768.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 04B -->
+<div class="lecture">
+  <h3>Lec 04B : Protozoa <span style="color:red">(NO DPP)</span></h3>
+  <p>By Vipin Sharma Sir</p>
+  <p class="date">Date: July 25, 2025 (Extra Lecture)</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5b43309d-51ce-4743-8687-ebb65cf4f6c2.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 05 -->
+<div class="lecture">
+  <h3>Lec 05 : Kingdom Fungi</h3>
+  <p>By Vipin Sharma Sir</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1b2c55d2-8a81-4fec-8764-109be63a5cac.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3d15ce3d-5a6d-4f30-a4af-2f7bfb0ad6de.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 06 -->
+<div class="lecture">
+  <h3>Lec 06 : Phycomycetes <span style="color:orange">(Extra Lecture)</span></h3>
+  <p>By Vipin Sharma Sir</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/32fd6cd4-35cf-49b2-a46a-2489e7edcfa0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lecture 07 -->
+<div class="lecture">
+  <h3>Lec 07 : Virus & Viroid <span style="color:orange">(Extra Recorded Lecture)</span></h3>
+  <p>By Vipin Sharma Sir</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/17bdc4cf-a838-4fd5-8cbe-3145405ca130.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-02 : Structure of Atom </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Structure of Atom 01 : Discovery of Electron || (NO DPP)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  8, 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/opfwztL8QYE?si=Za3fuj1BepBpLWM3" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/29f2663e-bd13-44e2-af96-1a84a7c92eac.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Structure of Atom 02 : Discovery of Neutron</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  13, 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/4KDz9gAFwBo?si=8WWvLYX379B1aPzL" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c137b0a1-b215-4e8e-aca4-3a22c571eb5c.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/31ff8426-e01e-444e-9927-76745e60e6e6.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Structure of Atom 03 : Electromagnetic Waves || (NO DPP) <span style="color:red">(NO DPP)</span></h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  20, 2025</p>
+  <p class="duration">Duration: 00:48:31</p>
+  <div class="buttons">
+    <a href="https://youtu.be/GqRBTZUGU7c?si=aA4yHVjPcOfPrpDn" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/93f0d21c-8840-47d4-b61c-08c3d25ceaba.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Structure of Atom 04 : Planck's Quantum Theory || (NO DPP) </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/7mlwzEVzkNo?si=OzpkEbFJCxvX1wx5" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5bce212b-278a-436a-8347-55876dd0874a.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Structure of Atom 05 : Photoelectric Effect</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/TMqYuxHfsBc?si=HGzIgQhI2W44qCKn" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c7e29220-701c-40a2-a6cf-0367d268dd07.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4b9ee4da-c8ed-4520-8e75-85cc95ccfd61.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Structure of Atom 06 : Bohr's Model (Part-1) </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/gw-_qTtj000?si=D6rGH6yzJezvRwld" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7c2fdf92-8dc2-413f-86a4-b22fb8d5d668.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cd145235-a866-40ac-bab7-9fc1c6a2421e.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Structure of Atom 07 : Bohr's Model (Part-2) </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/M208fSYTTBU?si=DLiXFqI4CvgsmoqE" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2cb4fd3d-43e8-416e-9cb9-4dbc80a3eaac.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/785edc8a-cfb1-4a37-b17a-269d503e8463.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Structure of Atom 08 : Bohr's Model (Part-3)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/03xs2l4CNd8?si=l-xReBO0Gub-s0h6" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e8854a74-674f-44d3-be00-f17597804511.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/84d999dc-77f2-471c-a2b4-4e7928ce0768.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 -->
+<div class="lecture">
+  <h3>Structure of Atom 09 : Hydrogen Spectra</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/6SFxAssIpSI?si=S0-cPb29zzGOOOmS target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/db3b4317-ca81-4540-8288-3bdb3e8b8ef9.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c7826a11-4e07-4d4b-8c29-553b20f72df8.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 10 -->
+<div class="lecture">
+  <h3>Structure of Atom 10 : De-Broglie's Hypothesis || Heisenberg's Uncertainty Principle (NO DPP)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/lPD2n_CO9kk?si=U1rv_RsQ2R1BViXN" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9f29551c-49e3-4aec-950b-b53095c9176f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 11 -->
+<div class="lecture">
+  <h3>Structure of Atom 11 : Schrodinger's Equation</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/_YgPPbCGYV8?si=1LrL7b5zzWEIKtPR" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eb54d89c-d711-4d5f-b114-4b84f08de3fe.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/35675f32-5488-4c11-b96e-7587aab7d974.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 12 -->
+<div class="lecture">
+  <h3>Structure of Atom 12 : Nodes </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/_wSd7ozNh6o?si=JgHan0q2uPpvAgjf" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3a48ac58-ca51-41c6-8b99-ed9e8862ea45.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d1b4fda9-ec08-4195-b8af-b9c9192b4ce2.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 13 -->
+<div class="lecture">
+  <h3>Structure of Atom 13 : Shapes of Orbitals || Applications of Quantum Numbers (Extra Lecture) </h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/i490qchj3G0?si=CQZJRR-PLeVz1gwV" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2944d387-db7f-407a-9858-3340334215f0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ab448ce7-478f-464c-9a7b-2189b9863c21.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 14 -->
+<div class="lecture">
+  <h3>Structure of Atom 14 : Pauli’s Exclusion Principal</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date:  22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/N26eo7iCUWg?si=P3QODlZ2F8Yqp-zu" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ec80be0e-7156-453e-9e3a-9c1c9259c120.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1b515877-20a3-4224-9d3e-a543d903728c.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+

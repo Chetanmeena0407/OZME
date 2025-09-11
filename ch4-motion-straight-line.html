@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-04 : Motion in a Straight Line </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3># Motion in a Straight Line 01 : Basic Maths || Distance and Displacement || (NO DPP) || (Rescheduled @ 04:05 PM)</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 2 Jul 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/t4zmPNyGb1Y?si=baymk0Mlqq6M50nc" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cb4fdf29-2334-4fd4-bee5-e11b1f0989ff.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3># Motion in a Straight Line 02 : Speed Velocity Average Instantaneous</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 3 Jul 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/dbPX2SDp-Yo?si=itGWkjmSByi9Zmj1" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ba9659c4-28cc-4c35-b3f9-0881be25cd9d.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cbc91389-76cf-40ce-b499-bff2873244b8.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3># Motion in a Straight Line 03 : Change in Velocity and Acceleration || (NO DPP)</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 4 Jul 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/n-2ALd_jZaE?si=jMmGt635HYUGA0a2" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c8719460-165f-489c-a014-d0a84839342f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3># Motion in a Straight Line 04 : Circular Basics || (NO DPP)</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 9 Jul 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/rMZTanm0gx4?si=88oRtu4sCIqPHzFS" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fd2cc686-aaec-40e8-a474-61dcb80a910d.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3># Motion in a Straight Line 05 : Non-Uniform Acceleration</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 10 Jul 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/i1sTvufiNO8?si=X07n4_48QA6uzQ4z" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4ba10a50-eb99-4fe9-8cb8-5f0fab92660e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/00b923c2-706f-4a7b-bd4f-31b47afe64e8.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3># Motion in a Straight Line 06 : Non-Uniform Acceleration (Part-2) || (NO DPP)</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 11 Jul 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/mnS6L513J7c?si=53XSbxEKORYlFY7c" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/bed59886-e78f-4ae2-94c3-268ca3be9357.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>

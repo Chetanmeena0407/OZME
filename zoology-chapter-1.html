@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-02 : Structure of Atom </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+// UNIVERSAL VERIFICATION SCRIPT
+const verified = localStorage.getItem("verifiedAt");
+const now = Date.now();
+if (!verified || (now - parseInt(verified)) > 24*60*60*1000) {
+  // Not verified → redirect to verify.html with this page as redirect
+  const currentPage = window.location.pathname.split("/").pop();
+  window.location.href = "verify.html?redirect=" + currentPage;
+}
+</script>
+
+<!-- Lec 01 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 01 : Introduction Tissues</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: 22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://www.youtube.com/live/F0RGzGYfWy8?si=H3G1hyvEcvK0KWCa" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/56fedee0-341c-40fe-a44e-59bc5d30f02a.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a2e63d41-fa04-4662-947a-e0ebccb4a80e.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 02 : Epithelial Tissue -1</h3>
+  <p>Samapti Sinha Ma’am</p>
+  <p class="date">Date: 22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/14u2h8b_14A?si=cfKhO8FaN9sG4Iln" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2e2c19b2-29f5-4df5-bbfb-e561c4ec9984.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 03 : Types of Epithelial || (NO DPP)</h3>
+  <p>Samapti Sinha Ma’am</p>
+  <p class="date">Date: 22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/HGc9GeMcNyU?si=uxIaKdU2DsbCAHVt" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8f9e0bbb-102b-4057-ac11-f98bfb9f2b2a.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 04 : Types of Simple Epithelium -2</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/APYnH7F2tHY?si=Z8g2MAMlgxmTQ11A" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/08154c77-9bd9-4a44-afd4-964970833c98.pdf
+" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/db637e87-66b0-4a61-86d4-cd33452bf5df.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 05 : Glandular Epithelium</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/ifG74IdIzj8?si=xTEpFS4gtT1X3349" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/42cd0a0a-9ff7-46af-a73f-a1a31576b5a0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2ca2991a-1d52-40f8-a501-6ddba6c879d1.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 06 : Cell Junction Connective Tissue -1</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/3C4SDjJzz8I?si=8K1WSJvZYA3eQmwL" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/62e98779-ea62-459c-afc1-c7ba5bfe6105.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 07 : Connective Tissue-1 (Part-2)</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/7tegR4yxCJE?si=qaBSCNMew1rfS1gC" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9a506317-d40e-4f28-bf84-5b8acd6f0ed1.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/08b9d36a-c186-44e3-998c-dc87bde8d9dd.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 08 : Connective Tissue-2</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/InowBI9Bg98?si=DJaYCYukHNJ3P6dE" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f5bd7c9e-8490-46ef-b49f-9b8958f1ffa3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/146d4e5d-e70d-4265-a2f5-3c3ae0cfdfe2.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 09 : Specialised Connective Tissue || (NO DPP)</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/pG6WmTA0pPs?si=-7VlMWz9w6lk7_tC" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/919b90f9-ec78-4540-962f-0337bb93d550.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 10 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 10 : Muscular Tissue</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/QHDPPJeyeI4?si=YKvwKr7yOFJnioML" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f3f5bda2-e21b-4aeb-8b94-e2d540e3f2b3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4c2d4329-1d23-4471-a6f2-fbf93614e8d6.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 11 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 11 : Neural Tissue || (NO DPP)</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/isF8pTl4Kbw?si=QIDZfJmJeedog8aS" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/11c205bc-ebd1-4635-8f74-f1342b14f56b.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 12 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 12 : Frog- Morphology Digestive System Respiration</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/X0gAGtdHPZ0?si=yrYtiadSPTyRXtZK" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f91e0e27-322e-4f3b-b60e-a4a4f2c3a4ed.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6481929f-2c6f-4ad6-89da-26d32e7929cc.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 13 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 13 : Frog- Digestive System and Respiration (Part-2)</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/tJgxPCa4NZA?si=i908-LC9OBnNGwvq" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7b2e2367-d72d-4602-9b68-33dc103943c8.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3061a3e5-12d9-42fc-8860-e2c8afb5aea0.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 14 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 14 : Frog- Respiration || Circulation</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/87LdogGAV1Y?si=Zg8nx6dSxbO_MWGC" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e87fbe17-9f29-4207-b81e-5c33981b3a70.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/90a05466-9da2-46e1-a5e5-e4911804788a.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 15 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 15 : Frog- Circulation-2 Reproduction (NO DPP)</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/KNPr0F5DyYY?si=xU_w1Qene_Uq9Esk" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/51b76ff8-8453-432b-9192-67deb9b0678c.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 16 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 16 : Frog- Excretion || Control & Coordination</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/De0zesmdfW8?si=hj4zA8rToY_ZEX5v" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1912f476-25a4-4f16-bb7e-0f54f25fc844.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/67b1aa44-4da9-4b3d-b0b0-9fc3903cbfde.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 17 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 17 : Sensory Structure</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/BzI8tWHezl0?si=Kb0qslw5zjZu5jDA" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a77d4d59-0a7a-4fdc-9b47-c5cbea007678.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0b35c4fa-5aff-4eae-ad84-1c944b6e8b94.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 18 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 18 : Cockroach- Morphology</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/PIFTQ7LHQ8M?si=YDd7JtO40mJEUgGr" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9e586011-665f-48bb-9473-1db82e870fb1.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a6369fc2-5f7c-42af-b81a-294509715617.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 19 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 19 : Cockroach- Digestive System</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/wx78IRJoHuc?si=Qu9_aXDuoQxHXxfT" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/00e8f4a8-fc8f-4230-a0bb-b76297ff26fc.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5cd8cea3-2db1-4326-9112-827ae0cca132.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 20 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 20 : COCKROACH - circulatory system,excretion,nervous sytem</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/r6MB6ivkScY?si=BliiCjLwG9Xi9Rzy" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b367ad44-0b53-4102-9049-1500492009ea.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6e602574-3001-401a-82a6-fa093ed427c7.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 21 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 21 : Cockroach- Nervous System, Sense Organ, Reproductive System || (NO DPP)</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/oaZdPeMJ2Ec?si=yHBuK1U2HTaePnow" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4453f724-df5d-45a7-8c72-4bb3f26e9c96.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 22 --> 
+<div class="lecture">
+  <h3>Structural Organization in Animals 22 : COCKROACH -reproductive system || TAPASYA</h3>
+  <p>By Samapti Sinha Ma'am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/oaZdPeMJ2Ec?si=yHBuK1U2HTaePnow" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://youtu.be/wumRDLa1CwA?si=DfhkAB9gFIHH1mRx" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/64b91fdd-1b95-4cd1-b9d0-cf29b21077f8.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>

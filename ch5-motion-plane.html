@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-05 : Motion in a Plane </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 01 : Vector and Basic Maths</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/HKXq7txYz9Q?si=EnKJaiB7BXJoUHJa" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/47983b3f-f162-4cb0-9707-a5e3f449d5f1.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 02 : Projectile Motion</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/lw_OdE0GuMo?si=YEzwzPidw9Soin6Q" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1a2feec0-1f73-4379-a728-3c39a604d29e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 03 : Projectile Motion (Part-2)</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/BZnIlVHW9aA?si=S_bT8n3j4RjuHOv9" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ae62cccf-3d9b-4f49-b6f8-482a76755f93.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ac2860b5-8ecb-4695-aec6-8c42d1576c50.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 04 : Projectile Motion</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/xg6pgkjMyq8?si=NjnOwQz6R5O0U7Sf" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/bc85e37e-b8a7-4072-a87a-e7b919842cb2.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/35d6ea6b-261c-4a1b-92ab-eb95e70f4506.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 05 : Horizontal Projectile</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/RQ4F9A95_3c?si=lFArtmphAK7FuccI" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/efefeca3-8103-49cf-bf71-ad113ebcf7d0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5010c723-535d-4095-92d9-4d910d3d6ddd.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 06 : Relative Motion in 1D</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/_im7EbIxlBU?si=AehPWbGFqMz_gH92" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/25e03051-6c53-430b-99b4-3fa6f71a7f03.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 07 : Relative Motion in 1D (Part-02)</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/mhDoBEdTC3g?si=1rvtyiRFAW-lMe0a" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/dc866d87-3b28-4fa5-8950-5ae970ca93b6.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 08 : Relative Motion Under Gravity 1D</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/uY0awO2wiSQ?si=9WFdKV0IC9F_TDNK" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f39d3fe1-92dc-458d-9dd6-e70decebc6c8.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e750d437-d5e9-43fd-968d-fd5601a50991.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 09 : Relative Motion in 2D</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/4Xw280vf1Lw?si=dMXuEUt1CDMhqWJd" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/932a40f0-1036-4cad-8c8d-7de128f83c96.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/238a178b-8b64-44fd-bdff-8c3f31fcd6d7.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 10 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 10 : Minimum Separation</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/nM1oQLYSGII?si=UwP-RG_bRjefvia-" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/21faa1d1-2327-4f7f-8fe3-46673c5607b9.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 11 --> 
+<div class="lecture">
+  <h3>Motion in a Plane 11 : Geometry Dash</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/woHWC6jO-pA?si=CUmzIkGbR9BcjfH3" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1e2d2638-aa75-4262-872e-9a3d81d6b6f3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>

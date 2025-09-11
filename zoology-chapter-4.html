@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-05 : Plant Kingdom</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Excretory Products and their Elimination 01 </h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: August 19, 2025</p>
+  <p class="duration">Duration:01:45:56</p>
+  <div class="buttons">
+    <a href="https://youtu.be/XGGi3OGPD94" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/16638c3d-60de-49d8-aab1-e17afa5bb11a.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">NO DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Lec 02 :Excretory Products and their Elimination </h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: _/_/_</p>
+  <p class="duration">Duration: .....</p>
+  <div class="buttons">
+    <a href="https://youtu.be/42HZXEQoPbU?si=Fv3j4KD60eET6O-a" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b659e660-132d-46b8-9b54-807cdb3f57c3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/35272010-f39d-47ce-8bfd-0fb48166a503.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Lec 03 :Excretory Products and their Elimination <span style="color:red">(NO DPP)</span></h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: August 20, 2025</p>
+  <p class="duration">Duration: 00:48:31</p>
+  <div class="buttons">
+    <a href="https://youtu.be/zVwIl8IBoNw?si=9mT64GRGwkDKSnF8" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3443a6a8-d68b-402f-9f92-f5d125f68b62.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">NO DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Lec 04 :Excretory Products and their Elimination</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: August 22, 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/bMg0pS6wAvs?si=K7kv60JuJcw9IXIO" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/749995a6-c9c5-45b0-ba3b-3922c36e545e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/594f3fc0-980e-4c49-8225-c5a4c5b584ca.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Lec 05 :Excretory Products and their Elimination <span style="color:red">(NO DPP)</span></h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: August 29, 2025</p>
+  <p class="duration">Duration: 01:40:30</p>
+  <div class="buttons">
+    <a href="https://youtu.be/5gp6zFnphLs?si=Rh2waqmwOLz1dgKL" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/237a69ed-4e95-4c9b-b448-732e4724093a.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ab0eb693-3030-4772-a2fb-e51c51af0391.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Lec 06 : Excretory Products and their Elimination</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: 8 September 2025</p>
+  <p class="duration">Duration: _:_:_</p>
+  <div class="buttons">
+    <a href="https://youtu.be/oRMmttoeICc?si=MmUU-hkHvfPTirmh" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cafc8b39-524e-42b5-b61b-02e707cedfd0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1952d113-ffb5-4fd3-872c-562cfe177761.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Excretory Products and their Elimination 07 : Regulation of Kidney Function || (NO DPP)</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: 8 September 2025</p>
+  <p class="duration">Duration: _:_:_</p>
+  <div class="buttons">
+    <a href="https://youtu.be/1D1D9lbMVXc?si=9OjCUkeVicyz9cRi" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/59161f2b-9a5f-4341-b615-9ce1b5c47254.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+

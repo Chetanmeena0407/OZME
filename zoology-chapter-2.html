@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-02 : Breathing and Exchange of Gases</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 01 : Introduction || Respiratory Organs</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/9jBJAp86NH4?si=c9mNi3PPHBBvhhkn" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b969dbc2-0eb5-46a3-9219-7d105ecc36ca.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/28ec142b-3700-4555-bf9f-173fbf4feff8.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 02 : Human Respiratory System-1</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/BCsChS8gKZY" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a437c4f4-7766-4014-aad5-5e2310a029a3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 03 : Mechanism of Breathing</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/D4x4_azLob4?si=AkvtqwdjIS5bqoHK" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/74a4f995-3cb4-4012-8f3a-319f43d3977c.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7277a3a7-dc2c-4f51-aed1-254672027581.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 04 : Respiratory Volumes || Capacities</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/8sUnKsyNmzY?si=AMht3s_LqQGrJXfy" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ef737fd7-8a00-4eca-9532-fc46320eedb8.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1121c2e2-2df2-47b6-9195-1cad24ada380.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 05 : Exchange of Gases</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/tbTrZzITOpQ?si=ZaKMJiXNJpLJhvNw" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f8117ed3-ff26-4097-894c-f8c98eb9337f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4ee721c9-77fa-4328-b213-3105e6df4a62.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 06 : Transport of Gases</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/_I0xBjekbk0?si=aJ9o9dHUcc2cWpk6" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f5e7281b-a8be-49df-ae56-654c5c4114d5.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/99ab49c9-cf3a-4774-9557-da4b08f5b831.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 07 : Exchange of Gases-2</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/e_zhylk7aVU?si=BFjVJ1D9PnuiodoL" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8466e104-bfa3-417c-b743-de7ccf75b5be.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0bb8c536-3291-43f4-b7b5-4056fa4bc178.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 08 : Regulation of Respiration || Disorders</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/4P8qjxnP5tU?si=NUoCDD63Ey4PLzTG" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/47177e7b-5c86-4b23-8580-a75cb6f4e604.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/195c463a-ea5c-44d9-8be2-0cfb490a434f.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 -->
+<div class="lecture">
+  <h3>Breathing and Exchange of Gases 09 : PYQ's || Tapasya</h3>
+  <p>By Samapti Sinha Ma’am</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/sjFpr00lEFY?si=VXe1aMBBrA0U9dQS" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/509063d4-0160-41e2-b757-e188bc9311cf.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-01 : Some Basic Concepts of Chemistry</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3># Some Basic Concepts of Chemistry 01 : Introduction || Matter and its Classification || (NO DPP)</h3>
+  <p>By Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 14 Apr 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f795d7ff-583f-4184-8dfc-b5b84cb89aa3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0cd34019-a6be-429d-bd5a-cf4c6643a20d.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3># Some Basic Concepts of Chemistry 02 : Atomic Number and Mass Number || (NO DPP) || (Rescheduled @ 06:10 PM)</h3>
+  <p>By Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 16 Apr 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f02db0be-df70-4a7b-85b7-9d30476e62e1.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3># Some Basic Concepts of Chemistry 03 : Iso Terms || Average Atomic Mass || (Rescheduled @ 06:13 PM)</h3>
+  <p>By Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 17 Apr 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0ee80f21-782e-4830-a8ad-424c41a234ff.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3># Some Basic Concepts of Chemistry 04 : Dalton's Atomic Theory || (NO DPP) || (Rescheduled @ 06:10 PM)</h3>
+  <p>By Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 21 Apr 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8f4d3901-f5fb-4575-a39e-8d9e091671ba.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3># Some Basic Concepts of Chemistry 05 : Numerical Prefixes || Rounding Off || (Rescheduled @ 06:10 PM)</h3>
+  <p>By Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 22 Apr 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/85a84dbc-a181-461d-a782-331d51ac9343.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/601a3ba3-5898-408c-9889-c157fda92dcf.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3># Some Basic Concepts of Chemistry 06 : Dimensional Analysis || Precision and Accuracy || (NO DPP) || (Rescheduled @ 06:10 PM)</h3>
+  <p>By Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 23 Apr 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="#" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d0ad7035-bf07-48af-8f56-3290dfa7cd0e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>

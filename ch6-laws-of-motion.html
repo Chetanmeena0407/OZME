@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-06 : Laws of Motion </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 --> 
+<div class="lecture">
+  <h3>Laws of Motion 01 : Basic Maths</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/0UyRSMapZc0?si=rezNSIhHEHPJu5Sb" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/84279a0c-dc97-400e-8aed-f7628b421387.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 --> 
+<div class="lecture">
+  <h3>Laws of Motion 02 : Theory of Force</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/WL-WSBx7Xjw?si=S9uf8RCvzd26-x-x" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4d4a57eb-574f-470b-bbed-b5aea6654d7f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 --> 
+<div class="lecture">
+  <h3>Laws of Motion 03 : 2nd Law Numerical</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/RP8VZkQJHNg?si=IOmKJCpRFQQx9xQU" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f1cb4f1c-da55-4cfd-a18a-39d28c2ed713.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e0b11f60-c9d7-4bdc-85b9-f7ec4e60543f.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 --> 
+<div class="lecture">
+  <h3>Laws of Motion 04 : Equilibrium</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/nbMAJA79CXY?si=x3XcR1-VMry2Sr-h" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/06cf700a-ec67-4980-a6a4-eb65668a083f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 --> 
+<div class="lecture">
+  <h3>Laws of Motion 05 : Pseudoforce</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: __.__</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/DOKO0ZnLs5E?si=zC1I_LjdvcaCx2z9" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e4c898af-187d-4bfa-acc8-ff475f03bc57.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/770616fb-a334-4c14-bac0-6ff93bd80428.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 --> 
+<div class="lecture">
+  <h3>Laws of Motion 06 : Push and Pull</h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 10 Sept 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/t35P6enkWoU?si=W_TYtQVFhqS4zehR" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0433c56c-52f4-4ab6-9246-005b5584a1db.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="#" class="dpp-btn">No DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 --> 
+<div class="lecture">
+  <h3>Laws of Motion 07 : Constraint Motion </h3>
+  <p>By Aayudh Yashlaha Sir</p>
+  <p class="date">Date: 11 Sept 2025</p>
+  <p class="duration">Duration: 01:53:14</p>
+  <div class="buttons">
+    <a href="https://youtu.be/2cX1rky4y0I?si=Q5DmMLkx0OJ-Xewc" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c7fd64e1-c8a8-497b-a17a-bfe321631d92.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5971a170-1ca0-476c-97c5-d6e478e7c3fc.pdf" class="dpp-btn"> DPP</a>
+  </div>
+</div>
+
