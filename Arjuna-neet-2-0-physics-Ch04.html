@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 04 : Motion in a plane </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Motion in Plane 01 : Resolution of vectors and Vectors addition</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 12 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/Na0qErfBMNw?si=oq9Ot97nc2rVs5wr" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c3a8f756-b567-4730-ac7a-8b6245d5712f.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Motion in Plane 02 : Vectors addition</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 19 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/dWMBCXHfR8c?si=LQI1a7KRAEorYjsN" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5e571f9f-2cda-4f06-aa2f-ec96878e0ec7.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8fa02c8b-ca8f-4563-b674-8d651bd85111.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Motion in Plane 03 : Questions on vectors</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 22 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/tW-6OdSV9Eg?si=f7XdteYY1jV62rTJ" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3ca0c07c-881f-43ee-bff3-e28d44868f82.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3c8cba3e-5ca6-472a-aa55-8f37e197bc8f.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Motion in Plane 04</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 23 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/qHJ_Kj2rP0g?si=uF9D6jc2E6Xby-bH" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/982f7561-e8b5-40c7-a8a6-a599e09b8229.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/086e2cef-ce72-4460-94d6-94699b922c61.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Motion in Plane 05 : Ground to ground projectile</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 25 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/6dh9cXmIHMw?si=LjBJa4TdRxkrf3jT" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1a7e914e-d298-462d-b62d-feae89539bbd.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6a78bfc3-4ac5-478c-bd7b-b663afc6bfa0.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Motion in Plane 06</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 26 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/2UBIYEAX4Sg?si=S2Z38r2WtZqjEfM4" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eb74ad99-b12b-4002-8ff7-df459b26d05f.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e586d5c5-bedf-4de3-93cf-529136906755.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Motion in Plane 07 : Horizontal projectile and question</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 29 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/KJNZ3mJJE-A?si=yMPAbYKZoiCwfm9W" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1aca2392-3ff3-47ea-9dfa-a6bdf9ad799d.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eeb5ace7-a1be-4660-8717-81f36e1d19ed.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Motion in Plane 08 : Equation of trajectory || NO DPP</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 30 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/l5O2GF7iKTE?si=uhPQrNFLDA6MYByh" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/aa7152dc-5dd1-4406-9a70-c4343cac1bfd.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 09 -->
+<div class="lecture">
+  <h3>Motion in Plane 09 : Equation of Trajectory (Part-02) || (NO DPP) Extra Lecture</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 31 Aug 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/fGMV1SYsqBM?si=16_z-zzjMd6Eki04" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/86ad1ef5-b9e0-4c4e-8c22-7eb47c741a92.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 10 -->
+<div class="lecture">
+  <h3>Motion in Plane 10 : Questions on projectile motion || DPP will be provided soon</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 1 Sep 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/VSaqxLNWQns?si=cR-PaPHyDZPpXPbI" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0730dbe3-f6f3-4ea4-944e-53a8e87ee298.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b61c20d0-d5cf-49a3-988f-bb70e0f5a287.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 11 -->
+<div class="lecture">
+  <h3>Motion in Plane 11 : Relative velocity</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 2 Sep 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/lvjbpvv60ic?si=Plw4H_D-XBnspDk4" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/127d8862-5a7f-46d9-884a-e707ad99d4fd.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b9de0bf7-e4ab-4263-b63c-bdc43fa4e8cc.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 12 -->
+<div class="lecture">
+  <h3>Motion in Plane 12 : DPP Will be provided soon</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 5 Sep 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/WAaADo7xcp0?si=qJuwJxF1NKKCDqsA" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/da14c929-fc07-453f-839f-9093511fa6d6.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/98d73c5b-9251-4b34-a2d4-f113fdaba61a.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 13 -->
+<div class="lecture">
+  <h3>Motion in Plane 13 : Rain man problems || NO DPP</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 6 Sep 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/3Bl5Xvdim1M?si=HcZvWjDE-oB3uqRc" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4f4a5f15-6638-446f-8afe-bdda48854547.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 14 -->
+<div class="lecture">
+  <h3>Motion in Plane 14 : Collisions of Two Projectiles || NO DPP</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 8 Sep 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/MKsttJAVpr8?si=m0I8OiHR0-3LvNBO" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2220a5e5-e18d-4452-b3e9-51b288f97224.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 15 -->
+<div class="lecture">
+  <h3>Motion in Plane 15 : River Boat Problem || (NO DPP)</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 9 Sep 2025</p>
+  <div class="buttons">
+    <a href="https://youtu.be/3HL93PuDZZc?si=3D_6ch_zDccmsthb" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/df40941d-d9fc-488f-aa13-d3b17979b201.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
