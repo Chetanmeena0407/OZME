@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 04 : Motion in a plane </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Motion in straight line 01 : NO DPP</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 14 Jul 2025</p>
+  <p class="duration">Duration: 02:03:35</p>
+  <div class="buttons">
+    <a href="https://youtu.be/eMb9FBNgWOk?si=U_NahwtBxtbQVuwn" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d3d2c4a6-d367-42e0-b79d-4d71d06b39f6.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Motion in straight line 02 : Type of vectors and resolution of vectors</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 15 Jul 2025</p>
+  <p class="duration">Duration: 01:52:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/3pnDOFzChVw?si=vaxhlv9TQFvU67lv" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c5ac3080-322c-425a-8b37-dd9d84f12ef2.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/855fd48a-61a4-4e97-a50e-a24ab849206a.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Motion in straight line 03 : Distance || Displacement || Speed || Velocity</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 18 Jul 2025</p>
+  <p class="duration">Duration: 01:56:04</p>
+  <div class="buttons">
+    <a href="https://youtu.be/DVQ7Vz06SEk?si=xwQ2h0FqvD5sAMDW" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/692e6e26-be34-4603-bb0f-db375e520fc0.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d6452306-ffd2-4f9b-93d6-726f66edd5a8.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Motion in straight line 04 : Questions on distance and displacement || NO DPP</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 19 Jul 2025</p>
+  <p class="duration">Duration: 01:56:04</p>
+  <div class="buttons">
+    <a href="https://youtu.be/GvkxqwbbQGc?si=6_oRTKKCBLSIapIN" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/58d82a78-7280-4f10-a00a-11f28ce2f8f0.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Motion in straight line 05 : Speed and Velocity</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 21 Jul 2025</p>
+  <p class="duration">Duration: 02:11:12</p>
+  <div class="buttons">
+    <a href="https://youtu.be/XvKbBQv6aPg?si=JsDInAAaoykuDncD" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e955ec98-0ce2-40b6-a987-df578d2d130e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9d95c226-71c0-4920-8e70-5b8624dac38e.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Motion in straight line 06 : Speed and Velocity (Part - 2)</h3>
+  <p>By Rajwant Singh Sir</p>
+  <p class="date">Date: 21 Jul 2025</p>
+  <p class="duration">Duration: 01:58:50</p>
+  <div class="buttons">
+    <a href="https://youtu.be/j9-QfB9kCLo?si=HTGrGZMQN4e6LH8m" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/200fc53d-108e-429a-ba22-637cbaacad8c.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7939ef9b-4185-42d5-a6ea-1c01c7979a7c.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
