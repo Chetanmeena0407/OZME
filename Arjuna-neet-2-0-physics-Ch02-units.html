@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 02 : Units and Measurements </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Units and Measurement 01 : Physical quantities and their type</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/ae6a4u-TNxA?si=yyh4j5yFN41YW6f7" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6701bdba-735a-4336-868b-ba7897c7fbb9.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fa4a12e1-ecde-4bef-9349-1a034c610137.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Units and Measurement 02 : Units and conversions</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/CK41eAl-TIg?si=1u3H0Ra_K1WYevo9" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f2403199-1b84-4263-80a5-a0036b29627d.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Units and Measurement 03 : Conversion of units and dimensions</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/2My-eZuAIq8" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5015353e-7f17-4fa0-bd64-0ba86783a85e.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f2033bb6-e71e-43c4-b3a5-89772b701c3f.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Units and Measurement 04 : Principle of Homogeneity</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/IborQQT1hbg?si=qMAXwgW-L98B46zP" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e99acedd-c077-462f-bf17-fadde7105807.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7fe5ef09-75d9-488a-b32f-409647d16380.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Units and Measurement 05 : Question on Principle of Homogeneity</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/KVHSDKNzjls?si=aQgO488mCFB3vLsi" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/045d3dd4-03c5-4bcc-b463-adfc2fe08640.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Units and Measurement 06</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/24DV3NHSRbk?si=_vdHQbJIdK94na6Q" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3c89f323-e8c6-4821-820a-55d816e59866.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/64555c79-7ca0-4a43-becb-93ad1d99a6a0.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Units and Measurement 07 : Dimensions of PQ</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/pGSuxcm_CTE?si=ngKQJLNnfZD3DIWU" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4bc472ee-0a00-4fac-82a4-629cdfe89800.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4aa11492-3db9-4ab0-906b-07393c16c0db.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Units and Measurement 08 : Introduction to Errors</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/Lh0eKwaz4NU?si=w8hJJGIX_W31Jkx" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/15228567-fcc7-4d75-bfb1-d4e6681b42c3.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ae59488d-5f8d-4b2a-8447-71c2123cf4cc.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 -->
+<div class="lecture">
+  <h3>Units and Measurement 09</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/WUNNk8_TXz0?si=gNsacznBPD7FNFe5" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fa4417ac-1cf6-46c9-9970-1a846689a69b.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d7972ef9-e811-40dd-a2c5-c9487163828d.pdf" target="_blank" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 10 -->
+<div class="lecture">
+  <h3>Units and Measurement 10 : Question on Errors</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/-wELB1XGgm8?si=ehRfNT7x2P86ym5h" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1dfdf779-2e12-4a59-a772-24b2fbef3593.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
+
+<!-- Lec 11 -->
+<div class="lecture">
+  <h3>Units and Measurement 11 : Questions on Errors (Part-2)</h3>
+  <p>By Rajwant Sir</p>
+  <p class="date">Date: 26 June 2025</p>
+  <p class="duration">Duration: 02:15:28</p>
+  <div class="buttons">
+    <a href="https://youtu.be/2siC4y8MrL0?si=lfuOOq1BlUuBmbwo" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2fa9ec1d-3fdd-40af-a0a0-c9a196fe4e64.pdf" target="_blank" class="notes-btn">Notes</a>
+  </div>
+</div>
