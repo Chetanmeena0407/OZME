@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-05 : Plant Kingdom</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Plant Kingdom 01 : Classification System</h3>
+  <p>By Archana Rathi Ma'am</p>
+  <p class="date">Date: 8 Sep 2025</p>
+  <p class="duration">Duration: 01:55:36</p>
+  <div class="buttons">
+    <a href="https://youtu.be/BfrbhfZBLJ0?si=I-m90LTd9vZOAKvd" target="_blank">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f1ba7e1d-fdb0-4919-8e20-95bdb6dde524.pdf" target="_blank">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/dae65d82-ee32-481f-b132-66066a5b295b.pdf" target="_blank">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Plant Kingdom 02 : Algae</h3>
+  <p>By Archana Rathi Ma'am</p>
+  <p class="date">Date: 9 Sep 2025</p>
+  <p class="duration">Duration: 01:46:04</p>
+  <div class="buttons">
+    <a href="https://youtu.be/sV-XGeBqhMw?si=XA-Nzpk3xvj9qasj" target="_blank">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f1ba7e1d-fdb0-4919-8e20-95bdb6dde524.pdf" target="_blank">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8fd260fc-2c44-46bc-90c2-bac399ebab33.pdf" target="_blank">DPP</a>
+  </div>
+</div>
