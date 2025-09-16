@@ -28,9 +28,9 @@
   }
 
   #logoOverlay h1 {
-    font-size: clamp(50px, 15vw, 120px); /* responsive font-size */
+    font-size: clamp(50px, 15vw, 120px);
     font-weight: 900;
-    letter-spacing: clamp(5px, 2vw, 12px); /* responsive spacing */
+    letter-spacing: clamp(5px, 2vw, 12px);
     background: linear-gradient(90deg,#ff4760,#ff9f43,#1e90ff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -73,7 +73,7 @@
     transform: translateY(30px);
     transition: opacity 1s ease, transform 1s ease;
     padding:20px;
-    background:#fff; /* FULL WHITE BACKGROUND */
+    background:#fff;
     color:#000;
     min-height:100vh;
     box-sizing:border-box;
@@ -165,13 +165,27 @@
 </div>
 
 <script>
-  // OZME animation duration = 4s, phir white background batches appear
-  setTimeout(()=> {
-    document.getElementById('logoOverlay').style.display='none';
-    const batches = document.getElementById('batches');
-    batches.style.opacity='1';
-    batches.style.transform='translateY(0)';
-  }, 4000);
+  const ONE_DAY = 24*60*60*1000; // 24 hours in ms
+  const verifiedTimestamp = localStorage.getItem('verifiedTimestamp');
+  const now = Date.now();
+
+  function showBatches() {
+    setTimeout(() => {
+      document.getElementById('logoOverlay').style.display='none';
+      const batches = document.getElementById('batches');
+      batches.style.opacity='1';
+      batches.style.transform='translateY(0)';
+    }, 4000);
+  }
+
+  if (verifiedTimestamp && (now - verifiedTimestamp < ONE_DAY)) {
+    // Verified within 24hr
+    showBatches();
+  } else {
+    // Not verified or 24hr expired → redirect to verify page
+    const currentURL = window.location.href;
+    window.location.href = "verify.html?redirect=" + encodeURIComponent(currentURL);
+  }
 </script>
 
 </body>
