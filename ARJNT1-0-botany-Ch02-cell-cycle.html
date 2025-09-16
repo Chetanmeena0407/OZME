@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch-02 : Cell Cycle and Cell Division </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
+    margin: 0;
+  }
+
+  .lecture {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
+
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<!-- Lec 01 -->
+  <div class="lecture">
+    <h3>Cell Cycle and Cell Division 01 : Why Cells Divide?</h3>
+    <p class="teacher">By Vipin Sir</p>
+    <p class="date">Date: 30 May 2025</p>
+    <p class="duration">Duration: 01:41:04</p>
+    <div class="buttons">
+      <a href="https://youtu.be/gqiJQUpsOhI?si=IC8HcGps6S8N2SpY" target="_blank" class="lecture-btn">Lecture</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/13a8502d-36c4-4631-a40d-ac9ebf2ff455.pdf" target="_blank" class="notes-btn">Notes</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/de1cb766-b710-465d-82cb-c795c5fe49e3.pdf" target="_blank" class="dpp-btn">DPP</a>
+    </div>
+  </div>
+
+  <!-- Lec 02 -->
+  <div class="lecture">
+    <h3>Cell Cycle and Cell Division 02 : Phases of Cell Division (Recorded Lecture)</h3>
+    <p class="teacher">By Vipin Sir</p>
+    <p class="date">Date: 5 Jun 2025</p>
+    <p class="duration">Duration: 01:15:23</p>
+    <div class="buttons">
+      <a href="https://youtu.be/n9AWC64zA44?si=ooFfw5KtR4Frjkf5" target="_blank" class="lecture-btn">Lecture</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d2812786-1c51-4df5-bb74-19f88c9724bf.pdf" target="_blank" class="notes-btn">Notes</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a3b4afc8-6ecd-432d-b58b-91a723a18614.pdf" target="_blank" class="dpp-btn">DPP</a>
+    </div>
+  </div>
+
+  <!-- Lec 03 -->
+  <div class="lecture">
+    <h3>Cell Cycle and Cell Division 03 : Karyokinesis</h3>
+    <p class="teacher">By Vipin Sir</p>
+    <p class="date">Date: 12 Jun 2025</p>
+    <p class="duration">Duration: 01:52:54</p>
+    <div class="buttons">
+      <a href="https://youtu.be/WTclFXNR2Fs?si=TxGmXVLNt8P-dafj" target="_blank" class="lecture-btn">Lecture</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/176e2b3d-6f83-4730-a65a-34a4fc1e27b9.pdf" target="_blank" class="notes-btn">Notes</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fce08329-e401-4438-b024-701a4f263173.pdf" target="_blank" class="dpp-btn">DPP</a>
+    </div>
+  </div>
+
+  <!-- Lec 04 -->
+  <div class="lecture">
+    <h3>Cell Cycle and Cell Division 04 : Cytokinesis</h3>
+    <p class="teacher">By Vipin Sir</p>
+    <p class="date">Date: 13 Jun 2025</p>
+    <p class="duration">Duration: 01:47:26</p>
+    <div class="buttons">
+      <a href="https://youtu.be/6ZDC4yRZelw?si=an30yTCwYf0frozd" target="_blank" class="lecture-btn">Lecture</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d0c75235-688e-4178-b119-e9a8d54c946b.pdf" target="_blank" class="notes-btn">Notes</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/967bec5e-0d6b-43d8-bb3a-a8985e4169ee.pdf" target="_blank" class="dpp-btn">DPP</a>
+    </div>
+  </div>
+
+  <!-- Lec 05 -->
+  <div class="lecture">
+    <h3>Cell Cycle and Cell Division 05 : Meiosis</h3>
+    <p class="teacher">By Vipin Sir</p>
+    <p class="date">Date: 19 Jun 2025</p>
+    <p class="duration">Duration: 01:45:52</p>
+    <div class="buttons">
+      <a href="https://youtu.be/nkTIqS7MmWI?si=lAE30sxB6rS1zSva" target="_blank" class="lecture-btn">Lecture</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/12fc7f39-badf-483b-8cb3-aefabbc0a62d.pdf" target="_blank" class="notes-btn">Notes</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8c1803d7-76e6-4cf2-9676-4487370bdca4.pdf" target="_blank" class="dpp-btn">DPP</a>
+    </div>
+  </div>
+
+  <!-- Lec 06 -->
+  <div class="lecture">
+    <h3>Cell Cycle and Cell Division 06 : Prophase-1</h3>
+    <p class="teacher">By Vipin Sir</p>
+    <p class="date">Date: 20 Jun 2025</p>
+    <p class="duration">Duration: 01:52:52</p>
+    <div class="buttons">
+      <a href="https://youtu.be/0tNDLQXmI-Y?si=xFJmHHzgDGWG2XSk" target="_blank" class="lecture-btn">Lecture</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6d4ace20-c223-4a91-9daa-448f8da641e0.pdf" target="_blank" class="notes-btn">Notes</a>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6e5b8ba3-ee09-4a02-a17a-2959b605429e.pdf" target="_blank" class="dpp-btn">DPP</a>
+    </div>
+  </div>
+</div>
