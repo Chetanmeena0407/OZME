@@ -45,25 +45,32 @@
       align-items: center;
       cursor: pointer;
       transition: transform .15s, box-shadow .2s;
+      flex-wrap: wrap;
     }
     .lec-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 16px rgba(59,130,246,0.25);
     }
 
-    .lec-card h3 {
+    .lec-info h3 {
       font-size: 15px;
       margin: 0 0 4px;
       color: #0f172a;
+      cursor: pointer;
     }
-    .lec-card .date {
+    .lec-info .date {
       font-size: 13px;
       color: #64748b;
     }
 
+    .lec-actions {
+      display: flex;
+      gap: 20px; /* increased spacing for mobile touch */
+      flex-shrink: 0;
+    }
+
     .lec-actions i {
       font-size: 22px;
-      margin-left: 14px;
       cursor: pointer;
       color: #1e40af;
       transition: transform 0.2s, color 0.2s;
@@ -146,6 +153,7 @@
 </head>
 <body>
 
+<!-- Verification Check -->
 <script>
 (function () {
   const verifiedAt = localStorage.getItem("verifiedAt");
@@ -187,8 +195,8 @@
     const card = document.createElement('div');
     card.className = 'lec-card';
     card.innerHTML = `
-      <div>
-        <h3>${lec.name}</h3>
+      <div class="lec-info">
+        <h3 onclick="openPopup('video', '${lec.video}', '', '${lec.name}')">${lec.name}</h3>
         <div class="date">${lec.date}</div>
       </div>
       <div class="lec-actions">
