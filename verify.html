@@ -1,50 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Verification</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 40px; background: #f9fafb; }
-    .box { max-width: 400px; margin: auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    h2 { color: #6c63ff; }
-    a.btn { display: inline-block; margin-top: 20px; padding: 12px 20px; background: #6c63ff; color: #fff; text-decoration: none; border-radius: 6px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OZME + Arjuna NEET Batches</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+  }
+
+  /* OZME animation overlay */
+  #logoOverlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    background: radial-gradient(circle at center, #05060a 0%, #0b1220 100%);
+    z-index: 9999;
+    padding:10px;
+    box-sizing:border-box;
+  }
+
+  #logoOverlay h1 {
+    font-size: clamp(50px, 15vw, 120px); /* responsive font-size */
+    font-weight: 900;
+    letter-spacing: clamp(5px, 2vw, 12px); /* responsive spacing */
+    background: linear-gradient(90deg,#ff4760,#ff9f43,#1e90ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity:0;
+    transform: scale(0.3) rotateX(90deg);
+    animation: epicLogo 2.5s cubic-bezier(0.19,1,0.22,1) forwards, pulseGlow 2s ease-in-out 2.5s infinite alternate;
+    text-align:center;
+    word-break: break-word;
+  }
+
+  #logoOverlay p {
+    margin-top:20px;
+    font-size: clamp(14px, 4vw, 22px);
+    opacity:0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay:2.5s;
+    color:#fff;
+    text-align:center;
+  }
+
+  @keyframes epicLogo {
+    0% {transform:scale(0.3) rotateX(90deg); opacity:0;}
+    50% {transform:scale(1.6) rotateX(20deg); opacity:1; text-shadow:0 0 80px rgba(255,71,87,1);}
+    100% {transform:scale(1) rotateX(0deg); opacity:1; text-shadow:0 0 35px rgba(30,144,255,0.9);}
+  }
+
+  @keyframes pulseGlow {
+    0% { text-shadow: 0 0 35px rgba(30,144,255,0.9); }
+    50% { text-shadow: 0 0 50px rgba(30,144,255,1), 0 0 25px rgba(255,71,87,0.7); }
+    100% { text-shadow: 0 0 35px rgba(30,144,255,0.9); }
+  }
+
+  @keyframes fadeUp { to {opacity:1; transform:translateY(0);} }
+
+  /* Batches page */
+  #batches {
+    opacity:0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    padding:20px;
+    background:#fff; /* FULL WHITE BACKGROUND */
+    color:#000;
+    min-height:100vh;
+    box-sizing:border-box;
+  }
+  h1.batchesTitle { text-align:center; margin-bottom:30px; color:#000; }
+
+  .batch-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  .batch-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    width: 100%;
+  }
+  .batch-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  }
+  .batch-card img { width:100%; display:block; border-bottom:1px solid #eee; transition: transform 0.3s ease;}
+  .batch-card img:hover { transform:scale(1.05); }
+  .content { padding:15px; }
+  .content h2 { margin:0 0 10px; font-size:18px; }
+  .content p { margin:5px 0; font-size:14px; color:#555; }
+  .price { color:#e63946; font-weight:bold; font-size:15px; margin-top:8px; }
+  .footer { padding:15px; background:#fafafa; border-top:1px solid #eee; text-align:center; }
+  .footer a {
+    display:inline-block;
+    padding:10px 20px;
+    background:#6c63ff;
+    color:#fff;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .footer a:hover { background:#4e46d3; transform:scale(1.05); }
+
+  @media(max-width:600px){
+    .batch-container{grid-template-columns:1fr;}
+    .batch-card{max-width:95%;}
+    h1.batchesTitle{font-size:20px;}
+  }
+</style>
 </head>
 <body>
-  <div class="box">
-    <h2>Verification Required</h2>
-    <p>Please verify once to continue. Ads will appear only once in 24 hours.</p>
-    <a id="verifyBtn" href="#" class="btn" target="_blank">Verify Now</a>
+
+<div id="logoOverlay">
+  <h1>OZME</h1>
+  <p>Next Gen Learning Platform</p>
+</div>
+
+<div id="batches">
+  <h1 class="batchesTitle">Arjuna NEET 2026 Batches</h1>
+  <div class="batch-container">
+    <div class="batch-card">
+      <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/02b090f7-2fba-494a-8dac-29ecbeabf24d.jpeg" alt="Arjuna NEET 1.0">
+      <div class="content">
+        <h2>Arjuna NEET 1.0 (2026)</h2>
+        <p><strong>Starts:</strong> 07 Apr 2025</p>
+        <p><strong>Ends:</strong> 30 Jun 2026</p>
+        <p class="price">₹FREE/- (Offer)</p>
+      </div>
+      <div class="footer">
+        <a href="verify.html?redirect=arjuna-neet1-subjects.html">Let's Study</a>
+      </div>
+    </div>
+
+    <div class="batch-card">
+      <img src="https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/338d676d-436d-4ff5-93c2-767b2df8f976.png" alt="Arjuna NEET 2.0">
+      <div class="content">
+        <h2>Arjuna NEET 2.0 (2026)</h2>
+        <p><strong>Starts:</strong> 26 May 2025</p>
+        <p><strong>Ends:</strong> 30 Jun 2026</p>
+        <p class="price">₹FREE/- (Offer)</p>
+      </div>
+      <div class="footer">
+        <a href="verify.html?redirect=arjuna-neet2-subjects.html">Let's Study</a>
+      </div>
+    </div>
   </div>
+</div>
 
-  <script>
-    function getParam(name) {
-      return new URLSearchParams(window.location.search).get(name);
-    }
+<script>
+  // OZME animation duration = 4s, phir white background batches appear
+  setTimeout(()=> {
+    document.getElementById('logoOverlay').style.display='none';
+    const batches = document.getElementById('batches');
+    batches.style.opacity='1';
+    batches.style.transform='translateY(0)';
+  }, 4000);
+</script>
 
-    const redirectPage = getParam("redirect");
-    const done = getParam("done");
-    const now = Date.now();
-    const lastVerified = localStorage.getItem("verifiedAt");
-
-    if (lastVerified && (now - parseInt(lastVerified)) < 24*60*60*1000) {
-      // Already verified → direct redirect
-      window.location.href = redirectPage;
-    } 
-    else if (done === "1") {
-      // Verification success → save & redirect
-      localStorage.setItem("verifiedAt", now);
-      window.location.href = redirectPage;
-    } 
-    else {
-      // Send to shortlink (lksfy)
-      const btn = document.getElementById("verifyBtn");
-      btn.href = "https://lksfy.com/ARJUNA-NEW-SITE";  
-    }
-  </script>
 </body>
 </html>
-
-
-
