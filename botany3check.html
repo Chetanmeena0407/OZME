@@ -65,13 +65,19 @@
 
     .lec-actions {
       display: flex;
-      gap: 20px; /* increased spacing for mobile touch */
+      gap: 20px;
       flex-shrink: 0;
+    }
+
+    .lec-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
     }
 
     .lec-actions i {
       font-size: 22px;
-      cursor: pointer;
       color: #1e40af;
       transition: transform 0.2s, color 0.2s;
     }
@@ -91,13 +97,18 @@
       align-items: center;
       z-index: 1000;
       padding: 10px;
+      animation: fadeIn .3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     .popup-content {
       background: #fff;
       padding: 22px;
       border-radius: 14px;
-      max-width: 600px;
+      max-width: 800px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
@@ -112,11 +123,20 @@
       color: #0f172a;
     }
 
-    .popup-content iframe {
+    /* Responsive Video */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 8px;
-      max-height: 60vh;
     }
 
     .pdf-btn {
@@ -135,6 +155,11 @@
       background: linear-gradient(90deg, #cbdafc, #e0ebff);
       transform: scale(1.03);
     }
+    .pdf-btn.disabled {
+      background: #f1f5f9;
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
 
     .close-btn {
       position: absolute;
@@ -152,20 +177,6 @@
   </style>
 </head>
 <body>
-
-<!-- Verification Check -->
-<script>
-(function () {
-  const verifiedAt = localStorage.getItem("verifiedAt");
-  const now = Date.now();
-  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-    const currentPage = encodeURIComponent(
-      window.location.pathname.split("/").pop() + window.location.search
-    );
-    window.location.href = "verify.html?redirect=" + currentPage;
-  }
-})();
-</script>
 
 <header>Ch - 02 : Cell Cycle and Cell Division</header>
 
@@ -186,29 +197,29 @@
       date: "08 Sep 2025",
       video: "https://www.youtube.com/embed/nppv2VXd9dQ",
       notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7dfcf807-f677-4d9e-b4f8-f781f134648b.pdf",
-      dpp: "#"
+      dpp: ""
     },
     {
-      id: 1,
+      id: 2,
       name: "Cell Cycle and Cell Division 02 : Phases of Cell Cycle",
       date: "09 Sep 2025",
-      video: "https://www.youtube.com/embed/9dqjpxUgUwE?si=rV24x-IZ97uVyAqf",
+      video: "https://www.youtube.com/embed/9dqjpxUgUwE",
       notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1f08bbf1-1251-4537-9ea7-5d406ee0e7e0.pdf",
       dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f174ac1f-8057-4a77-b1d7-afa74c4dca3f.pdf"
     },
     {
-      id: 1,
+      id: 3,
       name: "Cell Cycle and Cell Division 03 : Cytokinesis || (NO DPP)",
       date: "15 Sep 2025",
-      video: "https://www.youtube.com/embed/u7yolplN7Vs?si=oFRxRgT2oyJJsTyM",
+      video: "https://www.youtube.com/embed/u7yolplN7Vs",
       notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4eff43a2-a009-4bd4-8089-62cd22248a52.pdf",
-      dpp: "#"
+      dpp: ""
     },
     {
-      id: 1,
-      name: " Cell Cycle and Cell Division 04 : Meiosis ",
+      id: 4,
+      name: "Cell Cycle and Cell Division 04 : Meiosis",
       date: "16 Sep 2025",
-      video: "https://www.youtube.com/embed/C8wfWCeB6nI?si=33KIaUmbtF8z_n8D",
+      video: "https://www.youtube.com/embed/C8wfWCeB6nI",
       notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf",
       dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/43d3f161-6516-4f17-b727-e7de60f9ee9c.pdf"
     }
@@ -224,34 +235,45 @@
         <div class="date">${lec.date}</div>
       </div>
       <div class="lec-actions">
-        <i class="fa-solid fa-circle-play" onclick="openPopup('video', '${lec.video}', '', '${lec.name}')"></i>
-        <i class="fa-solid fa-file-pdf" onclick="openPopup('pdf', '${lec.notes}', '${lec.dpp}', '${lec.name}')"></i>
+        <button onclick="openPopup('video', '${lec.video}', '', '${lec.name}')">
+          <i class="fa-solid fa-circle-play"></i>
+        </button>
+        <button onclick="openPopup('pdf', '${lec.notes}', '${lec.dpp}', '${lec.name}')">
+          <i class="fa-solid fa-file-pdf"></i>
+        </button>
       </div>
     `;
     list.appendChild(card);
   });
 
   function openPopup(type, link1, link2, lecName) {
-    let popup = document.getElementById("popup");
-    let content = document.getElementById("popup-content");
+    const popup = document.getElementById("popup");
+    const content = document.getElementById("popup-content");
     popup.style.display = "flex";
 
     if (type === "video") {
+      // autoplay with full controls
+      const videoUrl = link1 + "?rel=0&autoplay=1&modestbranding=1&controls=1";
       content.innerHTML = `
         <button class="close-btn" onclick="closePopup()">✕</button>
         <h2>${lecName}</h2>
-        <iframe src="${link1}" allowfullscreen></iframe>`;
+        <div class="video-wrapper">
+          <iframe src="${videoUrl}" allowfullscreen></iframe>
+        </div>`;
     } else if (type === "pdf") {
       content.innerHTML = `
         <button class="close-btn" onclick="closePopup()">✕</button>
         <h2>${lecName}</h2>
-        ${link1 ? `<a href="${link1}" target="_blank" class="pdf-btn">📘 Notes</a>` : ''}
-        ${link2 && link2 !== '#' ? `<a href="${link2}" target="_blank" class="pdf-btn">📑 DPP</a>` : ''}`;
+        ${link1 ? `<a href="${link1}" target="_blank" class="pdf-btn">📘 Notes</a>` : '<div class="pdf-btn disabled">📘 Notes Not Available</div>'}
+        ${link2 ? `<a href="${link2}" target="_blank" class="pdf-btn">📑 DPP</a>` : '<div class="pdf-btn disabled">📑 DPP Not Available</div>'}`;
     }
   }
 
   function closePopup() {
-    document.getElementById("popup").style.display = "none";
+    const popup = document.getElementById("popup");
+    const content = document.getElementById("popup-content");
+    popup.style.display = "none";
+    content.innerHTML = '<button class="close-btn" onclick="closePopup()">✕</button>'; // clear iframe to stop video
   }
 </script>
 
