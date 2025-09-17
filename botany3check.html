@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter Lectures</title>
+  
+  <!-- ✅ Font Awesome Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #fdfdfd);
+      color: #111;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .main {
+      padding: 18px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .lec-card {
+      background: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .2s;
+      flex-wrap: wrap;
+    }
+    .lec-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(59,130,246,0.25);
+    }
+
+    .lec-info h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+      color: #0f172a;
+      cursor: pointer;
+    }
+    .lec-info .date {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .lec-actions {
+      display: flex;
+      gap: 20px; /* increased spacing for mobile touch */
+      flex-shrink: 0;
+    }
+
+    .lec-actions i {
+      font-size: 22px;
+      cursor: pointer;
+      color: #1e40af;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .lec-actions i:hover {
+      color: #111;
+      transform: scale(1.25);
+    }
+
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 10px;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 22px;
+      border-radius: 14px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-sizing: border-box;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .popup-content h2 {
+      margin: 0 0 14px;
+      font-size: 17px;
+      color: #0f172a;
+    }
+
+    .popup-content iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      max-height: 60vh;
+    }
+
+    .pdf-btn {
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 8px 0;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      background: linear-gradient(90deg, #e0ebff, #f0f4ff);
+      color: #1e40af;
+      transition: background .2s, transform .15s;
+    }
+    .pdf-btn:hover {
+      background: linear-gradient(90deg, #cbdafc, #e0ebff);
+      transform: scale(1.03);
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      border: 0;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #6b7280;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+<header>Ch - 02 : Cell Cycle and Cell Division</header>
+
+<main class="main" id="lecList"></main>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content" id="popup-content">
+    <button class="close-btn" onclick="closePopup()">✕</button>
+  </div>
+</div>
+
+<script>
+  const lectures = [
+    {
+      id: 1,
+      name: "Cell Cycle and Cell Division 01 : Cell Cycle || (NO DPP)",
+      date: "08 Sep 2025",
+      video: "https://www.youtube.com/embed/g3vb_sN3_0o?si=_GBT-9xasbwFk7g1",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf",
+      dpp: "#"
+    },
+    {
+      id: 1,
+      name: "Cell Cycle and Cell Division 02 : Phases of Cell Cycle",
+      date: "09 Sep 2025",
+      video: "https://www.youtube.com/embed/9dqjpxUgUwE?si=rV24x-IZ97uVyAqf",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf",
+      dpp: "#"
+    },
+    {
+      id: 1,
+      name: "Cell Cycle and Cell Division 02 : Phases of Cell Cycle",
+      date: "09 Sep 2025",
+      video: "https://www.youtube.com/embed/9dqjpxUgUwE?si=rV24x-IZ97uVyAqf",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf",
+      dpp: "#"
+    }
+  ];
+
+  const list = document.getElementById('lecList');
+  lectures.forEach(lec => {
+    const card = document.createElement('div');
+    card.className = 'lec-card';
+    card.innerHTML = `
+      <div class="lec-info">
+        <h3 onclick="openPopup('video', '${lec.video}', '', '${lec.name}')">${lec.name}</h3>
+        <div class="date">${lec.date}</div>
+      </div>
+      <div class="lec-actions">
+        <i class="fa-solid fa-circle-play" onclick="openPopup('video', '${lec.video}', '', '${lec.name}')"></i>
+        <i class="fa-solid fa-file-pdf" onclick="openPopup('pdf', '${lec.notes}', '${lec.dpp}', '${lec.name}')"></i>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  function openPopup(type, link1, link2, lecName) {
+    let popup = document.getElementById("popup");
+    let content = document.getElementById("popup-content");
+    popup.style.display = "flex";
+
+    if (type === "video") {
+      content.innerHTML = `
+        <button class="close-btn" onclick="closePopup()">✕</button>
+        <h2>${lecName}</h2>
+        <iframe src="${link1}" allowfullscreen></iframe>`;
+    } else if (type === "pdf") {
+      content.innerHTML = `
+        <button class="close-btn" onclick="closePopup()">✕</button>
+        <h2>${lecName}</h2>
+        ${link1 ? `<a href="${link1}" target="_blank" class="pdf-btn">📘 Notes</a>` : ''}
+        ${link2 && link2 !== '#' ? `<a href="${link2}" target="_blank" class="pdf-btn">📑 DPP</a>` : ''}`;
+    }
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
