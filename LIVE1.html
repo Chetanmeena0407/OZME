@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Player</title>
+
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
+
+  <style>
+    body {
+      background: #f0f4ff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    video, iframe {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎥 Universal Video Player</h2>
+
+<div id="player-container">
+  <video id="player" controls playsinline></video>
+</div>
+
+<!-- Plyr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
+<!-- HLS.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.10/hls.min.js"></script>
+<!-- DASH.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.1/dash.all.min.js"></script>
+
+<script>
+  // 🔹 Put your video link here
+  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_U2lnbmF0dXJlPWhUV0xpVEtLNWEtNlVrTGNNeU03YlctYVRRS2F2WVV5aG16JTdFM0QtY1lhV2M4bkZhb0VFZ01XSTlTNXZ6YTI3TUFPTENySS0tcXc0c2g5VXQ5N0hMRkxMcWxvbmRndWpkUDR6SmptVXJJdG1ra0ZPZDJMS3QwdVV6Z0JxTndtSjRLY2VQZzRvRmFTdGhicVhBWFpadHNYTTB5LUd1ZGdJdGR4SUN4WmRvcHV4MVpxNEg4OVBPZVQ5YTM2WDg4RVFzNGk2JTdFdzhlUnVybXo5NWtFamRodlhaeU1xb2N5UHBVOXZiQ0VoVHJReTE0WUYyT0x4Wnl3UE9XLVYlN0VNUUg5VHRtWE82MnVxZkY2RkZyb3hqNVFhVWVhajhtN0FFdWlLdGZMaWFyY2Jrd01xVWZBZzkwVlh0TFUyanQ3WDRZYzBYRnIyVUN3dHV2MFp3cklHM2lsclFVUV9fJlBvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OWtOREF5WkdsdGVIYzJlR3N1WTJ4dmRXUm1jbTl1ZEM1dVpYUXZLaUlzSWtOdmJtUnBkR2x2YmlJNmV5SkVZWFJsVEdWemMxUm9ZVzRpT25zaVFWZFRPa1Z3YjJOb1ZHbHRaU0k2TVRjMU9ESXdPRGd3TUgxOWZWMTkmS2V5LVBhaXItSWQ9QVBLQVhWS01FTkZDUktURzVYRTIiLCJ0eXBlIjoibGl2ZSIsInZpZGVvX3VybCI6Imh0dHBzOlwvXC9kNDAyZGlteHc2eGsuY2xvdWRmcm9udC5uZXRcL2luZGV4Lm0zdTgiLCJleHAiOjE3NTgyMDUyMDAsImlhdCI6MTc1ODE5NDQwMH0.Ykv5IKrpCia8WQDvCRDt2HNeAYXSgHP2pyJAK2Zx7fU/index.m3u8"; 
+
+  const video = document.getElementById('player');
+
+  function initPlayer(url) {
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+      // ✅ YouTube Embed
+      document.getElementById("player-container").innerHTML = `
+        <div id="yt-player">
+          <iframe src="https://www.youtube.com/embed/${extractYouTubeID(url)}" 
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>`;
+    } 
+    else if (url.endsWith(".m3u8")) {
+      // ✅ HLS
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          new Plyr(video);
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        new Plyr(video);
+      }
+    } 
+    else if (url.endsWith(".mpd")) {
+      // ✅ MPEG-DASH
+      const player = dashjs.MediaPlayer().create();
+      player.initialize(video, url, true);
+      new Plyr(video);
+    } 
+    else {
+      // ✅ Normal MP4
+      video.src = url;
+      new Plyr(video);
+    }
+  }
+
+  function extractYouTubeID(url) {
+    const regExp = /^.*(youtu\.be\/|v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  }
+
+  // 🚀 Start Player
+  initPlayer(videoUrl);
+</script>
+
+</body>
+</html>
