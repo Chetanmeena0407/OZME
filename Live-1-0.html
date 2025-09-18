@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thermodynamics 12 </title>
+
+  <!-- Verification Check -->
+  <script>
+  (function () {
+    const verifiedAt = localStorage.getItem("verifiedAt");
+    const now = Date.now();
+    if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+      const currentPage = encodeURIComponent(
+        window.location.pathname.split("/").pop() + window.location.search
+      );
+      window.location.href = "verify.html?redirect=" + currentPage;
+    }
+  })();
+  </script>
+
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
+  <style>
+    body {
+      background: #f0f4ff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    video, iframe {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎥 Universal Video Player</h2>
+
+<div id="player-container">
+  <video id="player" controls playsinline></video>
+</div>
+
+<!-- Plyr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
+<!-- HLS.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.10/hls.min.js"></script>
+<!-- DASH.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.1/dash.all.min.js"></script>
+
+<script>
+  // 🔹 Put your video link here
+  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_U2lnbmF0dXJlPU9kZnBRQjhHUFNUSVolN0U3WXNXdmpObSU3RUZVeFI2a3FhamxDRVdLRiU3RVo0MlVnVkF1LXdtWU51USU3RUp5OUMzdUpwbXk0OVcxcXM2SEUzanhIUkRWeUNsbzBzNHBETWhmNkpYZEdkVVd6YXRqV2I5Rk13SG1OUlBOWm8lN0VOJTdFakRxejNFRThDUDNIazVZRyU3RUowWkw3SVZpaTJNMUJ1RUdraHpLajF5YkJ0eUljM0RMUnU1WEotUWtrJTdFQnp1Nm9mNkJHOGZtNi1LRU12WXVqVEVmWWtGY0x4TU9GcnNVVXNoN21EaEJYZ3d0R3pWdEd6JTdFYWVDS0xKS1h4VHdvcnVQSDRybFhWdUlLMEtWRk9LclVJclZtN0sxRTdxdWNpS1pFYkc3bVFWdUhDbnppdDVuNlg5NVJxWkZlVnRESWt3dnZYbjFMczBObmFsSXFIdFRLZTJ0TzNTZGRKQV9fJlBvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OWtNV1p6T0dzeWJEY3hhMlp3ZUM1amJHOTFaR1p5YjI1MExtNWxkQzhxSWl3aVEyOXVaR2wwYVc5dUlqcDdJa1JoZEdWTVpYTnpWR2hoYmlJNmV5SkJWMU02UlhCdlkyaFVhVzFsSWpveE56VTRNakV6T1RjemZYMTlYWDBfJktleS1QYWlyLUlkPUFQS0FYVktNRU5GQ1JLVEc1WEUyIiwidHlwZSI6ImxpdmUiLCJ2aWRlb191cmwiOiJodHRwczpcL1wvZDFmczhrMmw3MWtmcHguY2xvdWRmcm9udC5uZXRcL2luZGV4Lm0zdTgiLCJleHAiOjE3NTgyMTAzNzMsImlhdCI6MTc1ODE5OTU3M30.zhmLuL3woaCd3G2dD99cOFEKRgwzG65c6Hy3J9CqyIo/index.m3u8"; 
+
+  const video = document.getElementById('player');
+
+  function initPlayer(url) {
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+      // ✅ YouTube Embed
+      document.getElementById("player-container").innerHTML = `
+        <div id="yt-player">
+          <iframe src="https://www.youtube.com/embed/${extractYouTubeID(url)}" 
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>`;
+    } 
+    else if (url.endsWith(".m3u8")) {
+      // ✅ HLS
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          new Plyr(video);
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        new Plyr(video);
+      }
+    } 
+    else if (url.endsWith(".mpd")) {
+      // ✅ MPEG-DASH
+      const player = dashjs.MediaPlayer().create();
+      player.initialize(video, url, true);
+      new Plyr(video);
+    } 
+    else {
+      // ✅ Normal MP4
+      video.src = url;
+      new Plyr(video);
+    }
+  }
+
+  function extractYouTubeID(url) {
+    const regExp = /^.*(youtu\.be\/|v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  }
+
+  // 🚀 Start Player
+  initPlayer(videoUrl);
+</script>
+
+</body>
+</html>
