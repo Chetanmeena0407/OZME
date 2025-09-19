@@ -1,9 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thermodynamics 12 </title>
+  <title>OZME </title>
 
   <!-- Verification Check -->
   <script>
@@ -50,7 +46,7 @@
 
 <script>
   // 🔹 Put your video link here
-  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_U2lnbmF0dXJlPUstZDZrR1d6NDlPY0t5VjFhZU9hNkhFU2lGbVVtSUVpeHY5ZXY5bnNPT0xtMTU3UHNLaEtiQktjcm8yeTBvRjRpMlNTT2ZjSjhEMUFzJTdFZnlWJTdFWEY2MHRIeFotTHlpY0pnZE9ja1RxUkVyS2k3MiU3RUpmMklVeHBHS3JDRkxKbmNLaFhqNG5mVFN5YmJ2Umx2ZDBFYVRUMGhVSFh2QSU3RW1FU28zSHlhOU5XRFoybU16NU9MNDJXcFUwRmRveTVkRHYxeXVvaDBQYXotenN2QkFnUWw2T0tZNFhYakFJMkhmV0RFNmVyeWFoJTdFTCU3RW1UVGVvcE94ZnlUSnRBUC1SbTJIVTd1NThVYnd2QmYycnJzbzElN0VnWjJreHlaNXlXYUVKWU9xSll1clp2MlloUDN5MVpzT0E1dEcxVzB2TVVkMzVGWG5MNXJFTjJLS1J2ZFY0eVZyZWU2QzdnX18mUG9saWN5PWV5SlRkR0YwWlcxbGJuUWlPbHQ3SWxKbGMyOTFjbU5sSWpvaWFIUjBjSE02THk5a01tNTNkekE1T0RGcWVXUTNOeTVqYkc5MVpHWnliMjUwTG01bGRDOHFJaXdpUTI5dVpHbDBhVzl1SWpwN0lrUmhkR1ZNWlhOelZHaGhiaUk2ZXlKQlYxTTZSWEJ2WTJoVWFXMWxJam94TnpVNE1qa3lNalUwZlgxOVhYMF8mS2V5LVBhaXItSWQ9QVBLQVhWS01FTkZDUktURzVYRTIiLCJ0eXBlIjoibGl2ZSIsInZpZGVvX3VybCI6Imh0dHBzOlwvXC9kMm53dzA5ODFqeWQ3Ny5jbG91ZGZyb250Lm5ldFwvaW5kZXgubTN1OCIsImV4cCI6MTc1ODI4ODY1NCwiaWF0IjoxNzU4Mjc3ODU0fQ.4jzdQpQcnjC7iddgqQ7xYIsbdYN1Ixal-Y4nnIHJwes/index.m3u8"; 
+  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_VVJMUHJlZml4PWFIUjBjSE02THk5elpXTXRjSEp2WkMxdFpXUnBZV05rYmk1d2R5NXNhWFpsTDJJd01qWmxaV1l3TFdRNVkyVXROR015T0MwNU9ETTBMV0l6TXpZeVlUSXlaRGMzTncmRXhwaXJlcz0xNzU4MzAwNjM0JktleU5hbWU9cHctcHJvZC1rZXkmU2lnbmF0dXJlPWVJNjc2NkZNaV9UVXBZdlg0ekxFY2tpc2RQdnFaVFhRbE1PTWoxZWNDVi01TDlxNXZVZlpHRWI4aEc3NmFmd2RUQ05IS1pqaHN1NDJJY0NweEtudkRnIiwidHlwZSI6ImxpdmUiLCJ2aWRlb191cmwiOiJodHRwczpcL1wvc2VjLXByb2QtbWVkaWFjZG4ucHcubGl2ZVwvYjAyNmVlZjAtZDljZS00YzI4LTk4MzQtYjMzNjJhMjJkNzc3XC9tYXN0ZXIubXBkIiwiZXhwIjoxNzU4Mjk3MDM0LCJpYXQiOjE3NTgyODYyMzR9.dYLgpUTb9BgxvQfwAIcD2NCyzVAouKM7JEqt-Gaz_fo/master.m3u8"; 
 
   const video = document.getElementById('player');
 
@@ -86,19 +82,3 @@
     else {
       // ✅ Normal MP4
       video.src = url;
-      new Plyr(video);
-    }
-  }
-
-  function extractYouTubeID(url) {
-    const regExp = /^.*(youtu\.be\/|v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
-  }
-
-  // 🚀 Start Player
-  initPlayer(videoUrl);
-</script>
-
-</body>
-</html>
