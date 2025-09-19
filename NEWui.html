@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arjuna NEET 1.0 (2026)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    p.description {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    /* ---------- CLASS SECTION ---------- */
+    .class-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .class-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+    }
+    .class-card.clickable {
+      cursor: pointer;
+    }
+    .class-card:hover.clickable {
+      transform: translateY(-4px);
+    }
+    .class-thumbnail {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+    }
+    .class-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* ✅ Auto adjust thumbnail */
+      display: block;
+    }
+    .class-body {
+      padding: 15px;
+      flex-grow: 1;
+    }
+    .class-body h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: #333;
+    }
+    .class-body p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .class-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .dot.live {
+      background: red;
+      animation: blink 1s infinite;
+    }
+    .dot.upcoming {
+      background: gray;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* ---------- SUBJECTS SECTION ---------- */
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .subject-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .subject-card div.icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .subject-card h3 {
+      font-size: 18px;
+      margin: 0;
+      color: #333;
+    }
+    .subject-card p {
+      font-size: 14px;
+      color: #777;
+      margin: 5px 0 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔴 TODAY'S CLASSES FIRST -->
+  <h2>Today's Classes</h2>
+  <p class="description">Join your live & upcoming classes</p>
+  <div class="class-container" id="classContainer"></div>
+
+  <!-- 📘 SUBJECTS BELOW -->
+  <h2>Arjuna NEET 1.0 (2026) – Subjects</h2>
+  <p class="description">Select your subjects & start learning</p>
+  <div class="subjects-grid">
+    <a href="neet1-notices.html" class="subject-card">
+      <div class="icon">📢</div>
+      <h3>Notices</h3>
+      <p>10 Updates</p>
+    </a>
+    <a href="neet1-physics.html" class="subject-card">
+      <div class="icon">📘</div>
+      <h3>Physics</h3>
+      <p>8 Chapters</p>
+    </a>
+    <a href="neet1-botany.html" class="subject-card">
+      <div class="icon">🌱</div>
+      <h3>Botany</h3>
+      <p>13 Chapters</p>
+    </a>
+    <a href="neet1-zoology.html" class="subject-card">
+      <div class="icon">🐋</div>
+      <h3>Zoology</h3>
+      <p>9 Chapters</p>
+    </a>
+    <a href="neet1-physical-chemistry.html" class="subject-card">
+      <div class="icon">⚛️</div>
+      <h3>Physical Chemistry</h3>
+      <p>12 Chapters</p>
+    </a>
+    <a href="neet1-organic-chemistry.html" class="subject-card">
+      <div class="icon">🧪</div>
+      <h3>Organic Chemistry</h3>
+      <p>3 Chapters</p>
+    </a>
+    <a href="neet1-inorganic-chemistry.html" class="subject-card">
+      <div class="icon">🔬</div>
+      <h3>Inorganic Chemistry</h3>
+      <p>7 Chapters</p>
+    </a>
+  </div>
+
+  <script>
+    // ✅ Example class data
+    const classes = [
+      {
+        title: "Laws of Motion 11",
+        startTime: "2025-09-19T09:00:00",
+        endTime: "2025-09-19T11:00:00",
+        subject: "Physics",
+        thumbnail: "https://static.pw.live/5eb393ee95fab7468a79d189/b5c711da-d236-4599-af10-1e7bef277877.png",
+        htmlFile: "Test-live.html" // clickable
+      },
+      {
+        title: "Biomolecules Basics",
+        startTime: "2025-09-19T14:00:00",
+        endTime: "2025-09-19T16:00:00",
+        subject: "Chemistry",
+        thumbnail: "thumbnail2.png",
+        htmlFile: "" // ❌ not clickable
+      }
+    ];
+
+    function updateClasses() {
+      const now = new Date();
+      const container = document.getElementById("classContainer");
+      container.innerHTML = "";
+
+      classes.forEach(cls => {
+        const start = new Date(cls.startTime);
+        const end = new Date(cls.endTime);
+        let status = "upcoming";
+        let timeText = "";
+
+        if (now >= start && now <= end) {
+          status = "live";
+          timeText = "Now Streaming";
+        } else if (now < start) {
+          status = "upcoming";
+          const diff = Math.floor((start - now) / (1000 * 60 * 60));
+          timeText = diff + "h left";
+        } else {
+          status = "completed";
+          timeText = "Class Ended";
+        }
+
+        const clickable = cls.htmlFile.trim() !== "";
+
+        const card = document.createElement("div");
+        card.className = "class-card" + (clickable ? " clickable" : "");
+
+        if (clickable) {
+          card.addEventListener("click", () => {
+            window.location.href = cls.htmlFile;
+          });
+        }
+
+        card.innerHTML = `
+          <div class="class-thumbnail">
+            <img src="${cls.thumbnail}" alt="Class Thumbnail">
+          </div>
+          <div class="class-body">
+            <h3>${cls.title}</h3>
+            <p>${start.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} 
+            - ${end.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</p>
+            <p>${timeText}</p>
+          </div>
+          <div class="class-footer">
+            <span style="color:#1976d2;">${cls.subject}</span>
+            <span>
+              ${clickable && status==="live" ? `<span class="dot live"></span>LIVE` : status.charAt(0).toUpperCase() + status.slice(1)}
+            </span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    updateClasses();
+    setInterval(updateClasses, 60000); // update every 1 min
+  </script>
+</body>
+</html>
