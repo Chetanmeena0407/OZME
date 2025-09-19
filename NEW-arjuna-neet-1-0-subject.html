@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Classes & Subjects</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+
+    h2 {
+      margin: 10px 0;
+      color: #222;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ===== TODAY CLASSES ===== */
+    .today-classes {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 25px auto 40px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      max-width: 1000px;
+    }
+
+    .class-card {
+      flex: 1 1 250px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e5e7eb;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .class-card.clickable:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+
+    .class-card:not(.clickable) {
+      cursor: default;
+    }
+
+    .class-thumb {
+      height: 140px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .class-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .class-body {
+      padding: 12px 14px;
+      flex: 1;
+    }
+
+    .class-body h3 {
+      margin: 0 0 5px;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .class-body p {
+      margin: 0;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .class-footer {
+      border-top: 1px solid #eee;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #555;
+      align-items: center;
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .dot.live { background: red; animation: blink 1s infinite; }
+    .dot.upcoming { background: gray; }
+    .dot.ended { background: #999; }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* ===== SUBJECTS SECTION ===== */
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .subject-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .subject-card .icon {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .subject-card h3 {
+      font-size: 16px;
+      margin: 0 0 5px;
+      color: #333;
+    }
+
+    .subject-card p {
+      font-size: 13px;
+      color: #777;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔴 Today Classes -->
+  <h2>Today Classes</h2>
+  <div class="today-classes" id="todayClasses"></div>
+
+  <!-- 📘 Subjects -->
+  <h2>Subjects</h2>
+  <div class="subjects-grid">
+    <a href="neet1-notices.html" class="subject-card">
+      <div class="icon">📢</div>
+      <h3>Notices</h3>
+      <p>11 chapters • 19 lectures</p>
+    </a>
+    <a href="neet1-physics.html" class="subject-card">
+      <div class="icon">📘</div>
+      <h3>Physics</h3>
+      <p>11 chapters • 63 lectures</p>
+    </a>
+    <a href="neet1-botany.html" class="subject-card">
+      <div class="icon">🌱</div>
+      <h3>Botany</h3>
+      <p>15 chapters • 52 lectures</p>
+    </a>
+    <a href="neet1-zoology.html" class="subject-card">
+      <div class="icon">🐋</div>
+      <h3>Zoology</h3>
+      <p>11 chapters • 44 lectures</p>
+    </a>
+    <a href="neet1-physical-chemistry.html" class="subject-card">
+      <div class="icon">⚛️</div>
+      <h3>Physical Chemistry</h3>
+      <p>13 chapters • 67 lectures</p>
+    </a>
+    <a href="neet1-organic-chemistry.html" class="subject-card">
+      <div class="icon">🧪</div>
+      <h3>Organic Chemistry</h3>
+      <p>3 chapters • 0 lectures</p>
+    </a>
+    <a href="neet1-inorganic-chemistry.html" class="subject-card">
+      <div class="icon">🔬</div>
+      <h3>Inorganic Chemistry</h3>
+      <p>10 chapters • 20 lectures</p>
+    </a>
+  </div>
+
+  <script>
+    const classData = [
+      {
+        title: "Laws of Motion 11 : (DPP will be provided soon)",
+        startTime: "2025-09-19T16:00:00",
+        endTime: "2025-09-19T18:45:00",
+        subject: "Physics",
+        thumbnail: "https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/8e8382da-9cea-4c6a-a9ad-60b2f26cbc85.png",
+        link: ""  // <- Jaise hi yaha .html daloge, LIVE ban jayega
+      },
+      {
+        title: "Morphology of Flowering Plants 03 :",
+        startTime: "2025-09-19T18:15:00",
+        endTime: "2025-09-19T21:00:00",
+        subject: "Botany",
+        thumbnail: "https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/8e8382da-9cea-4c6a-a9ad-60b2f26cbc85.png",
+        link: "" // <- Example: Live class link
+      }
+    ];
+
+    function renderClasses() {
+      const now = new Date();
+      const container = document.getElementById("todayClasses");
+      container.innerHTML = "";
+
+      classData.forEach(cls => {
+        const start = new Date(cls.startTime);
+        const end = new Date(cls.endTime);
+
+        // Agar link diya gaya hai to force status = live
+        let status = cls.link ? "live" : (now >= start && now <= end) ? "live" : (now > end) ? "ended" : "upcoming";
+
+        const card = document.createElement("div");
+        card.className = "class-card" + (cls.link ? " clickable" : "");
+
+        if (cls.link) {
+          card.addEventListener("click", () => {
+            window.location.href = cls.link;
+          });
+        }
+
+        card.innerHTML = `
+          <div class="class-thumb">
+            <img src="${cls.thumbnail}">
+          </div>
+          <div class="class-body">
+            <h3>${cls.title}</h3>
+            <p>${start.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} - ${end.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</p>
+          </div>
+          <div class="class-footer">
+            <span><span class="dot ${status}"></span>${status.toUpperCase()}</span>
+            <span>${cls.subject}</span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    renderClasses();
+  </script>
+
+</body>
+</html>
