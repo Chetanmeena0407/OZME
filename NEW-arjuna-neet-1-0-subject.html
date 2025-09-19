@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Classes & Subjects</title>
+  <title>ARJUNA NEET 2026 </title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -93,7 +93,6 @@
       justify-content: space-between;
       font-size: 12px;
       color: #555;
-      align-items: center;
     }
 
     .dot {
@@ -206,20 +205,20 @@
   <script>
     const classData = [
       {
-        title: "Laws of Motion 11 : (DPP will be provided soon)",
-        startTime: "2025-09-19T16:00:00",
-        endTime: "2025-09-19T18:45:00",
-        subject: "Physics",
-        thumbnail: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/322fdf31-cd12-44be-9f31-8685073ed9f1.png",
-        link: "LIVE1.html"  // <- Jaise hi yaha .html daloge, LIVE ban jayega
+        title: "Laws of Motion 12 :",
+        startTime: "2025-09-20T16:00:00",
+        endTime: "2025-09-20T18:45:00",
+        subject: "Inorganic Chemistry",
+        thumbnail: "https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/8e8382da-9cea-4c6a-a9ad-60b2f26cbc85.png",
+        link: ""
       },
       {
-        title: "Morphology of Flowering Plants 03 :",
-        startTime: "2025-09-19T18:15:00",
-        endTime: "2025-09-19T21:00:00",
-        subject: "Botany",
+        title: "Morphology of Flowering Plants 04 :",
+        startTime: "2025-09-20T18:15:00",
+        endTime: "2025-09-20T21:00:00",
+        subject: "Physics",
         thumbnail: "https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/8e8382da-9cea-4c6a-a9ad-60b2f26cbc85.png",
-        link: "LIVE-1-0-2.html" // <- Example: Live class link
+        link: ""
       }
     ];
 
@@ -231,9 +230,10 @@
       classData.forEach(cls => {
         const start = new Date(cls.startTime);
         const end = new Date(cls.endTime);
+        let status = "upcoming";
 
-        // Agar link diya gaya hai to force status = live
-        let status = cls.link ? "live" : (now >= start && now <= end) ? "live" : (now > end) ? "ended" : "upcoming";
+        if (now >= start && now <= end) status = "live";
+        else if (now > end) status = "ended";
 
         const card = document.createElement("div");
         card.className = "class-card" + (cls.link ? " clickable" : "");
