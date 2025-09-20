@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thermodynamics 12 </title>
+  <title>PW Live class</title>
 
   <!-- Verification Check -->
   <script>
@@ -21,6 +21,7 @@
 
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
+
   <style>
     body {
       background: #f0f4ff;
@@ -50,7 +51,7 @@
 
 <script>
   // 🔹 Put your video link here
-  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_U2lnbmF0dXJlPXNmUFJxS3daM3NGWmtsbzd1YyU3RVR4dENmb09WQmlObHRhZ1l2YiU3RUVSa3FsRWM4Zzk2bi1Xd0hQc3RueiU3RVhXLVpzNkZqWWM5QXd2Z1NZTTRFNUxOcWxSRUs1ck5sRmhhRE41cTZRbTVHUHFESjd6MHJ6ZCU3RXg4NUhBV294UVJQLTkzWHdPUDUzWHQwMC1YZ0NIZWNHRzFtbkdka3MzVCU3RVBPUHJvYzA2Q3RlbmVxM2hnQWs5SE5qNy12cVZiVjVQOUNCSVBlTmJjcDJwWkF1RmxzQjNsamlldjVpcm1wRzRTWUElN0VYMThGeGRvZ2FaUmN5ckVXTERCaGRTWGpTLWJoa2wlN0U0eWxyTVljVEpETWFOOTgzWHFmQ3d1LW5PM0pmNjlLaVJsVXFrSWFtSklDNEQyLVREemRySHFwWDdHenVPSlQ0UzJHSW5XZkdaeTdKLXA2eG10cU1nX18mUG9saWN5PWV5SlRkR0YwWlcxbGJuUWlPbHQ3SWxKbGMyOTFjbU5sSWpvaWFIUjBjSE02THk5a01uUmhNREYwT1daeVlYcGxkQzVqYkc5MVpHWnliMjUwTG01bGRDOHFJaXdpUTI5dVpHbDBhVzl1SWpwN0lrUmhkR1ZNWlhOelZHaGhiaUk2ZXlKQlYxTTZSWEJ2WTJoVWFXMWxJam94TnpVNE16QXdNekkxZlgxOVhYMF8mS2V5LVBhaXItSWQ9QVBLQVhWS01FTkZDUktURzVYRTIiLCJ0eXBlIjoibGl2ZSIsInZpZGVvX3VybCI6Imh0dHBzOlwvXC9kMnRhMDF0OWZyYXpldC5jbG91ZGZyb250Lm5ldFwvaW5kZXgubTN1OCIsImV4cCI6MTc1ODI5NjcyNSwiaWF0IjoxNzU4Mjg1OTI1fQ.jlJhqdze41jBHZ24fnjGeOkC6FoC8Pz9ZrMW-bjIDrs/index.m3u8"; 
+  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_U2lnbmF0dXJlPWwxVWhKekxycHVTd3FaY0lJQ1NoWUN6LU9NNUpzRlNtaktwSEs2MUJkMVlzUXQ0TWh5Rm9UTFlyUUp4V2dRUGhpb05oelduOWh2VHhqblRVczBNdmluT1ZXQWhzeHBjcW1mSmpuMXQlN0VSeFgzMGEyZEdQZTlGRlI2OWllQjhVVFlEb3dxTm16Uk9YZy1MblBxRFVMSFVpckdJZG9IUTJHbGZadWplcHZHQ1VwamppU25wSjd6cGRzQzJ0RXFzVkR4ZnJzJTdFajZkQWZGVGllNHBJWW5IUEdaZER1V05rRlBoZ3RySmw4M2FCNnJjSjZiWEhuMnE3JTdFR2doalppJTdFdFc5Rnp0YzgtN0FVRyU3RWtIa2ZiWnklN0UwbjB3cEFrRHhXVXU1dWhSYngxTGhNWjFwcWV4aXVvOEp3YzYzMk9yc29wN0lsVXNWYkdKOVYxTXdIVHZadXZOZGxuZ19fJlBvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OWtNblJoTURGME9XWnlZWHBsZEM1amJHOTFaR1p5YjI1MExtNWxkQzhxSWl3aVEyOXVaR2wwYVc5dUlqcDdJa1JoZEdWTVpYTnpWR2hoYmlJNmV5SkJWMU02UlhCdlkyaFVhVzFsSWpveE56VTRNemczTURRemZYMTlYWDBfJktleS1QYWlyLUlkPUFQS0FYVktNRU5GQ1JLVEc1WEUyIiwidHlwZSI6ImxpdmUiLCJ2aWRlb191cmwiOiJodHRwczpcL1wvZDJ0YTAxdDlmcmF6ZXQuY2xvdWRmcm9udC5uZXRcL2luZGV4Lm0zdTgiLCJleHAiOjE3NTgzODM0NDMsImlhdCI6MTc1ODM3MjY0M30.Z4MwnW8a827lycs-n3vJcgV0UfqEEuGLQUnl9lH9Suc/index.m3u8"; 
 
   const video = document.getElementById('player');
 
