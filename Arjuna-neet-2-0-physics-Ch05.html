@@ -1,171 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ch 05 : Laws of motion & Friction </title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f5f6fa;
-    margin: 0;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter Lectures</title>
+  
+  <!-- ✅ Font Awesome Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  .lecture {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #fdfdfd);
+      color: #111;
+    }
 
-  .lecture h3 {
-    margin: 0 0 10px 0;
-    color: #6c63ff;
-    font-size: 18px;
-  }
+    header {
+      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
 
-  .lecture p {
-    margin: 3px 0;
-    color: #333;
-  }
+    .main {
+      padding: 18px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-  .lecture p.date {
-    color: #777;
-    font-size: 13px;
-  }
+    .lec-card {
+      background: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .2s;
+      flex-wrap: wrap;
+    }
+    .lec-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(59,130,246,0.25);
+    }
 
-  .lecture p.duration {
-    color: #555;
-    font-size: 13px;
-  }
+    .lec-info h3 {
+      font-size: 15px;
+      margin: 0 0 4px;
+      color: #0f172a;
+      cursor: pointer;
+    }
+    .lec-info .date {
+      font-size: 13px;
+      color: #64748b;
+    }
 
-  .buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
+    .lec-actions {
+      display: flex;
+      gap: 20px;
+      flex-shrink: 0;
+    }
 
-  .buttons a {
-    flex: 1;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #fff;
-  }
+    .lec-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
 
-  .lecture .lecture-btn { background: #6c63ff; }
-  .lecture .notes-btn   { background: #4caf50; }
-  .lecture .dpp-btn     { background: #f44336; }
+    .lec-actions i {
+      font-size: 22px;
+      color: #1e40af;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .lec-actions i:hover {
+      color: #111;
+      transform: scale(1.25);
+    }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .lecture h3 { font-size: 16px; }
-    .buttons a { font-size: 13px; padding: 8px; }
-  }
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 10px;
+      animation: fadeIn .3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
 
-  @media (max-width: 480px) {
-    .lecture h3 { font-size: 14px; }
-    .buttons { flex-direction: column; }
-    .buttons a { flex: unset; width: 100%; }
-  }
-</style>
+    .popup-content {
+      background: #fff;
+      padding: 22px;
+      border-radius: 14px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-sizing: border-box;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .popup-content h2 {
+      margin: 0 0 14px;
+      font-size: 17px;
+      color: #0f172a;
+    }
+
+    /* Responsive Video */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-btn {
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 8px 0;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      background: linear-gradient(90deg, #e0ebff, #f0f4ff);
+      color: #1e40af;
+      transition: background .2s, transform .15s;
+    }
+    .pdf-btn:hover {
+      background: linear-gradient(90deg, #cbdafc, #e0ebff);
+      transform: scale(1.03);
+    }
+    .pdf-btn.disabled {
+      background: #f1f5f9;
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      border: 0;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #6b7280;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
+  </style>
 </head>
 <body>
 
+<header>Ch 05 : Laws of Motion and Friction</header>
+
+<main class="main" id="lecList"></main>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content" id="popup-content">
+    <button class="close-btn" onclick="closePopup()">✕</button>
+  </div>
+</div>
+
 <script>
-(function () {
-  const verifiedAt = localStorage.getItem("verifiedAt");
-  const now = Date.now();
-  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-    const currentPage = encodeURIComponent(
-      window.location.pathname.split("/").pop() + window.location.search
-    );
-    window.location.href = "verify.html?redirect=" + currentPage;
+  const lectures = [
+    {
+      id: 1,
+      name: "Laws of motion and Friction 01",
+      date: "12 Sep 2025",
+      video: "https://www.youtube.com/embed/u-Y3o_owYR0",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/54282800-c220-4ff8-a29e-1de16a41366b.pdf",
+      dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a65302a2-9d0e-4f6f-886b-9a4db0bf183e.pdf"
+    },
+    {
+      id: 2,
+      name: "Laws of motion and Friction 02 : Questions on laws of Motion",
+      date: "13 Sep 2025",
+      video: "https://www.youtube.com/embed/d80erfEyTAk",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c212661b-4ce8-49f5-9a44-fa155a825368.pdf",
+      dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/608641b9-9a59-40cf-b932-c5c687363f5c.pdf"
+    },
+    {
+      id: 3,
+      name: "Laws of motion and Friction 03: Questions on Newton Laws",
+      date: "14 Sep 2025",
+      video: "https://www.youtube.com/embed/wZHR3b-HGiQ",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f2b328cd-4c27-406a-897b-01f0620d8987.pdf",
+      dpp: ""
+    },
+    {
+      id: 4,
+      name: "Laws of motion and Friction 04 : Free Body Diagram || equilibrium",
+      date: "15 Sep 2025",
+      video: "https://www.youtube.com/embed/vkEb9TKS4ak",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a1b0d7b2-12c3-437c-acd7-cc681ded5ef4.pdf",
+      dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a6dadec2-1c3a-46c6-b5f9-ce2ca0293fcc.pdf"
+    },
+    {
+      id: 5,
+      name: "Laws of motion and Friction 05: Questions on equilibrium",
+      date: "16 Sep 2025",
+      video: "https://www.youtube.com/embed/7tqtqTjcs6s",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/77ccea8a-c0e1-4398-81eb-9a2887b6562b.pdf",
+      dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5cad163e-ac71-4c33-8e16-456206e85af0.pdf"
+    },
+    {
+      id: 6,
+      name: "Laws of motion and Friction 06: Weighing Machine Spring Balance",
+      date: "19 Sep 2025",
+      video: "https://www.youtube.com/embed/SNZYcyk3fTQ",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eb585971-6dd0-4af8-9a80-aadf5c21c6ad.pdf",
+      dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/78a22ce0-6a2d-496e-b3c9-23315165adad.pdf"
+    },
+    {
+      id: 7,
+      name: "Laws of motion and Friction 07 : Accelerated motion",
+      date: "20 Sep 2025",
+      video: "https://www.youtube.com/embed/tSn8Q4gx5OA",
+      notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0c521208-0b62-4ee2-bd1c-b2ffaac553bb.pdf",
+      dpp: ""
+    }
+  ];
+
+  const list = document.getElementById('lecList');
+  lectures.forEach(lec => {
+    const card = document.createElement('div');
+    card.className = 'lec-card';
+    card.innerHTML = `
+      <div class="lec-info">
+        <h3 onclick="openPopup('video', '${lec.video}', '', '${lec.name}')">${lec.name}</h3>
+        <div class="date">${lec.date}</div>
+      </div>
+      <div class="lec-actions">
+        <button onclick="openPopup('video', '${lec.video}', '', '${lec.name}')">
+          <i class="fa-solid fa-circle-play"></i>
+        </button>
+        <button onclick="openPopup('pdf', '${lec.notes}', '${lec.dpp}', '${lec.name}')">
+          <i class="fa-solid fa-file-pdf"></i>
+        </button>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  function openPopup(type, link1, link2, lecName) {
+    const popup = document.getElementById("popup");
+    const content = document.getElementById("popup-content");
+    popup.style.display = "flex";
+
+    if (type === "video") {
+      const videoUrl = link1 + "?rel=0&autoplay=1&modestbranding=1&controls=1";
+      content.innerHTML = `
+        <button class="close-btn" onclick="closePopup()">✕</button>
+        <h2>${lecName}</h2>
+        <div class="video-wrapper">
+          <iframe src="${videoUrl}" allowfullscreen></iframe>
+        </div>`;
+    } else if (type === "pdf") {
+      content.innerHTML = `
+        <button class="close-btn" onclick="closePopup()">✕</button>
+        <h2>${lecName}</h2>
+        ${link1 ? `<a href="${link1}" target="_blank" class="pdf-btn">📘 Notes</a>` : '<div class="pdf-btn disabled">📘 Notes Not Available</div>'}
+        ${link2 ? `<a href="${link2}" target="_blank" class="pdf-btn">📑 DPP</a>` : '<div class="pdf-btn disabled">📑 DPP Not Available</div>'}`;
+    }
   }
-})();
+
+  function closePopup() {
+    const popup = document.getElementById("popup");
+    const content = document.getElementById("popup-content");
+    popup.style.display = "none";
+    content.innerHTML = '<button class="close-btn" onclick="closePopup()">✕</button>';
+  }
 </script>
 
-
-<!-- Lec 01 -->
-<div class="lecture">
-  <h3>Laws of motion and Friction 01 : Laws of Motion</h3>
-  <p>By Rajwant Singh Sir</p>
-  <p class="date">Date: 12 Sep 2025</p>
-  <div class="buttons">
-    <a href="https://youtu.be/u-Y3o_owYR0?si=mmtq4vgyR6SOQa8c" target="_blank" class="lecture-btn">Lecture</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/54282800-c220-4ff8-a29e-1de16a41366b.pdf" target="_blank" class="notes-btn">Notes</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a65302a2-9d0e-4f6f-886b-9a4db0bf183e.pdf" class="dpp-btn"> DPP</a>
-  </div>
-</div>
-
-<!-- Lec 02 -->
-<div class="lecture">
-  <h3>Laws of motion and Friction 02 : Questions on laws of Motion</h3>
-  <p>By Rajwant Singh Sir</p>
-  <p class="date">Date: 13 Sep 2025</p>
-  <div class="buttons">
-    <a href="https://youtu.be/d80erfEyTAk?si=Vq2At_AsWtK3eco1" target="_blank" class="lecture-btn">Lecture</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c212661b-4ce8-49f5-9a44-fa155a825368.pdf" target="_blank" class="notes-btn">Notes</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/608641b9-9a59-40cf-b932-c5c687363f5c.pdf" class="dpp-btn"> DPP</a>
-  </div>
-</div>
-</div>
-
-<!-- Lec 03 -->
-<div class="lecture">
-  <h3>Laws of motion and Friction 03: Questions on Newton Laws</h3>
-  <p>By Rajwant Singh Sir</p>
-  <p class="date">Date: 14 Sep 2025</p>
-  <div class="buttons">
-    <a href="https://youtu.be/wZHR3b-HGiQ?si=QR42waRKC9A3zGB2" target="_blank" class="lecture-btn">Lecture</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f2b328cd-4c27-406a-897b-01f0620d8987.pdf" target="_blank" class="notes-btn">Notes</a>
-    <a href="#" class="dpp-btn">NO  DPP</a>
-  </div>
-</div>
-</div>
-
-<!-- Lec 04 -->
-<div class="lecture">
-  <h3>Laws of motion and Friction 04 : Free Body Diagram || equilibrium</h3>
-  <p>By Rajwant Singh Sir</p>
-  <p class="date">Date: 15 Sep 2025</p>
-  <div class="buttons">
-    <a href="https://www.youtube.com/watch?v=vkEb9TKS4ak" target="_blank" class="lecture-btn">Lecture</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a1b0d7b2-12c3-437c-acd7-cc681ded5ef4.pdf" target="_blank" class="notes-btn">Notes</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a6dadec2-1c3a-46c6-b5f9-ce2ca0293fcc.pdf" class="dpp-btn">DPP</a>
-  </div>
-</div>
-</div>
-<!-- Lec 05 -->
-<div class="lecture">
-  <h3>Laws of motion and Friction 05: Questions on equilibrium</h3>
-  <p>By Rajwant Singh Sir</p>
-  <p class="date">Date: 16 Sep 2025</p>
-  <div class="buttons">
-    <a href="https://youtu.be/7tqtqTjcs6s?si=saRb2KDCJA6Nypbm" target="_blank" class="lecture-btn">Lecture</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/77ccea8a-c0e1-4398-81eb-9a2887b6562b.pdf" target="_blank" class="notes-btn">Notes</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5cad163e-ac71-4c33-8e16-456206e85af0.pdf" class="dpp-btn">DPP</a>
-  </div>
-</div>
-</div>
-
-<!-- Lec 06 -->
-<div class="lecture">
-  <h3>Laws of motion and Friction 06: Weighing Machine Spring Balance </h3>
-  <p>By Rajwant Singh Sir</p>
-  <p class="date">Date: 19 Sep 2025</p>
-  <div class="buttons">
-    <a href="https://youtu.be/SNZYcyk3fTQ" target="_blank" class="lecture-btn">Lecture</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eb585971-6dd0-4af8-9a80-aadf5c21c6ad.pdf" target="_blank" class="notes-btn">Notes</a>
-    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/78a22ce0-6a2d-496e-b3c9-23315165adad.pdf" class="dpp-btn">DPP</a>
-  </div>
-</div>
-</div>
-
-
+</body>
+</html>
