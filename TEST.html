@@ -10,7 +10,9 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background: linear-gradient(135deg, #e6f2ff, #ffffff);
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    background-image: url('https://www.transparenttextures.com/patterns/grid.png');
+    background-repeat: repeat;
     color: #111;
 }
 
@@ -177,37 +179,15 @@ header {
 
 <main class="main" id="lecList"></main>
 
-<!-- Popup -->
 <div class="popup" id="popup" role="dialog" aria-modal="true">
     <div class="popup-content" id="popup-content"></div>
 </div>
 
 <script>
 const lectures = [
-    {
-        id: 1,
-        name: "Locomotion and Movement 01: Tapasya Types of Movement (NO DPP)",
-        date: "10 Sep 2025",
-        video: "https://www.youtube.com/embed/g3vb_sN3_0o",
-        notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf",
-        dpp: ""
-    },
-    {
-        id: 2,
-        name: "Locomotion and Movement 02 : Muscles",
-        date: "22 Sep 2025",
-        video: "https://www.youtube.com/embed/BPNSGmwoLNg",
-        notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b8be84be-b690-481c-8820-7daa6f78bfc8.pdf",
-        dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/af75fad7-4468-4d8a-9f11-f7468cdc3d83.pdf"
-    },
-    {
-        id: 3,
-        name: "Locomotion and Movement 03: Muscles",
-        date: "23 Sep 2025",
-        video: "https://www.youtube.com/embed/Rs4Su303cQY",
-        notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3dca5c5f-ce79-4471-ae51-4a6a8134065a.pdf",
-        dpp: ""
-    }
+    { id: 1, name: "Locomotion and Movement 01: Tapasya Types of Movement (NO DPP)", date: "10 Sep 2025", video: "https://www.youtube.com/embed/g3vb_sN3_0o", notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf", dpp: "" },
+    { id: 2, name: "Locomotion and Movement 02 : Muscles", date: "22 Sep 2025", video: "https://www.youtube.com/embed/BPNSGmwoLNg", notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b8be84be-b690-481c-8820-7daa6f78bfc8.pdf", dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/af75fad7-4468-4d8a-9f11-f7468cdc3d83.pdf" },
+    { id: 3, name: "Locomotion and Movement 03: Muscles", date: "23 Sep 2025", video: "https://www.youtube.com/embed/Rs4Su303cQY", notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3dca5c5f-ce79-4471-ae51-4a6a8134065a.pdf", dpp: "" }
 ];
 
 const list = document.getElementById('lecList');
