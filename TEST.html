@@ -10,12 +10,12 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background: linear-gradient(135deg, #f0f4ff, #fdfdfd);
+    background: linear-gradient(135deg, #e6f2ff, #ffffff);
     color: #111;
 }
 
 header {
-    background: linear-gradient(90deg, #1e40af, #3b82f6);
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
     color: white;
     padding: 16px;
     text-align: center;
@@ -32,7 +32,7 @@ header {
 }
 
 .lec-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 14px;
     padding: 16px;
     margin-bottom: 14px;
@@ -46,19 +46,19 @@ header {
 
 .lec-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(59,130,246,0.25);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
 }
 
 .lec-info h3 {
     font-size: 15px;
     margin: 0 0 4px;
-    color: #0f172a;
+    color: #1b5e20;
     cursor: pointer;
 }
 
 .lec-info .date {
     font-size: 13px;
-    color: #64748b;
+    color: #4e342e;
 }
 
 .lec-actions {
@@ -69,16 +69,15 @@ header {
 .lec-actions i {
     font-size: 22px;
     cursor: pointer;
-    color: #1e40af;
+    color: #2e7d32;
     transition: transform 0.2s, color 0.2s;
 }
 
 .lec-actions i:hover {
-    color: #111;
+    color: #1b5e20;
     transform: scale(1.25);
 }
 
-/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -140,13 +139,13 @@ header {
     text-align: center;
     text-decoration: none;
     font-weight: 600;
-    background: linear-gradient(90deg, #e0ebff, #f0f4ff);
-    color: #1e40af;
+    background: linear-gradient(90deg, #a5d6a7, #c8e6c9);
+    color: #1b5e20;
     transition: background .2s, transform .15s;
 }
 
 .pdf-btn:hover {
-    background: linear-gradient(90deg, #cbdafc, #e0ebff);
+    background: linear-gradient(90deg, #81c784, #a5d6a7);
     transform: scale(1.03);
 }
 
@@ -253,7 +252,7 @@ function closePopup() {
     const popup = document.getElementById("popup");
     const content = document.getElementById("popup-content");
     popup.style.display = "none";
-    content.innerHTML = ""; // clear video to stop autoplay
+    content.innerHTML = "";
 }
 </script>
 
