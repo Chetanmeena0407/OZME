@@ -7,60 +7,39 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #e6f7ec, #f0fff4);
+      background: #0a0f1c;
+      color: #fff;
       margin: 0;
       padding: 20px;
     }
     h1 {
       text-align: center;
-      margin-bottom: 30px;
-      color: #2f855a;
-      font-size: 2rem;
+      margin-bottom: 20px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
     }
     .card {
-      display: block;
-      background: white;
-      border-left: 4px solid #4caf50; /* ✅ green accent */
+      background: #1c1f2e;
+      padding: 15px;
       border-radius: 10px;
-      padding: 18px;
       text-decoration: none;
-      color: #333;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      color: #fff;
+      transition: transform 0.2s ease-in-out;
     }
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 14px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
     }
     .card-title {
+      font-size: 16px;
       font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #1e4d2b;
+      margin-bottom: 10px;
     }
     .card-info {
       font-size: 14px;
-      color: #444;
-    }
-    .card-info span {
-      margin-right: 12px;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.6rem;
-      }
-      .card-title {
-        font-size: 15px;
-      }
-      .card-info {
-        font-size: 13px;
-      }
+      color: #ffc107;
     }
   </style>
 </head>
@@ -70,55 +49,85 @@
 
 <div class="grid">
 
+  <a href="SOON.html" class="card">
+    <div class="card-title">Short Notes II (Only PDF)</div>
+    <div class="card-info">0 Lectures | 10 Notes | 0 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">Mind Map II (Only PDF)</div>
+    <div class="card-info">0 Lectures | 11 Notes | 0 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">PYQ's II (Only PDF)</div>
+    <div class="card-info">0 Lectures | 10 Notes | 0 DPPs</div>
+  </a>
+
   <a href="PODCASTNEET2.html" class="card">
     <div class="card-title">Podcast Summary</div>
-    <div class="card-info">
-      <span>14 Videos</span> | 
-      <span>10 Exercises</span> | 
-      <span>24 Notes</span>
-    </div>
+    <div class="card-info">3 Lectures | 0 Notes | 0 DPPs</div>
   </a>
 
   <a href="SOON.html" class="card">
+    <div class="card-title">NCERT Fill-up II (Only PDF)</div>
+    <div class="card-info">0 Lectures | 3 Notes | 0 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">Mega DPP</div>
+    <div class="card-info">0 Lectures | 4 Notes | 4 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">Practice Sheet</div>
+    <div class="card-info">0 Lectures | 4 Notes | 4 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">Summary Lecture</div>
+    <div class="card-info">4 Lectures | 4 Notes | 0 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">NCERT Discussion</div>
+    <div class="card-info">7 Lectures | 4 Notes | 0 DPPs</div>
+  </a>
+
+  <a href="SOON.html" class="card">
+    <div class="card-title">Handwritten Notes II (Only PDF)</div>
+    <div class="card-info">0 Lectures | 3 Notes | 0 DPPs</div>
+  </a>
+
+  <a href="Ch01-cell.html" class="card">
     <div class="card-title">Ch 01 : Cell - The Unit of Life</div>
-    <div class="card-info">
-      <span>14 Videos</span> | 
-      <span>10 Exercises</span> | 
-      <span>24 Notes</span>
-    </div>
+    <div class="card-info">14 Lectures | 24 Notes | 10 DPPs</div>
   </a>
 
-  <a href="SOON.html" class="card">
+  <a href="Ch02-cellcycle.html" class="card">
     <div class="card-title">Ch 02 : Cell Cycle and Cell Division</div>
-    <div class="card-info">
-      <span>8 Videos</span> | 
-      <span>7 Exercises</span> | 
-      <span>15 Notes</span>
-    </div>
+    <div class="card-info">8 Lectures | 15 Notes | 7 DPPs</div>
   </a>
 
-  <a href="SOON.html" class="card">
+  <a href="Ch03-livingworld.html" class="card">
     <div class="card-title">Ch 03 : The Living World</div>
-    <div class="card-info">
-      <span>4 Videos</span> | 
-      <span>2 Exercises</span> | 
-      <span>6 Notes</span>
-    </div>
+    <div class="card-info">4 Lectures | 6 Notes | 2 DPPs</div>
   </a>
 
-  <a href="SOON.html" class="card">
+  <a href="Ch04-bio-classification.html" class="card">
     <div class="card-title">Ch 04 : Biological Classification</div>
-    <div class="card-info">
-      <span>8 Videos</span> | 
-      <span>6 Exercises</span> | 
-      <span>14 Notes</span>
-    </div>
+    <div class="card-info">8 Lectures | 14 Notes | 6 DPPs</div>
   </a>
 
   <a href="Arjuna-neet-2-0-Ch05-plant-kingdom.html" class="card">
     <div class="card-title">Ch 05 : Plant Kingdom</div>
-    <div class="card-info">
-      <span>2 Videos</span> | 
+    <div class="card-info">7 Lectures | 12 Notes | 5 DPPs</div>
+  </a>
+
+</div>
+
+</body>
+</html>
       <span>2 Exercises</span> | 
       <span>4 Notes</span>
     </div>
@@ -128,3 +137,4 @@
 
 </body>
 </html>
+
