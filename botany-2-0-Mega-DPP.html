@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes PDFs</title>
+  <style>
+    body {
+      background: #0a0a0f;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin: 15px 0;
+      font-size: 22px;
+      color: #fff;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.6);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 12px rgba(90, 61, 255, 0.8);
+    }
+    .card h3 {
+      font-size: 14px;
+      margin: 0;
+      color: #e0e0ff;
+      min-height: 40px;
+    }
+    .icon {
+      font-size: 22px;
+      color: #5a3dff;
+    }
+    /* Mobile font छोटा */
+    @media (max-width: 480px) {
+      h1 { font-size: 18px; }
+      .card h3 { font-size: 13px; }
+      .icon { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mega DPP</h1>
+
+  <div class="cards">
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2c8cd270-c457-45d3-9a89-c920b794d473.pdf" target="_blank" class="card">
+      <div class="icon">👁</div>
+      <h3>Biological Classification</h3>
+    </a>
+
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/495d3495-57b9-42b3-9991-909d72cf1654.pdf" target="_blank" class="card">
+      <div class="icon">👁</div>
+      <h3>The Living World</h3>
+    </a>
+
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/22d7717b-c2f2-4ca1-a4c2-160ea595122a.pdf" target="_blank" class="card">
+      <div class="icon">👁</div>
+      <h3>Cell Cycle & Division</h3>
+    </a>
+
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/77a5cc6d-f6b5-423b-b102-98207cc642ce.pdf" target="_blank" class="card">
+      <div class="icon">👁</div>
+      <h3>Cell - The Unit of Life</h3>
+    </a>
+  </div>
+</body>
+</html>
