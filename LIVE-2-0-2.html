@@ -1,105 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PW Live class</title>
-
-  <!-- Verification Check -->
-  <script>
-  (function () {
-    const verifiedAt = localStorage.getItem("verifiedAt");
-    const now = Date.now();
-    if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-      const currentPage = encodeURIComponent(
-        window.location.pathname.split("/").pop() + window.location.search
-      );
-      window.location.href = "verify.html?redirect=" + currentPage;
-    }
-  })();
-  </script>
-
-  <!-- Plyr CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
-
+  <title>NEET Video Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
     body {
-      background: #f0f4ff;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
       padding: 20px;
     }
-    video, iframe {
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #ff4d6d;
+      text-shadow: 0px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .player-container {
+      width: 95%;
+      max-width: 850px;
+      background: #1e1e2f;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0px 6px 25px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    video {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
+      outline: none;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .controls {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      background: #ff4d6d;
+      border: none;
+      color: #fff;
+      padding: 10px 18px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff3355;
+      transform: scale(1.05);
+    }
+
+    .info {
+      margin-top: 12px;
+      font-size: 16px;
+      color: #d1d1d1;
+    }
+
+    .info span {
+      color: #ffcc70;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-<h2>🎥 Universal Video Player</h2>
+  <h2>📺 NEET Lecture Player</h2>
 
-<div id="player-container">
-  <video id="player" controls playsinline></video>
-</div>
+  <div class="player-container">
+    <video id="video" controls poster="thumbnail.jpg"></video>
 
-<!-- Plyr JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
-<!-- HLS.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.10/hls.min.js"></script>
-<!-- DASH.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.1/dash.all.min.js"></script>
+    <!-- Custom Controls -->
+    <div class="controls">
+      <button class="btn" onclick="skip(-10)">⏪ Back 10s</button>
+      <button class="btn" onclick="skip(10)">⏩ Forward 10s</button>
+    </div>
 
-<script>
-  // 🔹 Put your video link here
-  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_VVJMUHJlZml4PWFIUjBjSE02THk5elpXTXRjSEp2WkMxdFpXUnBZV05rYmk1d2R5NXNhWFpsTHpkaE9EZzVNRGxsTFdFNU9XSXROR0ZrTnkwNE5XVTVMV1l6WVRFNE9UWXpOREl5WlEmRXhwaXJlcz0xNzU4Mzk2NTc2JktleU5hbWU9cHctcHJvZC1rZXkmU2lnbmF0dXJlPUE4SnM4emE1TFc5QzNVeEVTcGJhUG1sU1FzaC1oX0c2dkI2Z05PWFZKamdaa0lDNXFWbWY0SFVMdnJobGx5eE5ITmoyR3ZwUzdlUzZLaHo3WmdQaEJnIiwidHlwZSI6ImxpdmUiLCJ2aWRlb191cmwiOiJodHRwczpcL1wvc2VjLXByb2QtbWVkaWFjZG4ucHcubGl2ZVwvN2E4ODkwOWUtYTk5Yi00YWQ3LTg1ZTktZjNhMTg5NjM0MjJlXC9tYXN0ZXIubXBkIiwiZXhwIjoxNzU4Mzk0MTU3LCJpYXQiOjE3NTgzODMzNTd9.6fEn1kCpolq4DCSW_A-owhNBadQsJDVOo1Vi1IHnmwM/master.m3u8"; 
+    <div class="info">
+      Now Playing: <span>Cell - The Unit of Life</span> | Duration: <span>~45 mins</span>
+    </div>
+  </div>
 
-  const video = document.getElementById('player');
+  <script>
+    const video = document.getElementById('video');
+    const videoSrc = "https://pwthor-m3u8-63071e05a4a6.herokuapp.com/stream/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..L95gYT9x-LkwYHHE.xZkbt78oYk9G5dlnElEDipqpnTBrXg1oRDjxmOKpH1rcoSpjJYf7mkVzyBzxI2h2hQDnRgjNQeyV6SRSbKTxjOHemOfdUbR1zwu0eQBT0I1QHPPqm9OXo5vCGj1FZEYpaNqM2lydEANyrspyr_CE7vQK7LhBnIM7fY6_HrPmcE1y7E6H6dkr_ZzZQJ6wtaR0p2YeEVrFGHiBpMS32oLTXqK77VjvRgjLY-3IVLuHyrgNYPJ_l8W1JGlqls-spxPgYNHbo3g0OHfUyLi1MHTEJVZy30B_fJhygFO5KE48t2A8dkVU-wMmXA668sNO9DlzuxRi_4FPFWq0Rv6bEjtnZD1E-Ht1-FwZ3y-EX2s6JSfTVbWSOZAzGOz6aFviPxhFTC_4s74slT4tq2sUDbIa25tIdmlE3Mclbts1nUbYHq1OHlCjbkVozmPX3RD3WHHXgDnzsblOmVnfiV0hl2pHCcv_-JCJ21JV788M-OxDJCSTsZZlPJECW84.QGmK2OCiyAXuGKRN-7y8KA/hls/720/main.m3u8";
 
-  function initPlayer(url) {
-    if (url.includes("youtube.com") || url.includes("youtu.be")) {
-      // ✅ YouTube Embed
-      document.getElementById("player-container").innerHTML = `
-        <div id="yt-player">
-          <iframe src="https://www.youtube.com/embed/${extractYouTubeID(url)}" 
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>`;
-    } 
-    else if (url.endsWith(".m3u8")) {
-      // ✅ HLS
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          new Plyr(video);
-        });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
-        new Plyr(video);
-      }
-    } 
-    else if (url.endsWith(".mpd")) {
-      // ✅ MPEG-DASH
-      const player = dashjs.MediaPlayer().create();
-      player.initialize(video, url, true);
-      new Plyr(video);
-    } 
-    else {
-      // ✅ Normal MP4
-      video.src = url;
-      new Plyr(video);
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
     }
-  }
 
-  function extractYouTubeID(url) {
-    const regExp = /^.*(youtu\.be\/|v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
-  }
-
-  // 🚀 Start Player
-  initPlayer(videoUrl);
-</script>
-
+    // Skip function
+    function skip(seconds) {
+      video.currentTime += seconds;
+    }
+  </script>
 </body>
 </html>
