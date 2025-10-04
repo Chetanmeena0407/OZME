@@ -1,240 +1,297 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter Lectures</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<title>Ch-03 : Thermodynamics</title>
 <style>
-body {
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f6fa;
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
-    background-image: url('https://www.transparenttextures.com/patterns/grid.png');
-    background-repeat: repeat;
-    color: #111;
-}
+  }
 
-header {
-    background: linear-gradient(90deg, #2e7d32, #66bb6a);
-    color: white;
-    padding: 16px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-
-.main {
-    padding: 18px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.lec-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 14px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform .15s, box-shadow .2s;
-    flex-wrap: wrap;
-}
-
-.lec-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
-}
-
-.lec-info h3 {
-    font-size: 15px;
-    margin: 0 0 4px;
-    color: #1b5e20;
-    cursor: pointer;
-}
-
-.lec-info .date {
-    font-size: 13px;
-    color: #4e342e;
-}
-
-.lec-actions {
-    display: flex;
-    gap: 20px;
-}
-
-.lec-actions i {
-    font-size: 22px;
-    cursor: pointer;
-    color: #2e7d32;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.lec-actions i:hover {
-    color: #1b5e20;
-    transform: scale(1.25);
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    padding: 10px;
-    animation: fadeIn .3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-.popup-content {
+  .lecture {
     background: #fff;
-    padding: 22px;
-    border-radius: 14px;
-    max-width: 900px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    box-sizing: border-box;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-.popup-content h2 {
-    margin: 0 0 14px;
-    font-size: 17px;
-    color: #0f172a;
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+    border: 1px solid #ddd;
     border-radius: 10px;
-}
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+  .lecture h3 {
+    margin: 0 0 10px 0;
+    color: #6c63ff;
+    font-size: 18px;
+  }
 
-.pdf-btn {
-    display: block;
-    padding: 12px;
-    border-radius: 8px;
-    margin: 8px 0;
+  .lecture p {
+    margin: 3px 0;
+    color: #333;
+  }
+
+  .lecture p.date {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .lecture p.duration {
+    color: #555;
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    flex: 1;
     text-align: center;
     text-decoration: none;
-    font-weight: 600;
-    background: linear-gradient(90deg, #a5d6a7, #c8e6c9);
-    color: #1b5e20;
-    transition: background .2s, transform .15s;
-}
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+  }
 
-.pdf-btn:hover {
-    background: linear-gradient(90deg, #81c784, #a5d6a7);
-    transform: scale(1.03);
-}
+  .lecture .lecture-btn { background: #6c63ff; }
+  .lecture .notes-btn   { background: #4caf50; }
+  .lecture .dpp-btn     { background: #f44336; }
 
-.pdf-btn.disabled {
-    background: #f1f5f9;
-    color: #9ca3af;
+  /* Disabled button */
+  .lecture .disabled-btn {
+    background: #999;
     cursor: not-allowed;
-}
+    pointer-events: none;
+  }
 
-.close-btn {
-    position: absolute;
-    right: 12px;
-    top: 10px;
-    border: 0;
-    background: transparent;
-    font-size: 22px;
-    cursor: pointer;
-    color: #6b7280;
-}
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lecture h3 { font-size: 16px; }
+    .buttons a { font-size: 13px; padding: 8px; }
+  }
 
-.close-btn:hover {
-    color: #000;
-}
+  @media (max-width: 480px) {
+    .lecture h3 { font-size: 14px; }
+    .buttons { flex-direction: column; }
+    .buttons a { flex: unset; width: 100%; }
+  }
 </style>
 </head>
 <body>
 
-<header>Ch-05 : Locomotion and Movement</header>
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
 
-<main class="main" id="lecList"></main>
-
-<div class="popup" id="popup" role="dialog" aria-modal="true">
-    <div class="popup-content" id="popup-content"></div>
+<!-- Lec 01 -->
+<div class="lecture">
+  <h3>Thermodynamics 01 : Introduction</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 2 Sep 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/5eowo-YCp9A?si=qbItgmeH9gbUcvtn" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/64af7382-da9a-40d0-8fff-aa89db030ced.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a class="dpp-btn disabled-btn">NO DPP</a>
+  </div>
 </div>
 
-<script>
-const lectures = [
-    { id: 1, name: "Locomotion and Movement 01: Tapasya Types of Movement (NO DPP)", date: "10 Sep 2025", video: "https://www.youtube.com/embed/g3vb_sN3_0o", notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/691615a3-0a30-47fa-85d3-3b82500e7600.pdf", dpp: "" },
-    { id: 2, name: "Locomotion and Movement 02 : Muscles", date: "22 Sep 2025", video: "https://www.youtube.com/embed/BPNSGmwoLNg", notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b8be84be-b690-481c-8820-7daa6f78bfc8.pdf", dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/af75fad7-4468-4d8a-9f11-f7468cdc3d83.pdf" },
-    { id: 3, name: "Locomotion and Movement 03: Muscles", date: "23 Sep 2025", video: "https://www.youtube.com/embed/Rs4Su303cQY", notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3dca5c5f-ce79-4471-ae51-4a6a8134065a.pdf", dpp: "" }
-];
+<!-- Lec 02 -->
+<div class="lecture">
+  <h3>Thermodynamics 02 : Work</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 3 Sep 2025</p>
+  <p class="duration">Duration: 00:51:24</p>
+  <div class="buttons">
+    <a href="https://youtu.be/7-6vZ77azEA?si=EKoGQw9i3p29xpVJ" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/46e91949-d19e-4cc8-97dc-066aecc2a805.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a class="dpp-btn disabled-btn">NO DPP</a>
+  </div>
+</div>
 
-const list = document.getElementById('lecList');
-lectures.forEach(lec => {
-    const card = document.createElement('div');
-    card.className = 'lec-card';
-    card.innerHTML = `
-        <div class="lec-info">
-            <h3 onclick="openPopup('video', '${lec.video}', '', '${lec.name}')">${lec.name}</h3>
-            <div class="date">${lec.date}</div>
-        </div>
-        <div class="lec-actions">
-            <i class="fa-solid fa-circle-play" title="Play Video" onclick="openPopup('video', '${lec.video}', '', '${lec.name}')"></i>
-            <i class="fa-solid fa-file-pdf" title="View Notes" onclick="openPopup('pdf', '${lec.notes}', '${lec.dpp}', '${lec.name}')"></i>
-        </div>`;
-    list.appendChild(card);
-});
+<!-- Lec 03 -->
+<div class="lecture">
+  <h3>Thermodynamics 03 : Heat</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 4 Sep 2025</p>
+  <p class="duration">Duration: 00:48:31</p>
+  <div class="buttons">
+    <a href="https://youtu.be/Ekuoh1Zoaes?si=6R9AKALb0hDSYIPg" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0b64ccc9-5ce4-433e-9d4a-4620eea7cde9.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4b489d5f-c5f7-4974-98c0-ba3f20d6c318.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
 
-function openPopup(type, link1, link2, lecName) {
-    const popup = document.getElementById("popup");
-    const content = document.getElementById("popup-content");
-    popup.style.display = "flex";
+<!-- Lec 04 -->
+<div class="lecture">
+  <h3>Thermodynamics 04 : First Law of Thermodynamics</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 8 Sep 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/_iuTp1OCUng?si=volXchGjh62N4ThC" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/48ee6840-a157-45ee-ba2d-78f3752fd144.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a class="dpp-btn disabled-btn">NO DPP</a>
+  </div>
+</div>
 
-    if (type === "video") {
-        const videoUrl = link1 + "?rel=0&autoplay=1&modestbranding=1&controls=1";
-        content.innerHTML = `
-            <button class="close-btn" onclick="closePopup()">✕</button>
-            <h2>${lecName}</h2>
-            <div class="video-wrapper">
-                <iframe loading="lazy" src="${videoUrl}" allowfullscreen></iframe>
-            </div>`;
-    } else {
-        content.innerHTML = `
-            <button class="close-btn" onclick="closePopup()">✕</button>
-            <h2>${lecName}</h2>
-            ${link1 ? `<a href="${link1}" target="_blank" class="pdf-btn">📘 Notes</a>` : '<div class="pdf-btn disabled">📘 Notes Not Available</div>'}
-            ${link2 ? `<a href="${link2}" target="_blank" class="pdf-btn">📑 DPP</a>` : '<div class="pdf-btn disabled">📑 DPP Not Available</div>'}`;
-    }
-}
+<!-- Lec 05 -->
+<div class="lecture">
+  <h3>Thermodynamics 05 : Types of Thermodynamic Processes</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 9 Sep 2025</p>
+  <p class="duration">Duration: 01:23:38</p>
+  <div class="buttons">
+    <a href="https://youtu.be/h-x1IBuq6Ek?si=8zOQ6TLLTflvThCM" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a5dbf182-eb01-4048-a05f-f091582f5044.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/aaf825bb-84d7-471b-8b7e-7706f2d68c4e.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
 
-function closePopup() {
-    const popup = document.getElementById("popup");
-    const content = document.getElementById("popup-content");
-    popup.style.display = "none";
-    content.innerHTML = "";
-}
-</script>
+<!-- Lec 06 -->
+<div class="lecture">
+  <h3>Thermodynamics 06 : Enthalpy</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 10 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/m7duGHsJppw" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/accfb211-c82d-4095-a022-9d81daa000f5.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a class="dpp-btn disabled-btn">NO DPP</a>
+  </div>
+</div>
+
+<!-- Lec 07 -->
+<div class="lecture">
+  <h3>Thermodynamics 07 : Workdone in Different Thermodynamic Processes</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 11 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/vhLwh78mVyM?si=1D8zFWaOKA4o2y2t" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/89dfcb8b-977a-4f34-9f43-d6a747333bd8.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/535ed8dd-50fa-4309-8a70-b874c9a0b8f4.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 08 -->
+<div class="lecture">
+  <h3>Thermodynamics 08 : Calorimetry || Entropy || (Extra Lecture)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 12 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/iBRh8dSvT9I?si=Imq0pqu-ccR14Y_U" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4f6c615a-44af-4e22-a3d9-d71768beeb25.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a class="dpp-btn disabled-btn">NO DPP</a>
+  </div>
+</div>
+
+<!-- Lec 09 -->
+<div class="lecture">
+  <h3>Thermodynamics 09: Entropy Change</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 15 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/PTibVx0sapA?si=HUX7eFWgWsLEIYUI" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/58acaa04-4393-4fd8-a394-3524af0bab2a.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4e5bb486-f5bd-41a8-a38e-b70a4e7b0937.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 10 -->
+<div class="lecture">
+  <h3>Thermodynamics 10: Gibbs Free Energy</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 16 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/8jOQ5SR8IaQ?si=d3p1hY1oClQiE7h3" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/baf05e0a-fc71-4fa6-8bd6-eca371b3a7f4.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/278dda91-52f0-4464-bbd8-66a1a78c147f.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 11 -->
+<div class="lecture">
+  <h3>Thermodynamics 11 : Gibbs Free Energy (Part-02)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 17 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/2Jew5geCZj0?si=_ubtBepLbol5J5Rv" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/33ee5c15-d804-40af-a2f8-88f7b05805dc.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6848669c-a077-4617-bafd-6562d7d261db.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 12 -->
+<div class="lecture">
+  <h3>Thermodynamics 12 : Thermochemistry</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 18 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/9nd0YWPi2ZI" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9660eb9a-8c7f-4009-afdc-07cb3975c02d.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2f3c7034-b894-4b25-9058-f024e07c17bc.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 13 -->
+<div class="lecture">
+  <h3>Thermodynamics 13 : Different types of Enthalpies (Part-1)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 22 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/qwIO-ysieQ8?si=1QtdNwkmeoluQFdb" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/faafa97d-010c-44cf-9b0f-6ab1208cc445.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/775b68dc-1efe-42ff-b587-a6777b060465.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 14 -->
+<div class="lecture">
+  <h3>Thermodynamics 14 : Different types of Enthalpies (Part-2)</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 23 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/ZpN-fGNq6pM?si=Y6_anfZq4TDRE0oy" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/aeb46fd9-cfdd-4d45-8539-1591a70d2e9c.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/378e65c6-08de-41a9-90cf-1524cda71d6f.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
+
+<!-- Lec 15 -->
+<div class="lecture">
+  <h3>Thermodynamics 15 : Hess Law of Constant Heat Summation</h3>
+  <p>Sudhanshu Kumar Sir</p>
+  <p class="date">Date: 24 Sep 2025</p>
+  <p class="duration">Duration: __.__</p>
+  <div class="buttons">
+    <a href="https://youtu.be/bWq-jiooyQg?si=0plcJ__ZpbWBnD6p" target="_blank" class="lecture-btn">Lecture</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b06a2576-79c6-46d9-93d9-bd949f14f28d.pdf" target="_blank" class="notes-btn">Notes</a>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/41a3a112-f007-4308-a82b-90fbcfd996cd.pdf" class="dpp-btn">DPP</a>
+  </div>
+</div>
 
 </body>
 </html>
