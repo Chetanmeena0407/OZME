@@ -1,24 +1,74 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 11 Physical Chemistry</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      color: #222;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #111827;
+      margin-bottom: 25px;
+      border-bottom: 3px solid #ef4444;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .chapter-card {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .chapter-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
+
     .chapter-card:active {
       transform: scale(0.97);
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
+
     .chapter-card h3 {
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
-      border-left: 4px solid #ef4444; /* Chemistry ke liye Red accent */
+      border-left: 4px solid #ef4444; /* Red accent for Chemistry */
       padding-left: 8px;
       text-align: left;
     }
+
     .chapter-card p {
       font-size: 14px;
       color: #555;
       text-align: left;
       margin: 0;
+    }
+
+    @media (max-width: 500px) {
+      h2 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -41,17 +91,15 @@
       <p>Videos | Exercises | Notes</p>
     </a>
 
-    <a href="ch4-Redox-Reaction.html" class="chapter-card" target="_blank">
-      <h3>Ch-04 : Redox Reaction</h3>
+    <a href="ch4-redox-reaction.html" class="chapter-card" target="_blank">
+      <h3>Ch-04: Redox Reaction</h3>
       <p>Videos | Exercises | Notes</p>
     </a>
 
-    <a href="Ch-05-Chemical-Equilibrium.html" class="chapter-card" target="_blank">
-      <h3>Ch-05 : Chemical Equilibrium</h3>
+    <a href="ch5-chemical-equilibrium.html" class="chapter-card" target="_blank">
+      <h3>Ch-05: Chemical Equilibrium</h3>
       <p>Videos | Exercises | Notes</p>
     </a>
   </div>
 </body>
 </html>
-
-
