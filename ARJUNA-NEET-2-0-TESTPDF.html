@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content | Notes Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== Global Styles ===== */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .view-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .download-btn {
+      background-color: #7a5af8;
+      color: white;
+    }
+
+    .view-btn:hover {
+      background-color: #3b3b3b;
+    }
+
+    .download-btn:hover {
+      background-color: #8d6bff;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab">Lectures</div>
+    <div class="tab active">Notes</div>
+    <div class="tab">DPP Quiz</div>
+    <div class="tab">DPP PDF</div>
+    <div class="tab">DPP Videos</div>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <h2>Test Papers || Only PDF</h2>
+
+  <div class="content-container">
+    <!-- Example Cards -->
+    <div class="card">
+      <h3>Practice Test 04 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/76162419-0056-48b2-a7db-a55cd24daa92.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers </a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2513dc5a-4a3f-4ee1-b0dc-87b9842e3a0e.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i> Hint and Solution </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>AITS Test 01 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c38e95b2-7565-49d3-bf2d-952d6fb8f1a2.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers </a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/db425d76-8054-4412-85d3-39e09454a53d.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i> Hint and Solution</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>AITS 01 : Test Paper || Arjuna NEET 2026</h3>
+      <div class="btn-container">
+        <a href="#" class="btn view-btn"><i class="fa-solid fa-eye"></i> View PDF</a>
+        <a href="#" class="btn download-btn"><i class="fa-solid fa-download"></i> Download PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Rank Booster Test 02 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c38e95b2-7565-49d3-bf2d-952d6fb8f1a2.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/503f47ec-cf4d-4777-8125-9dfbb147d0a0.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i>Hint and Solution</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Practice Test 03 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/61546ea3-203f-4663-b6ff-8ba9f4488266.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers </a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7c308abc-466e-40c8-84ee-b12167684d5b.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i> Solution PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Rank Booster Test 01 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2e610135-17bb-45fb-bcee-7d3b82da7d3f.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c6f448a2-b6e3-4487-8b55-823ca538191a.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i>  Solution PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Practice Test 02 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c16227a1-9091-4115-80dc-3275ae4d39a5.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2f46b0a7-669e-4f9e-827c-a16f4688cb07.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i> Solution PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Practice Test 01 : Test Papers || Arjuna NEET 2.0 2026</h3>
+      <div class="btn-container">
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ef532fc3-58ab-40ed-8baa-c4a69e79cc7f.pdf" class="btn view-btn"><i class="fa-solid fa-eye"></i> Test Papers </a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2ae78164-bf57-4072-b5c2-6683784b0112.pdf" class="btn download-btn"><i class="fa-solid fa-download"></i> Solution  PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab Switching (optional)
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
