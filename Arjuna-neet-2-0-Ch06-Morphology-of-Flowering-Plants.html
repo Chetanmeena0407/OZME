@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter Lectures</title>
-  
+  <title>Ch-06 : Morphology of Flowering Plants</title>
+
   <!-- ✅ Font Awesome Free CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -12,12 +12,12 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #fdfdfd);
+      background: linear-gradient(135deg, #f2fff5, #ffffff);
       color: #111;
     }
 
     header {
-      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      background: linear-gradient(90deg, #047857, #10b981);
       color: white;
       padding: 16px;
       text-align: center;
@@ -35,7 +35,6 @@
 
     .lec-card {
       background: #fff;
-      border: none;
       border-radius: 14px;
       padding: 16px;
       margin-bottom: 14px;
@@ -46,17 +45,19 @@
       transition: transform .15s, box-shadow .2s;
       flex-wrap: wrap;
     }
+
     .lec-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(59,130,246,0.25);
+      box-shadow: 0 6px 16px rgba(16,185,129,0.25);
     }
 
     .lec-info h3 {
       font-size: 15px;
       margin: 0 0 4px;
-      color: #0f172a;
+      color: #064e3b;
       cursor: pointer;
     }
+
     .lec-info .date {
       font-size: 13px;
       color: #64748b;
@@ -71,11 +72,12 @@
     .lec-actions i {
       font-size: 22px;
       cursor: pointer;
-      color: #1e40af;
+      color: #047857;
       transition: transform 0.2s, color 0.2s;
     }
+
     .lec-actions i:hover {
-      color: #111;
+      color: #064e3b;
       transform: scale(1.25);
     }
 
@@ -92,6 +94,7 @@
       padding: 10px;
       animation: fadeIn .3s ease-in-out;
     }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
@@ -113,17 +116,17 @@
     .popup-content h2 {
       margin: 0 0 14px;
       font-size: 17px;
-      color: #0f172a;
+      color: #064e3b;
     }
 
-    /* Responsive Video */
     .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: 10px;
     }
+
     .video-wrapper iframe {
       position: absolute;
       top: 0; left: 0;
@@ -140,14 +143,16 @@
       text-align: center;
       text-decoration: none;
       font-weight: 600;
-      background: linear-gradient(90deg, #e0ebff, #f0f4ff);
-      color: #1e40af;
+      background: linear-gradient(90deg, #dcfce7, #ecfdf5);
+      color: #047857;
       transition: background .2s, transform .15s;
     }
+
     .pdf-btn:hover {
-      background: linear-gradient(90deg, #cbdafc, #e0ebff);
+      background: linear-gradient(90deg, #bbf7d0, #dcfce7);
       transform: scale(1.03);
     }
+
     .pdf-btn.disabled {
       background: #f1f5f9;
       color: #9ca3af;
@@ -164,6 +169,7 @@
       cursor: pointer;
       color: #6b7280;
     }
+
     .close-btn:hover {
       color: #000;
     }
@@ -221,10 +227,7 @@
       video: "https://www.youtube.com/embed/PIkXkrdOikw",
       notes: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/839e8998-ea0d-4c12-849f-b0eb06197fc3.pdf",
       dpp: "https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8b63aff1-d556-4458-bad7-edeb4652a277.pdf"
-    },
-
-
-    
+    }
   ];
 
   const list = document.getElementById('lecList');
@@ -270,11 +273,9 @@
     let popup = document.getElementById("popup");
     let content = document.getElementById("popup-content");
     popup.style.display = "none";
-    content.innerHTML = '<button class="close-btn" onclick="closePopup()">✕</button>'; // reset iframe to stop video
+    content.innerHTML = '<button class="close-btn" onclick="closePopup()">✕</button>';
   }
 </script>
 
 </body>
 </html>
-
-
