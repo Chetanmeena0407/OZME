@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empty Folder | Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------- TOP NAV TABS ---------- */
+    .tabs {
+      display: flex;
+      gap: 30px;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ddd;
+      font-size: 15px;
+      align-items: center;
+    }
+
+    .tabs a {
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .tabs a.active {
+      color: #4a3aff;
+      font-weight: 600;
+    }
+
+    .tabs a.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #4a3aff;
+      border-radius: 2px;
+    }
+
+    /* ---------- EMPTY STATE SECTION ---------- */
+    .empty-section {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .empty-section img {
+      width: 140px;
+      max-width: 80%;
+      margin-bottom: 25px;
+    }
+
+    .empty-section h2 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .empty-section p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Tabs -->
+  <div class="tabs">
+    <a href="#" class="active">All</a>
+    <a href="#">Lectures</a>
+    <a href="#">DPPs</a>
+  </div>
+
+  <!-- Empty Folder Content -->
+  <div class="empty-section">
+    <img src="https://cdn-icons-png.flaticon.com/512/7486/7486766.png" alt="Empty Folder Illustration" />
+    <h2>Content on the Way</h2>
+    <p>Folder’s empty for now.... but it won’t be for long!</p>
+  </div>
+
+</body>
+</html>
