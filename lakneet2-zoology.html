@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoology | Arjuna NEET</title>
+  <title>Zoology | Lakshya Neet </title>
 
   <style>
     body {
@@ -142,54 +142,61 @@
   <a href="subjects.html" class="back">← Back to Subjects</a>
   <h1>Zoology</h1>
 
-  <!-- 🔍 Search -->
   <div class="search-container">
     <input type="text" placeholder="Search chapters..." class="search-box" onkeyup="filterCards(this.value)">
   </div>
 
-  <!-- 📚 Chapter Cards -->
   <div class="content-container" id="chapterList">
+
     <div class="card" onclick="openPage('mindmaps.html')">
       <h3>Mind Maps || Only PDF</h3>
-      <div class="stats">Lectures: 0 || Notes: 6 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="stats">Lectures: 0 || Notes: 7 || DPP Videos: 0 || Exercises: 0</div>
       <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
       <div class="percent">0%</div>
     </div>
 
     <div class="card" onclick="openPage('shortnotes.html')">
       <h3>Short Notes || Only PDF</h3>
-      <div class="stats">Lectures: 0 || Notes: 5 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="stats">Lectures: 0 || Notes: 6 || DPP Videos: 0 || Exercises: 0</div>
       <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
       <div class="percent">0%</div>
     </div>
 
     <div class="card" onclick="openPage('pyq.html')">
       <h3>PYQs || Only PDF</h3>
-      <div class="stats">Lectures: 0 || Notes: 5 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="stats">Lectures: 0 || Notes: 6 || DPP Videos: 0 || Exercises: 0</div>
       <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
       <div class="percent">0%</div>
     </div>
 
-    <div class="card" onclick="openPage('interactive.html')">
-      <h3>Interactive Session</h3>
-      <div class="stats">Lectures: 2 || Notes: 1 || DPP Videos: 0 || Exercises: 0</div>
+    <div class="card" onclick="openPage('handwritten.html')">
+      <h3>Handwritten Notes || Only PDF</h3>
+      <div class="stats">Lectures: 0 || Notes: 2 || DPP Videos: 0 || Exercises: 0</div>
       <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
       <div class="percent">0%</div>
     </div>
 
-    <div class="card" onclick="openPage('ch01.html')">
-      <h3>Ch 01 : Animal Kingdom</h3>
-      <div class="stats">Lectures: 15 || Notes: 18 || DPP Videos: 0 || Exercises: 6</div>
+    <div class="card" onclick="openPage('ch01-human-reproduction.html')">
+      <h3>Ch 01 : Human Reproduction</h3>
+      <div class="stats">Lectures: 15 || Notes: 28 || DPP Videos: 0 || Exercises: 12</div>
       <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
       <div class="percent">0%</div>
     </div>
 
-    <div class="card" onclick="openPage('ch02.html')">
-      <h3>Ch 02 : Structural Organisation in Animals</h3>
-      <div class="stats">Lectures: 10 || Notes: 12 || DPP Videos: 0 || Exercises: 5</div>
+    <div class="card" onclick="openPage('ch02-reproductive-health.html')">
+      <h3>Ch 02 : Reproductive Health</h3>
+      <div class="stats">Lectures: 5 || Notes: 7 || DPP Videos: 0 || Exercises: 2</div>
       <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
       <div class="percent">0%</div>
     </div>
+
+    <div class="card" onclick="openPage('ch03-human-health.html')">
+      <h3>Ch 03 : Human Health and Diseases</h3>
+      <div class="stats">Lectures: 13 || Notes: 23 || DPP Videos: 0 || Exercises: 10</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+
   </div>
 
   <script>
@@ -197,7 +204,6 @@
       window.location.href = page;
     }
 
-    // Simple search filter
     function filterCards(value) {
       const cards = document.querySelectorAll('.card');
       value = value.toLowerCase();
