@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌿 Botany</title>
+
+<style>
+  /* ==== BASE STYLES ==== */
+  body {
+    background-color: #0e0e12;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #8ab4f8;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: #3b82f6;
+  }
+
+  /* ==== GRID SYSTEM ==== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 16px;
+  }
+
+  /* ==== CARD ==== */
+  .card {
+    background: #141419;
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid #1f1f26;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 0 14px rgba(59, 130, 246, 0.3);
+  }
+
+  .card:active {
+    transform: scale(0.97);
+  }
+
+  a.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .details {
+    font-size: 13px;
+    color: #a3a3b3;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .progress-bar {
+    background: #1c1c22;
+    height: 6px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress {
+    background: #3b82f6;
+    height: 100%;
+    width: 0%;
+  }
+
+  .progress-text {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    margin-top: 5px;
+  }
+
+  /* ==== MOBILE FRIENDLY ==== */
+  @media (max-width: 768px) {
+    body {
+      padding: 12px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      gap: 14px;
+    }
+
+    .card {
+      padding: 16px;
+    }
+
+    .title {
+      font-size: 15px;
+    }
+
+    .details {
+      font-size: 12.5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 4px;
+    }
+
+    .card {
+      padding: 14px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .title {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .details {
+      font-size: 12px;
+    }
+
+    .progress-text {
+      font-size: 11px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <a href="#" class="back-link">← Back to Subjects</a>
+  <h1>Botany</h1>
+
+  <div class="grid">
+
+    <a href="mind-maps.html" class="card-link">
+      <div class="card">
+        <div class="title">Mind Maps || Only PDF</div>
+        <div class="details">Lectures: 0 || Notes: 10 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="short-notes.html" class="card-link">
+      <div class="card">
+        <div class="title">Short Notes || Only PDF</div>
+        <div class="details">Lectures: 0 || Notes: 7 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="pyq.html" class="card-link">
+      <div class="card">
+        <div class="title">PYQs || Only PDF</div>
+        <div class="details">Lectures: 0 || Notes: 7 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="vipu-practice.html" class="card-link">
+      <div class="card">
+        <div class="title">VIPU Sir ki Practice Sheets (Only PDF)</div>
+        <div class="details">Lectures: 0 || Notes: 1 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="vicks.html" class="card-link">
+      <div class="card">
+        <div class="title">Vipu Sir ke Important Classroom Kattar Questions Sheet (VICKS) (Only PDF)</div>
+        <div class="details">Lectures: 0 || Notes: 1 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="annotated-ncert.html" class="card-link">
+      <div class="card">
+        <div class="title">Annotated NCERT (Only PDF)</div>
+        <div class="details">Lectures: 0 || Notes: 1 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="handwritten-notes.html" class="card-link">
+      <div class="card">
+        <div class="title">Handwritten Notes || Only PDF</div>
+        <div class="details">Lectures: 0 || Notes: 2 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="ncert-discussion.html" class="card-link">
+      <div class="card">
+        <div class="title">NCERT Discussion</div>
+        <div class="details">Lectures: 4 || Notes: 4 || DPP Videos: 0 || Exercises: 0</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="ch-01.html" class="card-link">
+      <div class="card">
+        <div class="title">Ch-01 : Sexual Reproduction in Flowering Plant</div>
+        <div class="details">Lectures: 12 || Notes: 22 || DPP Videos: 0 || Exercises: 10</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="ch-02.html" class="card-link">
+      <div class="card">
+        <div class="title">Ch 02 : Principle of Inheritance and Variation</div>
+        <div class="details">Lectures: 12 || Notes: 21 || DPP Videos: 0 || Exercises: 9</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+    <a href="Lakneet2-0-2026-Ch 03 : Molecular Basis of Inheritance.html" class="card-link">
+      <div class="card">
+        <div class="title">Ch 03 : Molecular Basis of Inheritance</div>
+        <div class="details">Lectures: 14 || Notes: 22 || DPP Videos: 0 || Exercises: 8</div>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+</body>
+</html>
