@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content | Lecture Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+    }
+
+    .lec-btn {
+      background-color: #7a5af8;
+      color: white;
+    }
+
+    .notes-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .dpp-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .disabled {
+      background-color: #333;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active">Lectures</div>
+    <div class="tab">Notes</div>
+    <div class="tab">DPP</div>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <h2>Ch 02 : Haloalkanes and Haloarenes</h2>
+
+  <div class="content-container">
+
+    <!-- ✅ Example Lecture Card -->
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 01 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmQz&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fd744973-0ac6-4b5f-b2aa-01718e057742.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 02 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmUw&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6a4ce8dd-a10c-4c51-a3c2-dc4e6df55d3f.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6eab2add-e323-406b-90bf-62a7400998bc.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Haloalkanes and Haloarenes 03 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmVk&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ef226ad9-b74d-4c14-9a2b-13b5b2ddcf69.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0f538785-d89f-4441-a7b0-05f031eda6fc.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Haloalkanes and Haloarenes 04 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmM3&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/207d0ae7-61b8-421a-b33d-577618412f35.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 05 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmQ0&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/362a66f8-9ab0-43f5-9d87-f195b598a22d.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/35c03aa0-e01a-43a2-85a1-80d7fef62af7.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Haloalkanes and Haloarenes 06 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmUx&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/bbf17dde-dd01-4663-bf5c-ca7838d68f75.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a7b022ba-c3df-4fde-801f-79157bd27afe.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Haloalkanes and Haloarenes 07 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmVl&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9920d453-fed7-48d0-a8ac-76e49a5e5806.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Haloalkanes and Haloarenes 08 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmM4&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/58476480-f4fb-4535-bc3f-9f711c6beb5b.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/57e8d1aa-9605-4157-9baf-0045660f4195.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Haloalkanes and Haloarenes 09 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmQ1&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/dd5c219f-6355-42e6-9ae3-242cfd81e101.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 10 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmUy&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ee67ab49-d47c-46ca-ae53-dd0cb17c7784.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/58d460fd-2f81-49cb-9d13-93cb49f994c9.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 11 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmVm&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/68f7433c-918d-4af0-99ac-d3af342a94e3.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/739244a9-7da8-4e8b-aa08-3a7e326d0cf9.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 12 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmM5&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/44ef5b8f-54a8-40a1-9950-fb79d2289359.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/28de1b39-638a-44fa-bc28-f5abe43701d2.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 13 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmQ2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3eb8939a-d86c-4470-a76b-08513caa5ca0.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+<div class="card">
+      <h3> Haloalkanes and Haloarenes 14 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmUz&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/301823a6-318c-4afe-bad1-bdcd60ab5ed4.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8d03ceca-69a4-4f08-9162-8ab0ccecce6b.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 15 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmYw&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5f5aff9d-a8cf-4805-ac25-d88db315e563.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6a13e008-74ac-44ef-a074-5f72baf5b1e8.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 16 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmNh&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/93d7250e-5af3-4567-b0d8-ae1ec36289c2.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/adf24f0d-8584-45a7-8e2c-2ceec39b1464.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+     <div class="card">
+      <h3> Haloalkanes and Haloarenes 17 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmQ3&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0b9e66ce-806b-48fa-ae06-3c62cec1c6e7.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 18 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmU0&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7b8cca90-6f3d-4efe-82a1-b486a320721f.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/26b7dbb3-5010-4f93-a20f-de537295d706.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 19 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmYx&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/37435790-b688-4f7e-8148-440f7bf47fac.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f8d17ca0-5efe-4d64-8950-52c522c25071.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Haloalkanes and Haloarenes 20 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=NjhkZjcxOTYwNmIwY2M4OTIwOWMzNjM1&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/34c4e9ff-60d3-4a48-80a7-269efa26ee3b.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/424ad8bc-7d02-4c8e-89ff-e2372e94eaea.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ===== Auto-disable blank links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching (optional) =====
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
