@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoology | Arjuna NEET</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+
+    a {
+      color: #7a5af8;
+      text-decoration: none;
+    }
+
+    .back {
+      display: block;
+      margin: 20px;
+      color: #7a5af8;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0 30px;
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Search Box */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      width: 80%;
+      max-width: 600px;
+      padding: 12px 15px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #1b1b1b;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-box:focus {
+      border-color: #7a5af8;
+      box-shadow: 0 0 10px rgba(122,90,248,0.4);
+    }
+
+    /* Cards Grid */
+    .content-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 25px 40px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #121212;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 18px 20px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      border-color: #7a5af8;
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .stats {
+      font-size: 13px;
+      color: #bbb;
+      margin-bottom: 8px;
+    }
+
+    /* Progress Bar */
+    .progress {
+      background-color: #222;
+      height: 6px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .progress-fill {
+      background-color: #7a5af8;
+      height: 100%;
+      width: 0%;
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+
+    .percent {
+      font-size: 12px;
+      text-align: right;
+      color: #888;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+      .search-box {
+        width: 90%;
+      }
+      .card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="subjects.html" class="back">← Back to Subjects</a>
+  <h1>Zoology</h1>
+
+  <!-- 🔍 Search -->
+  <div class="search-container">
+    <input type="text" placeholder="Search chapters..." class="search-box" onkeyup="filterCards(this.value)">
+  </div>
+
+  <!-- 📚 Chapter Cards -->
+  <div class="content-container" id="chapterList">
+    <div class="card" onclick="openPage('mindmaps.html')">
+      <h3>Mind Maps || Only PDF</h3>
+      <div class="stats">Lectures: 0 || Notes: 6 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+
+    <div class="card" onclick="openPage('shortnotes.html')">
+      <h3>Short Notes || Only PDF</h3>
+      <div class="stats">Lectures: 0 || Notes: 5 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+
+    <div class="card" onclick="openPage('pyq.html')">
+      <h3>PYQs || Only PDF</h3>
+      <div class="stats">Lectures: 0 || Notes: 5 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+
+    <div class="card" onclick="openPage('interactive.html')">
+      <h3>Interactive Session</h3>
+      <div class="stats">Lectures: 2 || Notes: 1 || DPP Videos: 0 || Exercises: 0</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+
+    <div class="card" onclick="openPage('ch01.html')">
+      <h3>Ch 01 : Animal Kingdom</h3>
+      <div class="stats">Lectures: 15 || Notes: 18 || DPP Videos: 0 || Exercises: 6</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+
+    <div class="card" onclick="openPage('ch02.html')">
+      <h3>Ch 02 : Structural Organisation in Animals</h3>
+      <div class="stats">Lectures: 10 || Notes: 12 || DPP Videos: 0 || Exercises: 5</div>
+      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
+      <div class="percent">0%</div>
+    </div>
+  </div>
+
+  <script>
+    function openPage(page){
+      window.location.href = page;
+    }
+
+    // Simple search filter
+    function filterCards(value) {
+      const cards = document.querySelectorAll('.card');
+      value = value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
