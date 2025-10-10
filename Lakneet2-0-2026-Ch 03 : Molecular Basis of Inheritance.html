@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content | Lecture Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+    }
+
+    .lec-btn {
+      background-color: #7a5af8;
+      color: white;
+    }
+
+    .notes-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .dpp-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .disabled {
+      background-color: #333;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active">Lectures</div>
+    <div class="tab">Notes</div>
+    <div class="tab">DPP</div>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <h2>Ch 03 : Molecular Basis of Inheritance</h2>
+
+  <div class="content-container">
+
+    <!-- ✅ Example Lecture Card -->
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 01 : Introduction to Molecular Basis of Inheritance || NO DPP || Extra Lecture</h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=NjhiMmE2OGYzMDY0ZTczNDFjMzZmMzc5&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/541ef187-a2cc-457e-a6c4-2bfe56baf2f0.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Molecular Basis of Inheritance 02 : Structure of Polynucleotide || NO DPP</h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmE1&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/aca007d7-b26c-4bb5-acbc-c011f50f7bdb.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 03 : Basics of DNA</h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmIy&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ff6d813e-2cb4-4ffc-a7de-faa01a89c9cd.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ff6d813e-2cb4-4ffc-a7de-faa01a89c9cd.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 04 : Griffith's Experiment</h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmE2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ea347408-5100-4f5d-a086-d1b82fb2a94c.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9dac4527-827d-4c81-a90d-618a3b6bc4a1.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 05 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmIz&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/61be38a7-c5b9-467e-8f8c-0346d5da046c.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e7c38fb4-4d64-4246-897f-405c999a17cb.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 06 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmE3&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a5307a9c-bcef-4168-8804-65006d94b31b.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 07 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmI0&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b247513f-d0f5-43f0-ae91-355001d2a030.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/819cd591-ca92-4e89-9332-ecbc1db2cd27.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 08 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmE4&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/09627087-6b1d-4719-98a1-d092116552da.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1de1a908-2ffe-4f0e-a08f-2849af18af49.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 09 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmI1&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/81f2512b-a6df-4ae2-802f-ea21a9cc6ea2.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c2ffc2bc-8b64-4dbe-aeb4-5d8982ba8a15.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 10 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmE5&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2ca87234-05cb-40ee-a9d4-53217d836ed1.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 11 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmI2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/edd53e3f-35be-4e91-bc4c-ad74ba98fd70.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/321b8fe8-6c96-4a59-bfd1-fd2ce5597bba.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 12 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=NjhlMTVmZDRkYWZhNTFiZDMxYTNiMzQ2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/61950f54-73be-491e-8988-08709b5fd628.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5c88e29b-7e97-462c-816e-42efbe4eeee9.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Molecular Basis of Inheritance 13 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NmFh&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b39dc29f-f537-4784-acbc-b45c4cb869d0.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+<div class="card">
+      <h3>Molecular Basis of Inheritance 14 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=NjhlNTEwYjc5NmZkZjQyOWZjMjg2YzU4&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fcd6e728-8c22-4864-8203-aa781c4d5148.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ===== Auto-disable blank links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching (optional) =====
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
