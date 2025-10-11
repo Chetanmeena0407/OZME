@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics | Lecture Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+    }
+
+    .lec-btn {
+      background-color: #7a5af8;
+      color: white;
+    }
+
+    .notes-btn, .dpp-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .disabled {
+      background-color: #333;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active">Lectures</div>
+    <div class="tab">Notes</div>
+    <div class="tab">DPP</div>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <h2>Ch 03 : Current Electricity</h2>
+
+  <div class="content-container">
+
+    <!-- ✅ Sample Lecture Cards (Blank Links) -->
+    <div class="card">
+      <h3> Current Electricity 01   </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzll&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7ea90bd9-065e-45ef-b9fa-7b00333b76bb.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity 02 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzk0&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/54e9f5fa-ae13-4cd9-9fd8-296461d04916.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7ceb8b66-3b2d-4b61-9c1f-7b728bd132d5.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  03  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=NjhhOGI0NmQ4MTE3OTlkNzUwMTQ5ODA5&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/da51f9bf-06cd-4521-bb2b-5491afc8b4b5.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  04  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzhi&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1cbeea67-92a8-4933-9625-41b03c737ee1.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/63f2bbe0-1994-4e58-b369-d6aa36e36a53.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  05  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzlm&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/593a7848-eb74-4cf8-baac-bd1377bf55fe.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/593a7848-eb74-4cf8-baac-bd1377bf55fe.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  06  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5M2E5&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6ce35632-91c9-4a75-87a4-715bff00a8d2.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2ba4e2c0-4b76-45d2-8a71-663124de1d5c.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  07  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzhj&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a5a607b0-5418-4739-be4e-137b0c3d3d0e.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/157c1ac5-c212-4dda-a74b-90bfc300ec98.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  08  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5M2Ew&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ea76fd31-3625-4026-bce9-d866e6edd4c6.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ad0fea6b-7d5a-46df-a0c1-42d599792a7d.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  09  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzk2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/205ad72d-a255-4af1-a633-3ac0d9ad0e58.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eaf68a6e-aa5d-423c-8d15-2fee89d443b5.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  10  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5M2Fh&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/026f29df-188e-45a6-a3fb-4d53a0013888.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  11  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzhk&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/20a48fb6-4457-41d2-962a-5b416eaa1f4a.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Current Electricity  12  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5M2Ex&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/409214ab-9d01-48b3-bacf-98c81fa80f9b.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script>
+    // ===== Auto-disable blank links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching =====
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
