@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics | Lecture Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+    }
+
+    .lec-btn {
+      background-color: #7a5af8;
+      color: white;
+    }
+
+    .notes-btn, .dpp-btn {
+      background-color: #2c2c2c;
+      color: #bbb;
+    }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .disabled {
+      background-color: #333;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active">Lectures</div>
+    <div class="tab">Notes</div>
+    <div class="tab">DPP</div>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <h2>Ch 01 : Animal Kingdom </h2>
+
+  <div class="content-container">
+
+    <!-- ✅ Sample Lecture Cards (Blank Links) -->
+    <div class="card">
+      <h3> Animal Kingdom 01  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzNWFkNzA2MzZmOTk4ZTc4Nzc1ZjEz&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/12544d2b-9bd2-489b-ac41-138de8dd92b0.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 02  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDE1&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/63b37c0c-5b18-455d-bb2c-a825f2f8f6ca.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0662a164-4ab4-4cbc-8b2f-a74ef8579683.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 03  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDE2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e70c65f8-e6f4-4004-a337-5b6b0401910b.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f8e7ce85-2e07-404b-a83e-9120482ff460.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 04  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDI1&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0441ea13-f36e-442c-9fe0-3cbaa0974968.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e8568654-3748-49a6-b357-99e7139eb7cf.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 05  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDI5&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a191e8a2-2f4e-4e17-afe5-2a45ce612b9b.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 06  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDJk&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/84126726-2106-4868-a0d7-667a457ade5d.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/abf6b7f3-0282-4b6f-80c2-a0c34de8b866.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 07 </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=Njg0NjhkY2MyMTRiZDk5YmEzNTJhYTdj&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/06959827-ba64-4b0f-8a5f-1274c5be22a3.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eefcd858-522f-48aa-82ee-a0ce34c7ba85.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 08  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDI2&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d2be54e4-6508-42eb-832d-1cfe5d969565.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ad5640eb-29b2-4ae2-bb0c-ed57f2b42d6a.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 09  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDJh&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/997e1b67-0c7a-4d61-a7ec-3078e7911637.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/00cc71ef-0b10-44d4-9b31-89a0a506a954.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 10  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDJl&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/45e8e5ee-269c-4358-a6a0-90ec2c079270.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 11  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDI3&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2debbad0-8c74-4200-8bf9-a806a868a20d.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5bdbcff6-7dec-4680-ac08-993f393c449a.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 12  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDJi&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b9f3e773-0862-4d15-b44d-3b596dc6e081.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b583db50-5823-4eaf-b1a6-1e1fb339270a.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 13  </h3>
+      <div class="btn-container">
+        <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a08fc872e93ccb58047b0&video_key=NjgzMTc1OTljMzVjODQwMmVlM2U3NDJm&video_type=new" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cfe93512-e6e4-42b6-9a12-8707c42adace.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3> Animal Kingdom 14  </h3>
+      <div class="btn-container">
+        <a href="" class="btn lec-btn"><i class="fa-solid fa-play"></i> Lecture</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9203e6fa-e980-4bed-8816-722c1694808f.pdf" class="btn notes-btn"><i class="fa-solid fa-file-lines"></i> Notes</a>
+        <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1584eabb-7c02-4e50-a2e3-84b05d3b06dc.pdf" class="btn dpp-btn"><i class="fa-solid fa-book"></i> DPP</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ===== Auto-disable blank links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching =====
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
