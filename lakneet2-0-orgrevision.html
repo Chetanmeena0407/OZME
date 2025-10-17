@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch 04 : Aldehydes, Ketones and Carboxylic Acids| Lecture Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+      display: inline-block;
+      color: white;
+    }
+
+    /* 🎥 Lecture */
+    .lec-btn { background-color: #7a5af8; }
+
+    /* 📘 Notes */
+    .notes-btn { background-color: #3a9efd; }
+
+    /* 🧩 DPP Quiz */
+    .quiz-btn { background-color: #f8a84f; }
+
+    /* 📗 DPP */
+    .dpp-btn { background-color: #00c896; }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.04);
+    }
+
+    .disabled {
+      background-color: #333 !important;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Hide non-active tab content ===== */
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; font-size: 14px; }
+      .btn { font-size: 12px; padding: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Chapter Heading ===== -->
+  <h2>Ch 04 : Aldehydes, Ketones and Carboxylic Acids</h2>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active" data-target="lectures">Lectures</div>
+    <div class="tab" data-target="notes">Notes</div>
+    <div class="tab" data-target="dppQuiz">DPP Quiz</div>
+    <div class="tab" data-target="dpp">DPP</div>
+  </div>
+
+  <!-- ====== LECTURE CARDS ====== -->
+  <div class="content-container tab-content active" id="lectures">
+    <div class="card">
+      <h3> Revision 01 : NO DPP || Extra </h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJValp6VVVNMVVFbHZXVWd5UldZemJVaDJaRkozZUd3M2NERTVjbGxLUm5Wd05pOTBUbEJKYVhBeVNUMD0iLCJuYW1lIjoiUmV2aXNpb24gMDEgOiBOTyBEUFAgfHwgRXh0cmEiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvYjc0OTg4NTUtNTFjMi00YjUwLTliYWItMjQxYThhNDEzNDQ4LnBuZyJ9.uOWmGsDvjHlp-b2VZgnsixAVC2ujOTdYUjPhz1PspPg&loaded=1" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Revision 02 : NO DPP || Extra </h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlbVJ2TlVkTk5IcHdSalpyUTBwSFNuQkNiSE5GT1dJeFdIbG9VVFJTYkZsR1REZHBhVkZsV1VaNlJUMD0iLCJuYW1lIjoiUmV2aXNpb24gMDIgOiBOTyBEUFAgfHwgRXh0cmEiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvMDk0ZTkyZWItMjgzZC00NWYzLTg2MDgtNzE5YjM2ZGM2YTdiLmpwZyJ9.XhrlWSLdb8TEqgQt77clNqtdrvPeK9He3UXmvHhtwNA&loaded=1" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 03 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJPRGwzUWtwSU5HMUNZMXBCUnpSU01VODRNWE12V1doelZtSXpOSGM0ZFRGWlVUbDVTRmQwWjJKNWF6MD0iLCJuYW1lIjoiUmV2aXNpb24gMDMgOiBOTyBEUFAiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvZGE0NzNhYjQtNzM3OS00YTYzLWE0YzktY2I3NTQ2ZGU1OWEzLnBuZyJ9.YXudTue3uKBbFyNzB0mB8qKi_aBtV8xJJY5_GALwyd4" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 04 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlbTlpTm1sdmFtVnFWelZHWnpFeVJtUlJiR0pNUkhOYU16Wm1ZbTh3ZG5KT2FGQjFNMnhyTld4RmJ6MD0iLCJuYW1lIjoiUmV2aXNpb24gMDQgOiIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC9jNTAzNWVmMC05NmI0LTQwOTUtODE5Zi02M2Q2YmI4NTk0NmIucG5nIn0.JeituZYW01IIYwRc7NbKjuTl0lw_XxGNr6WRe5o5zsk" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 05 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJXRE01WjJsTU9GWk5iVk5xU0d3eU1HUjFiMmRTUzBKbWQwSnVaMUJqYzBoeVIzcFRORWRDY1ZwbGF6MD0iLCJuYW1lIjoiUmV2aXNpb24gMDUgOiBOTyBEUFAiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvY2EyNmQzODMtZmI4NS00NTY0LTkyOTMtNTI3ZTFlOTk3ZDNkLnBuZyJ9.J3Ep4qjP0QQzfLM-_Iy7Nw5x1oHTVgmKjpSOrgZO4X0&loaded=1" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 06 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJSVEZNY2t0S1lrNVdhRWxLYzFRemN6VmxXa3BQTmpJMFVFZzVUMjFuYXpSTk9HWlNhVGRKU3pWblRUMD0iLCJuYW1lIjoiUmV2aXNpb24gMDYgOiBOTyBEUFAiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvNDE0OGMyNGMtM2ZjZS00ZWRhLTk0ZTAtMjUwZTdhODAxYTlhLnBuZyJ9.eiceTtUOzdRvN0vkJ41dmVcgkcpFpmAfQSUrWT-3lVw" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 07 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJkVTB6WjNaS1UzWXJPWHBPTVhWWGVVVTFZM0JST1c5VWVIUllTalIyVURJMlQwVnRPR3gxUm5sWVl6MD0iLCJuYW1lIjoiUmV2aXNpb24gMDcgOiBOTyBEUFAiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvYTdkMzc0M2UtNWRhNS00YjIyLTk1Y2ItZTc2MzMxZDc1YmRkLnBuZyJ9.d0SsZkPqtTePgpXAh5yXYw0pcAkRyVS-mgKT2RTcjAo" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 08 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJUR3hrZERSb1QzY3lWSEUzZUhkdGNEbDRjV00wTkZOUlNYVjJlRXRGTm1kNU1URnNXbEZRV1VoNFJUMD0iLCJuYW1lIjoiUmV2aXNpb24gMDggOiBOTyBEUFAiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvNjI4NmQ1ZTUtMTVhOS00NjY3LWJlZTMtMzQ4NmNlZGExNWFiLmpwZyJ9.8wqvCaTlsVgAH1ugvaoX_7fIpSrK1HN-ro88nKnsDuI" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 09 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJLekowYWpneU5uUjVWbkpOYUZGMWRtUnNielJIWlhONFlVOTFZek5JUVhoa2NUQllkMlpET1dFeWF6MD0iLCJuYW1lIjoiUmV2aXNpb24gMDkgOiAgfHwgTk8gRFBQIHx8IFJlc2NoZWR1bGVkIGF0IDM6MDAgUE0iLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvODdiOThiOTUtMjQzMS00MjUwLThjM2EtZTViM2Y5MTE0OTA1LnBuZyJ9.NTWKgIj3Py5xDBB68VKQZxix_QZpkNG1ZC8Qkh5tmhs" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 10 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJhVWNyWmtJdmNtWmtkV1kxYlZWcFJFbFFTRUZXT0VzeVNWY3lTbkZDYzJOS1YzVlZjVkJvWlVsMFdUMD0iLCJuYW1lIjoiUmV2aXNpb24gMTAgOiBJU09NRVJJU00gfHwgTk8gRFBQIHx8IFJlc2NoZWR1bGVkIGF0IDM6MDAgUE0iLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvZGU5MDU0MGUtM2VkYS00ODUwLWJiZGYtMmNlNDgzNmZjNjg3LnBuZyJ9.PADV78aSXi69bdR13P3EakO38R2b9W5u5OgjGOIs0NE" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 11 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJTRTlJVEhGaVlsTTBiVmRpYVRsd1EwZFBWbVV2WmpScmRGSnlMMjkzV1d0R09YVXJkVEo1YnpORFVUMD0iLCJuYW1lIjoiUmV2aXNpb24gMTEgOiBJU09NRVJJU00gfHwgTk8gRFBQIiwiaW1hZ2UiOiJodHRwczpcL1wvc3RhdGljLnB3LmxpdmVcLzVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OVwvQURNSU5cLzhmMTlkZjhiLTk2NjktNGU5NC1iMWZmLTMyYTk1MGU5MTBhYy5qcGVnIn0.LEDATCCJZU8NPJrNI0xmaWQnhyXlY9LHnB27Rbkhl_4" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 12 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlREZ1VlVObmIydEJkVXh5VEVkTGNHOVpSamxMTVhwRll6UnBhR2dyWWtvNFRWWnhUbU5DVldaaVl6MD0iLCJuYW1lIjoiUmV2aXNpb24gMTIgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC81YjBlZDI5Ny1iYzIzLTQyYjQtYjgzOS0zZjRlMTc0ZDcxOTAucG5nIn0.Brx7GPLIyl3_Gcv3thfSvuCbt4pt0PybonWkOfuIm6Y" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 13 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJZVzlUYkhwaVVFWjNhUzlxUkRSUmFrUkRSR1ozTTFaU1kwTXpUemhKTkhaVU1FZ3hjVkF6U1VkSWF6MD0iLCJuYW1lIjoiUmV2aXNpb24gMTMgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC9jMTRmOWY0ZS05NDEyLTRmNDAtODMwYy0yYzlmZTdjODgwZDEucG5nIn0.si9QuhtSfKo5iOREK4_U87BdhLi4BN_E6sFdBdEron4" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 14 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJOVlkyTW1wRU1GWlBRa2hpTXl0M2NrZDNZM3BrWjJGWk5EVlVUMHh6VEZobU9WTTFNVGNyVGl0S1l6MD0iLCJuYW1lIjoiUmV2aXNpb24gMTQgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC80ODIyZmVhNC03OWJhLTRhYTUtOTZjYS0zZjllNDAyNjFkNGUuanBnIn0.wfnRh9tG1Al_tm9T6pD8uNNBUgwBtsbbp8Ufn3xygYQ" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 15 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJiV1puZHpNek5rVnNkbEZLZW5KVk1FUjFRVEJGWkZaQ1NsTXZhbFV3YVUxQ2JqSnhUMWRVVjFwS1dUMD0iLCJuYW1lIjoiUmV2aXNpb24gMTUgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC9jYWQ3ZGRhMi1jYWYxLTRjOTYtOGVhZC05NTEzNmJhM2RmMjMuanBnIn0.FknxABV__iUZnxginsQ0DIl7HiJ7sxpRkSBnsIHFCzI" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 16 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlQzh2VGtNeE1qSnljMVpSVkVwUVNEbFBVRXBpVXpGbFJXdGtSV0pUU1ZoSk5uZ3ZkMnBPVUZRdll6MD0iLCJuYW1lIjoiUmV2aXNpb24gMTYgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCB8fCBFeHRyYSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC82MjA4MGZmNS1jNGI1LTQzODYtODVmMy0wOTIwY2FkNjVlYTgucG5nIn0.lX4qmvRZCqz7n2CV0BVz2zy7Cui1f9EeTD0gjmbW1Xg" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 17 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJXRk5RVjJ0TVJubHlSelJKUTBwek16WXpVMWx2YUhSaGVIWkVMMjVSVTNSeldqUk5NRkZqY0ZSemJ6MD0iLCJuYW1lIjoiUmV2aXNpb24gMTcgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC84ZjhlNWRiMS05ZDhkLTRlYmEtOTczMS0wZDcxMGE1NmViNzEucG5nIn0.SetzCGo20IBtN4EBH59gyo3piiGhTlL3GQSyuALcbCo" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 18 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJiRUZHT1hsNVExQmxNbWhFV2xOSWNGTkhaMFJGUkU5NmMxb3ZRbFZ4TkZZeFVXdGFjV00yWVUxQlVUMD0iLCJuYW1lIjoiUmV2aXNpb24gMTggOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC9kMDZiNWQzMi03OTAyLTQ1ZGItOGJiMi05MWMxYjhkNGQxNWMuanBnIn0.y-Swbj-qeQLKSSN0-bKMO7ASOKMN0I6XC4D70zl_IYo" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 19 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJhMnBQZFVGRmNGaEhOVTgxY2xkUFMzbGliVVZZZFdZeE5YSXhkV3hDYUhab2RIaFRXazF2Ym01d1NUMD0iLCJuYW1lIjoiUmV2aXNpb24gMTkgOiBHZW5lcmFsIE9yZ2FuaWMgQ2hlbWlzdHJ5IHx8IE5PIERQUCB8fCBFeHRyYSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC82ZjBiM2NkOC0zOTA5LTQxZGItOGNmNi1mMmM5NjhjNzcwZWUuanBnIn0.s_-W649QqTreBnKA-GEgl0E9EpzmUvHUz-s-I7zy6oc" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 20 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJVa1k1UjNkQ2RISjZlVFJDY1ZWbkwwVm9iekJGZEV4clVreENTRFJYZDI0dk9FSnBUMjlEUmxadGN6MD0iLCJuYW1lIjoiUmV2aXNpb24gMjAgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC85MGI0MDNiZS04NGQ3LTQyODYtYmZiYS1iN2E4YzMxYTJlZWMucG5nIn0.nRlJ5KMCTEtJqD6VMk09m_EQHhHUo8Ds5XF4q2HcRUU" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 21 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJWSEIwUXpGd1RYZGhTMUkyWjBweGVGaDRlVVJDTjB3MWJYWm1hbkZOY2tSQldXaHhVbko2U2t0bVJUMD0iLCJuYW1lIjoiUmV2aXNpb24gMjEgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC84NDU3MzNhNi0xZTVhLTQ0NWQtOTUwMC0xZmQxZWIzZTIyNjYuanBlZyJ9.abpIaVXJwonwSaj1-sgbZego3RyoRZpr_MrFVN2adWM" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 22 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJWbGd2UVdGUFR6VjJkMWhRVGxSU1pUTktUVU4wUkZJMWRuRnpSR3QwTVhvMVkzQXJTelZ0UXpodFl6MD0iLCJuYW1lIjoiUmV2aXNpb24gMjIgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC9hODdmNDVmZC1iNjdhLTQ1ZDItYTg1OS1jNDBmMjJiNDQ1OTIucG5nIn0.2C2koREQFbNB53UvqLoMdsZsVcn0taOUrgcmzVOnFOc" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 23 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJhWFJDY0VkcVIweHhPVEp3TWk5S1JIUlpWakExUTI1UlVGVlZXVnByWmpScWVIbDJUMkpVVUc4MmR6MD0iLCJuYW1lIjoiUmV2aXNpb24gMjMgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSB8fCBSZXNjaGVkdWxlZCBhdCA4OjUwcG0gfHwiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvYzMzMDJiMTQtZDMzYy00ZDEyLTg5OGMtMmJhMThlMDdmMTExLnBuZyJ9.a4EuHZ59IbSCl8PNphwgf7ajgZCvWkI8WZwNnCvoNDo" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 24 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJhVWxhYlM4NVpFcGxaV3AwZUdSak5VeFJUVVJGYTFORE1EVXpkMmRqY0RCTVdGRkdNbEIxY0hCeU1EMD0iLCJuYW1lIjoiUmV2aXNpb24gMjQgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC9mNDRiMjM2NS04MGY3LTQ4MTItYjNmOS03N2Q0NWU5ZjUxMjAucG5nIn0.vE0AHdIbgaAH0LVXMuenn1QcEQg7OlNh3oWIUXp7oIk" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 25 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJVRFp6TkRaNmNrTm1LMGxvS3pWTFdFeE1Za05GUlV4eVlVaGliVWxqZEVjMWFXOTZPRVZ4VVZVelNUMD0iLCJuYW1lIjoiUmV2aXNpb24gMjUgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSB8fCBSZXNjaGVkdWxlZCBhdCAwODo0NSBwbSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC8yMDk2NzU5MC04MGM2LTQxNjgtODcwOS00MjdkNjIwOTc3MmEucG5nIn0.x0Ukv6ixMBvkPxMJ-SL5gT_dlYtzfTVU6rli7TWhG3g" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 26 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJOakY0TWtoaGN6WnlOWEF2V21sRVltZ3djbVJMUTAxQlJrSjZSRTFEY2pkRFozTlJRVzQyUkdJNVp6MD0iLCJuYW1lIjoiUmV2aXNpb24gMjYgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSB8fCBSZXNjaGVkdWxlZCBhdCA4OjQ1IHBtIiwiaW1hZ2UiOiJodHRwczpcL1wvc3RhdGljLnB3LmxpdmVcLzVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OVwvQURNSU5cL2ViMDNjZmExLTdmN2UtNGRlMy1iMGVkLTA5MmFlYzIxOTYzNC5wbmcifQ.IBstP1dPvpuCVDhoeTDpj-xne__W2Anfb0trwOwBcAE" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 27 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJRbGxaU0U1MWMybG9jQzlFVlhkb04zTjNiRlpCY3pONlkwcENhMDVvTVc1M01tTjNWa1JvYkhscE1EMD0iLCJuYW1lIjoiUmV2aXNpb24gMjcgOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSB8fCBSZXNjaGVkdWxlZCBhdCA4OjQ1IHBtIiwiaW1hZ2UiOiJodHRwczpcL1wvc3RhdGljLnB3LmxpdmVcLzVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OVwvQURNSU5cL2RkNzE3OWU1LWRiODgtNGJhOS1hNmYyLWNjMGMwMDQ3YjU0MC5wbmcifQ.ju33o7NPelsFpF5uc91lf1eJLEueRNJsPTFyiwEQ7o4" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Revision 28 : NO DPP || Extra</h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJZMUpGWVVoUFNsSTRjV05hUm5acWNIVnZVRWRwU1doeWJWSmlVVTVtVjJ0UU5sWjVkelV5ZDNoT1JUMD0iLCJuYW1lIjoiUmV2aXNpb24gMjggOiBIeWRyb2NhcmJvbiB8fCBOTyBEUFAgfHwgRXh0cmEgTGVjdHVyZSIsImltYWdlIjoiaHR0cHM6XC9cL3N0YXRpYy5wdy5saXZlXC81ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODlcL0FETUlOXC85MzI0MjkyNy1hZDlhLTRmOTctYTY1Yi02NWU5NzgzZWU1NTIuanBnIn0.18LrrzHPmLpAmY9SBdsEA4hRIvZg8WLLGRpgafE9NjU" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== NOTES CARDS ====== -->
+  <div class="content-container tab-content" id="notes">
+    <div class="card">
+      <h3>UPAC (Revision 01) : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>IUPAC (Revision 02) : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>IUPAC (Revision 03) : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== DPP QUIZ ====== -->
+  <div class="content-container tab-content" id="dppQuiz">
+    <div class="card">
+      <h3>Failed to load tests</h3>
+      <a href="" class="btn quiz-btn">
+        <i class="fa-solid fa-circle-question"></i> Attempt Quiz
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== DPP CARDS ====== -->
+  <div class="content-container tab-content" id="dpp">
+    <div class="card">
+      <h3>Failed to load</h3>
+      <a href="" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // ===== Disable empty links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching =====
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const target = tab.getAttribute("data-target");
+        contents.forEach(c => c.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
