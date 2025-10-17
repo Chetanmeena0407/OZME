@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemical Equilibrium | Lecture Section</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+      display: inline-block;
+      color: white;
+    }
+
+    /* 🎥 Lecture */
+    .lec-btn { background-color: #7a5af8; }
+
+    /* 📘 Notes */
+    .notes-btn { background-color: #3a9efd; }
+
+    /* 🧩 DPP Quiz */
+    .quiz-btn { background-color: #f8a84f; }
+
+    /* 📗 DPP */
+    .dpp-btn { background-color: #00c896; }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.04);
+    }
+
+    .disabled {
+      background-color: #333 !important;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Hide non-active tab content ===== */
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; font-size: 14px; }
+      .btn { font-size: 12px; padding: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active" data-target="lectures">Lectures</div>
+    <div class="tab" data-target="notes">Notes</div>
+    <div class="tab" data-target="dppQuiz">DPP Quiz</div>
+    <div class="tab" data-target="dpp">DPP</div>
+  </div>
+
+  <h2>Ch 04 : Aldehydes, Ketones and Carboxylic Acids</h2>
+
+  <!-- ====== LECTURE CARDS ====== -->
+  <div class="content-container tab-content active" id="lectures">
+    <div class="card">
+      <h3> Aldehydes, Ketones and Carboxylic Acids 01 : || NO DPP || </h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlREZ1VlVObmIydEJkVXh5VEVkTGNHOVpSamxMTmtVMlRtbHNhMEZIUVZocGNGUTNlVVp2TVV0dFZUMD0iLCJuYW1lIjoiQWxkZWh5ZGVzLCBLZXRvbmVzIGFuZCBDYXJib3h5bGljIEFjaWRzIDAxIDogfHwgTk8gRFBQIHx8IiwiaW1hZ2UiOiJodHRwczpcL1wvc3RhdGljLnB3LmxpdmVcLzVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OVwvQURNSU5cL2IwOTA3MjcyLTc4NGUtNDE0My05MmQzLWYzODYwODc5MWM0Yy5wbmcifQ.6UC5Vfe4lb4xhShDfNJaVPNaoOzV91ia9j9Ol5u_nhc&loaded=1" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Aldehydes, Ketones and Carboxylic Acids 02 : || DPP will provide </h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlREZ1VlVObmIydEJkVXh5VEVkTGNHOVpSamxMT0N0V2IxTm1ka0Z5SzJndlNqWkdVV1ZqTWpVNWJ6MD0iLCJuYW1lIjoiQWxkZWh5ZGVzLCBLZXRvbmVzIGFuZCBDYXJib3h5bGljIEFjaWRzIDAyIDogfHwgRFBQIHdpbGwgcHJvdmlkZSBzb29uIHx8IiwiaW1hZ2UiOiJodHRwczpcL1wvc3RhdGljLnB3LmxpdmVcLzVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OVwvQURNSU5cLzEwNjcxZGFkLTAzMDUtNGVlNC1hMmQ0LTIxNDRjZTkzMjA5NS5wbmcifQ.gNQePyaAbXMTeotufct7NfLHsD4rx4DV8rPlog6fEsc&loaded=1" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3> Aldehydes, Ketones and Carboxylic Acids 03 : MOP OF Ketone || No DPP </h3>
+      <a href="https://studystark.com/play/play.php?batch_id=678a0ffe3afbca5384419b05&video_data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJlREZ1VlVObmIydEJkVXh5VEVkTGNHOVpSamxMTWpWc2QxVlViMjB2TUZFdlMyaFFhWFZ2TlhOSFdUMD0iLCJuYW1lIjoiQWxkZWh5ZGVzLCBLZXRvbmVzIGFuZCBDYXJib3h5bGljIEFjaWRzIDAzIDogTU9QIE9GIEtldG9uZSB8fCBObyBEUFAiLCJpbWFnZSI6Imh0dHBzOlwvXC9zdGF0aWMucHcubGl2ZVwvNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5XC9BRE1JTlwvMTAyMzExMDktMDBmZS00YjkwLTkzYWItNmRhZGM1MmQxZDVjLnBuZyJ9.Q4Nq2STpuV_7CndM5LSwybD3JgHDm5wo8UsZY4vbhko&loaded=1" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== NOTES CARDS ====== -->
+  <div class="content-container tab-content" id="notes">
+    <div class="card">
+      <h3>Aldehydes, Ketones and Carboxylic Acids 01 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/63fde969-bf68-46e3-b1d6-6ab6fa2defc6.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Aldehydes, Ketones and Carboxylic Acids 02 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/af62401c-ec10-4e29-a631-cf9c8df0fbf7.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Aldehydes, Ketones and Carboxylic Acids 03 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/25be3815-f5e1-4483-8c4d-3b6aab91bcf2.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== DPP QUIZ ====== -->
+  <div class="content-container tab-content" id="dppQuiz">
+    <div class="card">
+      <h3>Failed to load tests</h3>
+      <a href="" class="btn quiz-btn">
+        <i class="fa-solid fa-circle-question"></i> Attempt Quiz
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== DPP CARDS ====== -->
+  <div class="content-container tab-content" id="dpp">
+    <div class="card">
+      <h3> Aldehydes, Ketones and Carboxylic Acids : DPP 01(of lec 02) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fcdb30da-7e39-4e96-9641-b82c9abccb7c.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // ===== Disable empty links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching =====
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const target = tab.getAttribute("data-target");
+        contents.forEach(c => c.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
