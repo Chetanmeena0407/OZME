@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Physics | Lecture Section</title>
+  <title> PC | Lecture Section</title>
 
   <!-- ✅ Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -145,19 +145,7 @@
 
 <body>
 
-<!-- ✅ Verification Check -->
-<script>
-(function () {
-  const verifiedAt = localStorage.getItem("verifiedAt");
-  const now = Date.now();
-  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-    const currentPage = encodeURIComponent(
-      window.location.pathname.split("/").pop() + window.location.search
-    );
-    window.location.href = "verify.html?redirect=" + currentPage;
-  }
-})();
-</script>
+
 
   <!-- ===== Tabs ===== -->
   <div class="tabs">
@@ -177,6 +165,20 @@
         <i class="fa-solid fa-play"></i> Watch Lecture
       </a>
     </div>
+
+    <div class="card">
+      <h3Thermodynamics 02 : Extensive and Intensive Properties (NO DPP)</h3>
+      <a href="https://youtu.be/sflh7JbmDsc" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3Thermodynamics 03 : Work</h3>
+      <a href="https://youtu.be/xIKH_a1Hfo4" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
   </div>
 
   <!-- ====== NOTES CARDS ====== -->
@@ -184,6 +186,20 @@
     <div class="card">
       <h3>Thermodynamics 01 : Class Notes || Arjuna NEET 2.0 2026</h3>
       <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0083a68e-9b95-4ce4-a4d8-7d6cf373cd6a.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Thermodynamics 02 : Class Notes || Arjuna NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0ea876cb-ab62-4156-b1f8-9936044a327b.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Thermodynamics 03 : Class Notes || Arjuna NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/24db356c-c08e-4c63-a2bd-39062b429588.pdf" class="btn notes-btn">
         <i class="fa-solid fa-file-lines"></i> View Notes
       </a>
     </div>
@@ -202,8 +218,8 @@
   <!-- ====== DPP CARDS ====== -->
   <div class="content-container tab-content" id="dpp">
     <div class="card">
-      <h3>Thermodynamics 01 : DPP Sheet</h3>
-      <a href="" class="btn dpp-btn">
+      <h3>Thermodynamic : DPP 01 (Of Lec 03) || Arjuna NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/206457fa-2571-4300-ae17-7bc5aa6d935e.pdf" class="btn dpp-btn">
         <i class="fa-solid fa-book"></i> Daily Practice Problem
       </a>
     </div>
