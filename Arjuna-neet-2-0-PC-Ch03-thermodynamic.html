@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physics | Lecture Section</title>
 
   <!-- ✅ Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     body {
@@ -68,7 +68,7 @@
     .card {
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -76,14 +76,25 @@
     }
 
     /* Different card colors */
-    #lectures .card { background-color: #1b1b1b; }
-    #notes .card { background-color: rgba(58,158,253,0.1); }
-    #dppQuiz .card { background-color: rgba(248,168,79,0.1); }
-    #dpp .card { background-color: rgba(0,200,150,0.1); }
+    #lectures .card {
+      background-color: #1b1b1b;
+    }
+
+    #notes .card {
+      background-color: rgba(58, 158, 253, 0.1);
+    }
+
+    #dppQuiz .card {
+      background-color: rgba(248, 168, 79, 0.1);
+    }
+
+    #dpp .card {
+      background-color: rgba(0, 200, 150, 0.1);
+    }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+      box-shadow: 0 0 15px rgba(122, 90, 248, 0.4);
     }
 
     .card h3 {
@@ -108,16 +119,25 @@
     }
 
     /* 🎥 Lecture */
-    .lec-btn { background-color: #7a5af8; }
+    .lec-btn {
+      background-color: #7a5af8;
+    }
 
     /* 📘 Notes */
-    .notes-btn { background-color: #3a9efd; }
+    .notes-btn {
+      background-color: #3a9efd;
+    }
 
     /* 🧩 DPP Quiz */
-    .quiz-btn { background-color: #f8a84f; color: #000; }
+    .quiz-btn {
+      background-color: #f8a84f;
+      color: #000;
+    }
 
     /* 📗 DPP */
-    .dpp-btn { background-color: #00c896; }
+    .dpp-btn {
+      background-color: #00c896;
+    }
 
     .btn:hover:not(.disabled) {
       opacity: 0.9;
@@ -132,20 +152,44 @@
     }
 
     /* ===== Hide non-active tab content ===== */
-    .tab-content { display: none; }
-    .tab-content.active { display: grid; }
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: grid;
+    }
 
     /* ===== Responsive ===== */
     @media (max-width: 600px) {
-      .tab { padding: 10px 15px; font-size: 14px; }
-      .btn { font-size: 12px; padding: 8px; }
+      .tab {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 8px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
 
   <!-- ===== Tabs ===== -->
   <div class="tabs">
@@ -166,17 +210,15 @@
       </a>
     </div>
 
-  <div class="content-container tab-content active" id="lectures">
     <div class="card">
-      <h3Thermodynamics 02 : Extensive and Intensive Properties (NO DPP)</h3>
+      <h3>Thermodynamics 02 : Extensive and Intensive Properties (NO DPP)</h3>
       <a href="https://youtu.be/sflh7JbmDsc" class="btn lec-btn">
         <i class="fa-solid fa-play"></i> Watch Lecture
       </a>
     </div>
 
-  <div class="content-container tab-content active" id="lectures">
     <div class="card">
-      <h3Thermodynamics 03 : Work</h3>
+      <h3>Thermodynamics 03 : Work</h3>
       <a href="https://youtu.be/xIKH_a1Hfo4" class="btn lec-btn">
         <i class="fa-solid fa-play"></i> Watch Lecture
       </a>
@@ -192,7 +234,6 @@
       </a>
     </div>
 
-  <div class="content-container tab-content" id="notes">
     <div class="card">
       <h3>Thermodynamics 02 : Class Notes || Arjuna NEET 2.0 2026</h3>
       <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0ea876cb-ab62-4156-b1f8-9936044a327b.pdf" class="btn notes-btn">
@@ -200,7 +241,6 @@
       </a>
     </div>
 
-  <div class="content-container tab-content" id="notes">
     <div class="card">
       <h3>Thermodynamics 03 : Class Notes || Arjuna NEET 2.0 2026</h3>
       <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/24db356c-c08e-4c63-a2bd-39062b429588.pdf" class="btn notes-btn">
@@ -253,6 +293,5 @@
       });
     });
   </script>
-
 </body>
-  </html>
+</html>
