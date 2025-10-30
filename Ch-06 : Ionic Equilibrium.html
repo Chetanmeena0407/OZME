@@ -18,7 +18,7 @@
 
     h2 {
       text-align: center;
-      margin: 30px 0;
+      margin: 30px 0 15px 0;
     }
 
     a {
@@ -76,21 +76,10 @@
     }
 
     /* Different card colors */
-    #lectures .card {
-      background-color: #1b1b1b;
-    }
-
-    #notes .card {
-      background-color: rgba(58, 158, 253, 0.1);
-    }
-
-    #dppQuiz .card {
-      background-color: rgba(248, 168, 79, 0.1);
-    }
-
-    #dpp .card {
-      background-color: rgba(0, 200, 150, 0.1);
-    }
+    #lectures .card { background-color: #1b1b1b; }
+    #notes .card { background-color: rgba(58, 158, 253, 0.1); }
+    #dppQuiz .card { background-color: rgba(248, 168, 79, 0.1); }
+    #dpp .card { background-color: rgba(0, 200, 150, 0.1); }
 
     .card:hover {
       transform: translateY(-5px);
@@ -118,26 +107,10 @@
       color: white;
     }
 
-    /* 🎥 Lecture */
-    .lec-btn {
-      background-color: #7a5af8;
-    }
-
-    /* 📘 Notes */
-    .notes-btn {
-      background-color: #3a9efd;
-    }
-
-    /* 🧩 DPP Quiz */
-    .quiz-btn {
-      background-color: #f8a84f;
-      color: #000;
-    }
-
-    /* 📗 DPP */
-    .dpp-btn {
-      background-color: #00c896;
-    }
+    .lec-btn { background-color: #7a5af8; }
+    .notes-btn { background-color: #3a9efd; }
+    .quiz-btn { background-color: #f8a84f; color: #000; }
+    .dpp-btn { background-color: #00c896; }
 
     .btn:hover:not(.disabled) {
       opacity: 0.9;
@@ -152,25 +125,13 @@
     }
 
     /* ===== Hide non-active tab content ===== */
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: grid;
-    }
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
 
     /* ===== Responsive ===== */
     @media (max-width: 600px) {
-      .tab {
-        padding: 10px 15px;
-        font-size: 14px;
-      }
-
-      .btn {
-        font-size: 12px;
-        padding: 8px;
-      }
+      .tab { padding: 10px 15px; font-size: 14px; }
+      .btn { font-size: 12px; padding: 8px; }
     }
   </style>
 </head>
@@ -191,7 +152,10 @@
 })();
 </script>
 
-  <!-- ===== Tabs ===== -->
+  <!-- ===== Chapter Title (Top) ===== -->
+  <h2>Ch-06 : Ionic Equilibrium</h2>
+
+  <!-- ===== Tabs (Below Title) ===== -->
   <div class="tabs">
     <div class="tab active" data-target="lectures">Lectures</div>
     <div class="tab" data-target="notes">Notes</div>
@@ -199,12 +163,10 @@
     <div class="tab" data-target="dpp">DPP</div>
   </div>
 
-  <h2>Ch-06 : Ionic Equilibrium</h2>
-
   <!-- ====== LECTURE CARDS ====== -->
   <div class="content-container tab-content active" id="lectures">
     <div class="card">
-      <h3>Ionic Equilibrium 01 : Acid-Base Theory(NO DPP)</h3>
+      <h3>Ionic Equilibrium 01 : Acid-Base Theory (NO DPP)</h3>
       <a href="https://youtu.be/Jek83DhNfes?si=BLQH4dsEPRWCm-X1" class="btn lec-btn">
         <i class="fa-solid fa-play"></i> Watch Lecture
       </a>
