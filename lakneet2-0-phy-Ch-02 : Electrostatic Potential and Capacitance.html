@@ -1,0 +1,545 @@
+OCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> PHYSICS </title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+      display: inline-block;
+      color: white;
+    }
+
+    /* 🎥 Lecture */
+    .lec-btn { background-color: #7a5af8; }
+
+    /* 📘 Notes */
+    .notes-btn { background-color: #3a9efd; }
+
+    /* 🧩 DPP Quiz */
+    .quiz-btn { background-color: #f8a84f; }
+
+    /* 📗 DPP */
+    .dpp-btn { background-color: #00c896; }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.04);
+    }
+
+    .disabled {
+      background-color: #333 !important;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Hide non-active tab content ===== */
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; font-size: 14px; }
+      .btn { font-size: 12px; padding: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Chapter Heading ===== -->
+  <h2>Ch-02 : Electrostatic Potential and Capacitance</h2>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active" data-target="lectures">Lectures</div>
+    <div class="tab" data-target="notes">Notes</div>
+    <div class="tab" data-target="dppQuiz">DPP Quiz</div>
+    <div class="tab" data-target="dpp">DPP</div>
+  </div>
+
+  <!-- ====== LECTURE CARDS ====== -->
+  <div class="content-container tab-content active" id="lectures">
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 01 : Potential Energy || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2001%20%3A%20Potential%20%20Energy%20%7C%7C%20NO%20DPP&video_key=Njg3MGQ1OWU4OWE2OTE1YWY2YjI5NjNi&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fa32bb2f0-2719-4c61-bc8d-eab238927db1.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 02 : Potential Energy (Part-2) || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2002%20%3A%20%20Potential%20Energy%20(Part-2)%20%7C%7C%20NO%20DPP&video_key=Njg3MGQ1OWU4OWE2OTE1YWY2YjI5NjNm&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F49cd7e9f-a0be-4119-a0e2-deb8deeb9345.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 03 : Practice Question</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=%20Electrostatic%20Potential%20and%20Capacitance%2003%20%3A%20Practice%20Question&video_key=Njg3MGQ1OWU4OWE2OTE1YWY2YjI5NjNk&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fd69218b7-91f8-4315-a48b-d28807992212.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 04 : Potential || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2004%20%3A%20Potential%20%7C%7C%20NO%20DPP&video_key=Njg3MGQ1OWU4OWE2OTE1YWY2YjI5NjQx&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F38fdf2ed-877c-4999-bcb6-3ce4b26a0bcb.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 05 : Potential due to Ring Rod</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=%20Electrostatic%20Potential%20and%20Capacitance%2005%20%3A%20Potential%20due%20to%20Ring%20Rod%20&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3Njg2&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fc7400f24-bca6-4e7a-adbe-3b1fe7efaebf.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 06 : Practice Questions || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2006%20%3A%20Practice%20Questions%20%7C%7C%20NO%20DPP%20&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3Njc5&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F12b1e059-e000-4d47-8dbf-7ddcb7947fe3.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 07 : Graph of Potential versus Distance</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2007%20%3A%20Graph%20of%20Potential%20versus%20Distance&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NjUy&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F5e9fbc99-c1e8-4b64-a304-dd036364e10e.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 08 : Equipotential Surface || Extra Lecture</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2008%20%3A%20Equipotential%20Surface%20%7C%7C%20Extra%20Lecture&video_key=Njg4YjJjMTNhNjQ5ODg2MzFmZWE4MDkw&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fcd48a9e5-bccf-42a0-b8fe-7f330c90e1c1.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 09 : Potential due to sphere || NO DPP || Extra Lecture</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2009%20%3A%20Potential%20due%20to%20sphere%20%7C%7C%20NO%20DPP%20%7C%7C%20Extra%20Lecture&video_key=Njg4ZjA0MDU5MjczZjdiMzY2Mzk5MDIz&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F95bec922-b76a-4126-8185-e2f5f569508a.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 10 : Potential due to Sphere || NO DPP </h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=%20Electrostatic%20Potential%20and%20Capacitance%2010%20%3A%20Potential%20due%20to%20Sphere%20%7C%7C%20NO%20DPP&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3Njg3&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F50b92310-b2db-4e45-b004-08cebceefaa4.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 11 : Distribution of Charge || Earthing || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2011%20%3A%20Distribution%20of%20Charge%20%7C%7C%20Earthing%20%7C%7C%20NO%20DPP&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3Njdh&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fd84a00e1-aab2-424c-bbf3-acd2aabcc88e.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 12 : Earthing </h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2012%20%3A%20Earthing&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NjUz&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F2aabafdc-cf7b-49ad-a7a8-60c50b9c3c93.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 13 : Earthing || Capacitor</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2013%20%3A%20Earthing%20%7C%7C%20Capacitor%20&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NjZk&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fe462aae7-f4bb-4ff7-9a56-70feabef14af.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 14 : Capacitor (Part-2) || NO DPP || Recorded || Extra </h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2014%20%3A%20%20Capacitor%20(Part-2)%20%7C%7C%20NO%20DPP%20%7C%7C%20Recorded%20%7C%7C%20Extra%20&video_key=Njg5NjUxZDIzZDdiOWUyYTM5M2MxZmZl&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F17080a80-ae37-421e-ae6e-8d38bc4d6697.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 15 : Capacitor (Part-2) || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=%20Electrostatic%20Potential%20and%20Capacitance%2015%20%3A%20%20Capacitor%20(Part-2)%20%7C%7C%20NO%20DPP%20&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3Njg4&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2Fa975a956-2ef8-454c-bae9-e9a3ba3110be.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 16 : Charging and Discharging</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2016%20%3A%20Charging%20and%20Discharging&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3Njdi&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F0d9a06e6-d897-4d94-bf0c-19bdefab1cce.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 17 : Combination of Capacitors || NO DPP || Rescheduled at 4:10 pm</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2017%20%3A%20Combination%20of%20Capacitors%20%7C%7C%20NO%20DPP%20%7C%7C%20Rescheduled%20at%204%3A10%20pm&video_key=Njg3NGQzNTVhODVkZmEwZWE0MWY3NjU0&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F3f2a3a4a-fe2c-4f70-9720-d387cc71659f.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 18 : Practice Question || Extra Lecture </h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=%20Electrostatic%20Potential%20and%20Capacitance%2018%20%3A%20Practice%20Question%20%7C%7C%20Extra%20Lecture%20&video_key=Njg5ZjdjMWNhODJhMmY5ZjU0MzcxMjEy&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F4b43ff40-94e7-44eb-a6ba-3c104894aea1.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 19 : Dielectric || Extra Lecture || (Reschedule 10:15AM)</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2019%20%3A%20Dielectric%20%7C%7C%20Extra%20Lecture%20%7C%7C%20(Reschedule%2010%3A15AM)&video_key=NjhhMDlkYzA5ZTA3ZGY5NGJmODJhY2Yz&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F93f665fe-40c7-4bcd-8bef-83611d6de20a.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 20 : Dielectric (Part-2) || NO DPP</h3>
+      <a href="https://pw.studyxocean.xyz/play.php?batch_id=678a0ffe3afbca5384419b05&name=Electrostatic%20Potential%20and%20Capacitance%2020%20%3A%20Dielectric%20(Part-2)%20%20%7C%7C%20NO%20DPP&video_key=Njg5ZDlmNmU2NDU4MTM2NTcxNjQ5Mzhh&video_type=new&image=https%3A%2F%2Fstatic.pw.live%2F5eb393ee95fab7468a79d189%2FADMIN%2F9ccb3303-6dad-4b58-9d16-4fde6ca481a0.png" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== NOTES CARDS ====== -->
+  <div class="content-container tab-content" id="notes">
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 01 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/38159063-7f94-48ef-9905-7e9d13ac0340.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 02 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/dc1d58bc-307a-4c1d-924e-8afa99f9237f.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 03 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6cf8272b-8392-460a-aa3d-cdfe8f0fb62d.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 04 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4bd557c5-9daa-4783-b20a-40fbf3a4c3ae.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 05 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5f800815-4513-4739-bc1f-4e1a485d63b8.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 06 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0f9b5838-e97e-4b4b-bd47-1615e577625a.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 07 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/412c38a9-ab99-40f7-b79c-8fd788a7184e.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 08 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/24ec048a-6365-4009-a6a6-5f320f3ca017.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 09 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6dac6d24-05f4-46a5-a7c1-4f998dc2e413.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 10 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0cbbec7b-72fe-47bc-adc7-5b7e43e4fdd2.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 11 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ec9d1480-c1b3-46f5-8f0b-4fe5943a542d.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 12 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/29c582ba-323b-4741-a5fb-f1b2cddba12e.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 13 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a5bcc6eb-bb5a-4e2f-be89-1a0e87333952.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 14 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ea8330fa-7f3b-45b3-be1a-e47e9b77d5c4.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 15 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5e8918e9-6ce5-4863-b29b-52ce007147ef.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 16 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/511d1863-526a-49db-a173-791fa6c68dfb.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 17 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c761d5b2-7ca8-438b-b3ef-869ebff374e1-small.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 18 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c9b52c41-71cd-496c-8c94-220154117c6a.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 19 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/035e4e32-6e59-463b-b65f-76e1e17a5cb1-small.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance 20 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4be48807-1a3d-4846-9435-26a35c2bcf4d.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== DPP CARDS ====== -->
+  <div class="content-container tab-content" id="dpp">
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 01 (Of lec 03) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/14276fd1-7ad8-49e3-9006-43a79efa6135.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 02 (Of lec 05) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f8c9ac49-b1d4-4b9a-b74b-0d01db5bb265.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 03 (Of lec 07) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/46674862-59a0-4ad1-96f2-063cce5c3384.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 04 (Of lec 08) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/24f1554a-d5cb-431f-a2dc-2280467f60aa.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 05 (Of lec 12) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2fda3a40-3120-4e57-83b3-6f7b13cecda2.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 06 (Of lec 13) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0244d141-f2b0-4171-9f0e-1c2bcb3ac5de.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 07 (Of lec 16) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8c465712-3ab2-494e-91a1-92bb64aadb50.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 08 (Of lec 18) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/286fec64-ff62-4c00-84fb-5e7f8bd0d571.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Electrostatic Potential and Capacitance : DPP 09 (Of lec 19) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/eeae2bda-adc2-4b47-a585-2401c9fc79ad.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>        
+  </div>
+
+  <script>
+    // ===== Disable empty links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching =====
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const target = tab.getAttribute("data-target");
+        contents.forEach(c => c.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
