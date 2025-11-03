@@ -1,105 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PW Live class</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HLS Video Player</title>
 
-  <!-- Verification Check -->
-  <script>
-  (function () {
-    const verifiedAt = localStorage.getItem("verifiedAt");
-    const now = Date.now();
-    if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-      const currentPage = encodeURIComponent(
-        window.location.pathname.split("/").pop() + window.location.search
-      );
-      window.location.href = "verify.html?redirect=" + currentPage;
-    }
-  })();
-  </script>
-
-  <!-- Plyr CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
+  <!-- ✅ hls.js for Chrome/Edge/Firefox -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
   <style>
     body {
-      background: #f0f4ff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #111;
     }
-    video, iframe {
-      width: 100%;
-      border-radius: 10px;
+    video {
+      width: 80%;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
   </style>
 </head>
 <body>
 
-<h2>🎥 Universal Video Player</h2>
+  <video id="video" controls></video>
 
-<div id="player-container">
-  <video id="player" controls playsinline></video>
-</div>
+  <script>
+    const video = document.getElementById('video');
+    const videoSrc = "https://sec-prod.workfast.live/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJpbmRleC5tM3U4Iiwic2lnbmVkX3F1ZXJ5IjoiP1NpZ25hdHVyZT1IdU9CTmRuajMzMERIaEhvMHpRVE91Wm9Pd3IwQlRrU2pKT2p3LW1MVjVlSzRVWUZhNlEtcGFWcXFoSGRIajBZNFkzZjhBeElMa0VjZGxuZ003d0IzTGstUVVIeXpFNFJWek1ZMSU3RWg0MmVVenViT0MzZlE3WlVuZ2gtYWNuQTRmNTR2aWtzM1B4NGhQczBDR1kxQ2RjQ0twSWNIS0xwRFZXTHpjeXdTOC13eHclN0VDcDBvRDBHSTdBUThuclJvT3lVU0RSbzYzV0VZRmVaeHYxTm5yS0JSbjhJZW1Ca1FwNHQ4TFBZU2hZVHdIbFRsTXhFeGtWZFZRMmFBNmRUa0J6JTdFRDVsQ0p6OXEzVTZoVEZJdlV1TDd3aUxUY0YxMmdYJTdFZy1lWHBsJTdFWWxRbVNMTkdYS3k0SDZPZ0Nza1gtSjZBQkZGQ3U1NzRnTERib1R5bHNUWVIyVHBRX18mS2V5LVBhaXItSWQ9QVBLQVhWS01FTkZDUktURzVYRTImUG9saWN5PWV5SlRkR0YwWlcxbGJuUWlPbHQ3SWxKbGMyOTFjbU5sSWpvaWFIUjBjSE02THk5a05UaHRiWFF5Ym01cmJHTnVMbU5zYjNWa1puSnZiblF1Ym1WMEx5b2lMQ0pEYjI1a2FYUnBiMjRpT25zaVJHRjBaVXhsYzNOVWFHRnVJanA3SWtGWFV6cEZjRzlqYUZScGJXVWlPakUzTmpJeE9ESTVPVFY5ZlgxZGZRX18iLCJ2aWRlb191cmwiOiJodHRwczpcL1wvZDU4bW10Mm5ua2xjbi5jbG91ZGZyb250Lm5ldFwvaW5kZXgubTN1OCIsImZpbGVfbmFtZSI6ImluZGV4Lm0zdTgiLCJleHAiOjE3NjIxODI5ODgsImlhdCI6MTc2MjE2ODU4OH0.R2xfxJLVAqvIJTmdw4iPkwyUi1otrDQrxyc9HlaJ8ko/index.m3u8";
 
-<!-- Plyr JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
-<!-- HLS.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.10/hls.min.js"></script>
-<!-- DASH.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.1/dash.all.min.js"></script>
-
-<script>
-  // 🔹 Put your video link here
-  const videoUrl = "https://next-api.infoaihub.com/pw-multi-stream/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWQiOiIiLCJwb2wiOiI_VVJMUHJlZml4PWFIUjBjSE02THk5elpXTXRjSEp2WkMxdFpXUnBZV05rYmk1d2R5NXNhWFpsTDJOa1lXSmtOVFV6TFROaVpUUXROR1prTWkxaU1XWXlMVEV3TkRNeE1ETmhNVGsxWlEmRXhwaXJlcz0xNzU4Mzk4NTU0JktleU5hbWU9cHctcHJvZC1rZXkmU2lnbmF0dXJlPWQ5bzFMOGlyZzdVMUh1dEhVbk9BcGFOLWViR3BhU2o5ZVFYUGxiT25VU3RrLXpIejBGcU1GSUJ6NDBQN2hNZVVpbVFYdF9USjRuaElPMlJiWDVvUEJBIiwidHlwZSI6ImxpdmUiLCJ2aWRlb191cmwiOiJodHRwczpcL1wvc2VjLXByb2QtbWVkaWFjZG4ucHcubGl2ZVwvY2RhYmQ1NTMtM2JlNC00ZmQyLWIxZjItMTA0MzEwM2ExOTVlXC9tYXN0ZXIubXBkIiwiZXhwIjoxNzU4Mzk0OTU1LCJpYXQiOjE3NTgzODQxNTV9.aBWzGHgIQsFzqiDcGNzk6cDdkblf-r1br5c6BZ0rIZQ/master.m3u8"; 
-
-  const video = document.getElementById('player');
-
-  function initPlayer(url) {
-    if (url.includes("youtube.com") || url.includes("youtu.be")) {
-      // ✅ YouTube Embed
-      document.getElementById("player-container").innerHTML = `
-        <div id="yt-player">
-          <iframe src="https://www.youtube.com/embed/${extractYouTubeID(url)}" 
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>`;
-    } 
-    else if (url.endsWith(".m3u8")) {
-      // ✅ HLS
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          new Plyr(video);
-        });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
-        new Plyr(video);
-      }
-    } 
-    else if (url.endsWith(".mpd")) {
-      // ✅ MPEG-DASH
-      const player = dashjs.MediaPlayer().create();
-      player.initialize(video, url, true);
-      new Plyr(video);
-    } 
-    else {
-      // ✅ Normal MP4
-      video.src = url;
-      new Plyr(video);
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+      video.addEventListener('loadedmetadata', () => video.play());
     }
-  }
-
-  function extractYouTubeID(url) {
-    const regExp = /^.*(youtu\.be\/|v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
-  }
-
-  // 🚀 Start Player
-  initPlayer(videoUrl);
-</script>
+  </script>
 
 </body>
 </html>
