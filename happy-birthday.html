@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Simal 🎂</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      background: radial-gradient(circle at top, #1a002b, #000);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5, #42e695);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 2s forwards ease-out 1s;
+      z-index: 5;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff6ec4, 0 0 20px #7873f5;
+      }
+      to {
+        text-shadow: 0 0 20px #42e695, 0 0 40px #ff6ec4;
+      }
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+      opacity: 0.8;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff6ec4;
+      animation: fall 4s linear infinite;
+      top: -10px;
+      border-radius: 2px;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+
+    .msg {
+      font-size: 1.2em;
+      color: #ddd;
+      opacity: 0;
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.8;
+      max-width: 700px;
+      animation: fadeIn 2s forwards ease-in 3s;
+      z-index: 3;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌟 Happy Birthday Simal 🎉</h1>
+
+  <div class="msg">
+    You’re not just my best friend, you’re my favorite person 💖<br>
+    On your special day, I just want you to know how lucky I am to have you in my life.<br><br>
+    May your smile stay bright like these stars 🌌,<br>
+    your heart be filled with endless happiness 🎈,<br>
+    and your journey ahead be as beautiful as your soul 💫.<br><br>
+    Thank you for being the one who understands me without words,<br>
+    laughs with me till it hurts, and stays even in my worst days 💕.<br><br>
+    Wishing you love, laughter, and all the magic the world can offer! 🎂✨
+  </div>
+
+  <script>
+    // ⭐ Twinkling stars
+    for (let i = 0; i < 150; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = 1 + Math.random() * 3 + 's';
+      document.body.appendChild(star);
+    }
+
+    // 🎉 Confetti rain
+    const colors = ['#ff4081', '#ffeb3b', '#03a9f4', '#4caf50', '#ff5722'];
+    setInterval(() => {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDuration = 3 + Math.random() * 3 + 's';
+      confetti.style.width = 8 + Math.random() * 6 + 'px';
+      confetti.style.height = confetti.style.width;
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 6000);
+    }, 200);
+  </script>
+</body>
+</html>
