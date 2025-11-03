@@ -1,117 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEET Video Player</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HLS Video Player</title>
+
+  <!-- ✅ hls.js for Chrome/Edge/Firefox -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-      font-size: 24px;
-      color: #ff4d6d;
-      text-shadow: 0px 2px 8px rgba(0,0,0,0.6);
-    }
-
-    .player-container {
-      width: 95%;
-      max-width: 850px;
-      background: #1e1e2f;
-      border-radius: 16px;
-      padding: 15px;
-      box-shadow: 0px 6px 25px rgba(0,0,0,0.6);
-      text-align: center;
-    }
-
-    video {
-      width: 100%;
-      border-radius: 12px;
-      outline: none;
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-    }
-
-    .controls {
-      margin-top: 12px;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #111;
     }
-
-    .btn {
-      background: #ff4d6d;
-      border: none;
-      color: #fff;
-      padding: 10px 18px;
-      font-size: 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #ff3355;
-      transform: scale(1.05);
-    }
-
-    .info {
-      margin-top: 12px;
-      font-size: 16px;
-      color: #d1d1d1;
-    }
-
-    .info span {
-      color: #ffcc70;
-      font-weight: 600;
+    video {
+      width: 80%;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
   </style>
 </head>
 <body>
 
-  <h2>📺 NEET Lecture Player</h2>
-
-  <div class="player-container">
-    <video id="video" controls poster="thumbnail.jpg"></video>
-
-    <!-- Custom Controls -->
-    <div class="controls">
-      <button class="btn" onclick="skip(-10)">⏪ Back 10s</button>
-      <button class="btn" onclick="skip(10)">⏩ Forward 10s</button>
-    </div>
-
-    <div class="info">
-      Now Playing: <span>Cell - The Unit of Life</span> | Duration: <span>~45 mins</span>
-    </div>
-  </div>
+  <video id="video" controls></video>
 
   <script>
     const video = document.getElementById('video');
-    const videoSrc = "https://pwthor-m3u8-63071e05a4a6.herokuapp.com/stream/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..L95gYT9x-LkwYHHE.xZkbt78oYk9G5dlnElEDipqpnTBrXg1oRDjxmOKpH1rcoSpjJYf7mkVzyBzxI2h2hQDnRgjNQeyV6SRSbKTxjOHemOfdUbR1zwu0eQBT0I1QHPPqm9OXo5vCGj1FZEYpaNqM2lydEANyrspyr_CE7vQK7LhBnIM7fY6_HrPmcE1y7E6H6dkr_ZzZQJ6wtaR0p2YeEVrFGHiBpMS32oLTXqK77VjvRgjLY-3IVLuHyrgNYPJ_l8W1JGlqls-spxPgYNHbo3g0OHfUyLi1MHTEJVZy30B_fJhygFO5KE48t2A8dkVU-wMmXA668sNO9DlzuxRi_4FPFWq0Rv6bEjtnZD1E-Ht1-FwZ3y-EX2s6JSfTVbWSOZAzGOz6aFviPxhFTC_4s74slT4tq2sUDbIa25tIdmlE3Mclbts1nUbYHq1OHlCjbkVozmPX3RD3WHHXgDnzsblOmVnfiV0hl2pHCcv_-JCJ21JV788M-OxDJCSTsZZlPJECW84.QGmK2OCiyAXuGKRN-7y8KA/hls/720/main.m3u8";
+    const videoSrc = "https://sec-prod.workfast.live/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWRlb19rZXkiOiJpbmRleC5tM3U4Iiwic2lnbmVkX3F1ZXJ5IjoiP1NpZ25hdHVyZT1hV2dERlpCcjhxOWotSjg2NmV0cjdzUkVhWVhzaTJEUVNtdTR0VzMyZjE4UEFXNmhUMlh4eG5pS3k4U2w1c0ZoTndFM1JBLWljR2x5elBvU01MTE1LbFh5M0otTW5QNU10c012SVZrZFlLd0JQLTNEQ0VvciU3RWc5TG91M2xYVGNwV0RlYklYa2NBc2lJRmVYeHRnJTdFemFRRkxsZnlLLWhldUwyWFNlWEd3YUNCbFBKRS1RYzZJaEhWeGxNanJBWXRKN3NEaEpSZnlBWEJkTEVaTmFnblROTk4zRldnS0VNTm1Oak5heTRuRi15JTdFZGptR1hGVHdqU2dOcS0xTmolN0VsTjZuaUxxanM0OWROSW1uZ3REb2xBYXd2dy1lSmNUWjJEWkR0Z3dPQzdGSEl3VnYlN0VGYzBSOHdtUGR1TmZ1OEN0ZmhSVnRuT1hhN2MtWFZWaUdkZFNiYk1nX18mS2V5LVBhaXItSWQ9QVBLQVhWS01FTkZDUktURzVYRTImUG9saWN5PWV5SlRkR0YwWlcxbGJuUWlPbHQ3SWxKbGMyOTFjbU5sSWpvaWFIUjBjSE02THk5a01uUmhNREYwT1daeVlYcGxkQzVqYkc5MVpHWnliMjUwTG01bGRDOHFJaXdpUTI5dVpHbDBhVzl1SWpwN0lrUmhkR1ZNWlhOelZHaGhiaUk2ZXlKQlYxTTZSWEJ2WTJoVWFXMWxJam94TnpZeU1UZzROemMxZlgxOVhYMF8iLCJ2aWRlb191cmwiOiJodHRwczpcL1wvZDJ0YTAxdDlmcmF6ZXQuY2xvdWRmcm9udC5uZXRcL2luZGV4Lm0zdTgiLCJmaWxlX25hbWUiOiJpbmRleC5tM3U4IiwiZXhwIjoxNzYyMTg4NzY4LCJpYXQiOjE3NjIxNzQzNjh9.MqqSpIwWUzGQsXMsiQRTNAVgXEpUT8yu3eA4ZicuMtw/index.m3u8";
 
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(videoSrc);
       hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = videoSrc;
-    }
-
-    // Skip function
-    function skip(seconds) {
-      video.currentTime += seconds;
+      video.addEventListener('loadedmetadata', () => video.play());
     }
   </script>
+
 </body>
 </html>
