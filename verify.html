@@ -10,6 +10,7 @@
       text-align: center;
       padding: 40px;
       background: #f9fafb;
+      user-select: none;
     }
     .box {
       max-width: 400px;
@@ -19,9 +20,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #6c63ff;
-    }
+    h2 { color: #6c63ff; }
     a.btn {
       display: inline-block;
       margin-top: 20px;
@@ -30,49 +29,101 @@
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
-<body>
-  <div class="box">
-    <h2>Verification Required</h2>
-    <p>Please verify once to continue. Ads will appear only once in 24 hours.</p>
-    <a id="verifyBtn" href="#" class="btn" target="_blank">Verify Now</a>
-  </div>
 
-  <script>
-    function getParam(name) {
-      return new URLSearchParams(window.location.search).get(name);
-    }
+<body oncontextmenu="return false">
 
-    const redirectPage = getParam("redirect");
-    const done = getParam("done");
-    const now = Date.now();
-    const lastVerified = localStorage.getItem("verifiedAt");
+<div class="box" id="box">
+  <h2>Verification Required</h2>
+  <p>Verify once to continue. Ads appear only once every 24 hours.</p>
+  <a id="verifyBtn" class="btn">Verify Now</a>
+</div>
 
-    // Already verified within 24 hours
-    if (lastVerified && (now - parseInt(lastVerified)) < 24*60*60*1000) {
-      window.location.href = redirectPage;
-    } 
-    // Verification completed just now
-    else if (done === "2811") {
-      localStorage.setItem("verifiedAt", now);
-      window.location.href = redirectPage;
-    } 
-    // Otherwise, show shortlink button
-    else {
-      const btn = document.getElementById("verifyBtn");
-      btn.href = "https://vplink.in/i42DE";
-    }
-  </script>
+<script>
+
+function getParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+const SHORTLINK_URL = "https://vplink.in/i42DE";
+const DEFAULT_REDIRECT = "https://ozme.vercel.app";
+
+const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
+const done = getParam("done");
+const now = Date.now();
+
+const WAIT_TIME = 75 * 1000;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+const box = document.getElementById("box");
+
+// If already verified previously (24 hrs rule)
+const lastVerified = localStorage.getItem("verifiedAt");
+if (!done && lastVerified && (now - parseInt(lastVerified)) < DAY_MS) {
+  window.location.href = redirectPage;
+}
+
+// Track verification attempt per tab
+if (!sessionStorage.getItem("verifyStart")) {
+  sessionStorage.setItem("verifyStart", now.toString());
+}
+
+const verifyStart = parseInt(sessionStorage.getItem("verifyStart"));
+const clickedAt = parseInt(sessionStorage.getItem("verifyClicked") || "0");
+
+// If user is returning after shortlink (done=2811)
+if (done === "2811") {
+
+  // Case: No button click -> direct URL or bypass → Denied
+  if (!clickedAt) {
+    box.innerHTML = `
+      <h2>Access Denied ❌</h2>
+      <p>Verification failed. Do not open direct links.</p>
+    `;
+  }
+
+  // Case: Clicked verify but too early → permanently fail this session
+  else if ((now - verifyStart) < WAIT_TIME) {
+
+    // Mark attempt as permanently failed on this tab
+    sessionStorage.setItem("blocked", "true");
+
+    box.innerHTML = `
+      <h2>Verification Failed ❌</h2>
+      <p>You tried to verify too early.  
+      Restart verification from the beginning.</p>
+    `;
+  }
+
+  // Case: Already blocked due to cheat attempt
+  else if (sessionStorage.getItem("blocked") === "true") {
+    box.innerHTML = `
+      <h2>Access Locked 🔒</h2>
+      <p>You attempted to bypass verification.  
+      Reload and restart verification.</p>
+    `;
+  }
+
+  // SUCCESS → verify only now
+  else {
+    localStorage.setItem("verifiedAt", now.toString());
+    sessionStorage.removeItem("verifyClicked"); 
+    window.location.href = redirectPage;
+  }
+}
+
+// Normal state → show verify button
+else {
+  const btn = document.getElementById("verifyBtn");
+  btn.addEventListener("click", function () {
+    sessionStorage.setItem("verifyClicked", Date.now().toString());
+    window.location.href = SHORTLINK_URL;
+  });
+}
+
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
