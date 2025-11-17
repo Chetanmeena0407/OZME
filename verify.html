@@ -10,7 +10,7 @@
       text-align: center;
       padding: 40px;
       background: #f9fafb;
-      user-select: none;
+      user-select: none; /* Disable copy */
     }
     .box {
       max-width: 400px;
@@ -20,8 +20,10 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h2 { color: #6c63ff; }
-    a.btn {
+    h2 {
+      color: #6c63ff;
+    }
+    a.btn, button.btn {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 20px;
@@ -30,100 +32,180 @@
       text-decoration: none;
       border-radius: 6px;
       cursor: pointer;
+      border: none;
+      font-size: 14px;
+    }
+    .premium-box {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      text-align: left;
+    }
+    .premium-box h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 16px;
+    }
+    .premium-box p {
+      font-size: 13px;
+      color: #555;
+    }
+    .premium-input-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .premium-input-row input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    #premiumMsg {
+      margin-top: 8px;
+      font-size: 13px;
     }
   </style>
 </head>
 
-<body oncontextmenu="return false">
+<body oncontextmenu="return false"> <!-- Right-click disabled -->
 
-<div class="box" id="box">
-  <h2>Verification Required</h2>
-  <p>Verify once to continue. Ads appear only once every 24 hours.</p>
-  <a id="verifyBtn" class="btn">Verify Now</a>
-</div>
+  <div class="box" id="box">
+    <h2>Verification Required</h2>
+    <p>Verify once to continue. Ads appear only once every 24 hours.</p>
+    <a id="verifyBtn" class="btn">Verify Now</a>
+
+    <!-- PREMIUM / PAID ACCESS SECTION -->
+    <div class="premium-box">
+      <h3>Premium / Paid Access</h3>
+      <p>Have a secret premium code? Enter it below to get ad-free, no-wait access.</p>
+      <div class="premium-input-row">
+        <input
+          type="password"
+          id="premiumCode"
+          placeholder="Enter premium code"
+          autocomplete="off"
+        >
+        <button id="premiumBtn" class="btn">Submit</button>
+      </div>
+      <p id="premiumMsg"></p>
+    </div>
+  </div>
 
 <script>
-
-function getParam(name) {
-  return new URLSearchParams(window.location.search).get(name);
-}
-
-const SHORTLINK_URL = "https://vplink.in/i42DE";
-const DEFAULT_REDIRECT = "https://ozme.vercel.app";
-
-const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
-const done = getParam("done");
-const now = Date.now();
-
-const WAIT_TIME = 75 * 1000;
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-const box = document.getElementById("box");
-
-// If already verified previously (24 hrs rule)
-const lastVerified = localStorage.getItem("verifiedAt");
-if (!done && lastVerified && (now - parseInt(lastVerified)) < DAY_MS) {
-  window.location.href = redirectPage;
-}
-
-// Track verification attempt per tab
-if (!sessionStorage.getItem("verifyStart")) {
-  sessionStorage.setItem("verifyStart", now.toString());
-}
-
-const verifyStart = parseInt(sessionStorage.getItem("verifyStart"));
-const clickedAt = parseInt(sessionStorage.getItem("verifyClicked") || "0");
-
-// If user is returning after shortlink (done=2811)
-if (done === "2811") {
-
-  // Case: No button click -> direct URL or bypass → Denied
-  if (!clickedAt) {
-    box.innerHTML = `
-      <h2>Access Denied ❌</h2>
-      <p>Verification failed. Do not open direct links.</p>
-    `;
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
   }
 
-  // Case: Clicked verify but too early → permanently fail this session
-  else if ((now - verifyStart) < WAIT_TIME) {
+  // ================== CONFIG ==================
+  const SHORTLINK_URL    = "https://vplink.in/i42DE";      // Tumhara shortlink
+  const DEFAULT_REDIRECT = "https://ozme.vercel.app";      // Default main site
+  const PREMIUM_CODE     = "28 nov 2010";                  // Secret premium code
+  const WAIT_TIME        = 75 * 1000;                      // 1 min 15 sec
+  const DAY_MS           = 24 * 60 * 60 * 1000;            // 24 hours
+  // ============================================
 
-    // Mark attempt as permanently failed on this tab
-    sessionStorage.setItem("blocked", "true");
+  const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
+  const done  = getParam("done");
+  const now   = Date.now();
+  const box   = document.getElementById("box");
 
-    box.innerHTML = `
-      <h2>Verification Failed ❌</h2>
-      <p>You tried to verify too early.  
-      Restart verification from the beginning.</p>
-    `;
-  }
+  // ---------- 24-hour based verification ----------
+  const lastVerified    = localStorage.getItem("verifiedAt");
+  const alreadyVerified = lastVerified && (now - parseInt(lastVerified, 10)) < DAY_MS;
 
-  // Case: Already blocked due to cheat attempt
-  else if (sessionStorage.getItem("blocked") === "true") {
-    box.innerHTML = `
-      <h2>Access Locked 🔒</h2>
-      <p>You attempted to bypass verification.  
-      Reload and restart verification.</p>
-    `;
-  }
-
-  // SUCCESS → verify only now
-  else {
-    localStorage.setItem("verifiedAt", now.toString());
-    sessionStorage.removeItem("verifyClicked"); 
+  // Agar already verified hai aur ?done nahi hai -> direct redirect
+  if (!done && alreadyVerified) {
     window.location.href = redirectPage;
   }
-}
 
-// Normal state → show verify button
-else {
-  const btn = document.getElementById("verifyBtn");
-  btn.addEventListener("click", function () {
-    sessionStorage.setItem("verifyClicked", Date.now().toString());
-    window.location.href = SHORTLINK_URL;
+  // ---------- Per-tab verification start time ----------
+  if (!sessionStorage.getItem("verifyStart")) {
+    sessionStorage.setItem("verifyStart", now.toString());
+  }
+
+  const verifyStart = parseInt(sessionStorage.getItem("verifyStart"), 10) || null;
+  const clickedAt   = parseInt(sessionStorage.getItem("verifyClicked") || "0", 10);
+
+  // ---------- Shortlink se wapas: ?done=2811 ----------
+  if (done === "2811") {
+
+    // 1) Direct URL / bypass (button click hi nahi hua)
+    if (!clickedAt) {
+      box.innerHTML = `
+        <h2>Access Denied ❌</h2>
+        <p>Verification failed. Please use the verify button only.</p>
+      `;
+    }
+
+    // 2) Button click hua, lekin 75 sec se pehle hi verify kar diya
+    else if (!verifyStart || (now - verifyStart) < WAIT_TIME) {
+      box.innerHTML = `
+        <h2>Too Early ⏳</h2>
+        <p>You tried to verify too quickly.<br>
+        Please reopen the verification link and wait at least <b>1 minute 15 seconds</b> before completing verification.</p>
+      `;
+      // Is attempt ke liye session data reset
+      sessionStorage.removeItem("verifyClicked");
+      sessionStorage.removeItem("verifyStart");
+    }
+
+    // 3) Sab sahi: button click hua + 75 sec bhi ho gaye
+    else {
+      localStorage.setItem("verifiedAt", now.toString());   // ✅ success pe save
+      sessionStorage.removeItem("verifyClicked");
+      sessionStorage.removeItem("verifyStart");
+      window.location.href = redirectPage;
+    }
+  }
+
+  // ---------- Normal mode: verify button handle ----------
+  else {
+    const btn = document.getElementById("verifyBtn");
+
+    btn.addEventListener("click", function () {
+      sessionStorage.setItem("verifyClicked", Date.now().toString());
+      window.location.href = SHORTLINK_URL;  // Shortlink open
+    });
+  }
+
+  // ---------- PREMIUM / PAID CODE HANDLING ----------
+  const premiumInput = document.getElementById("premiumCode");
+  const premiumBtn   = document.getElementById("premiumBtn");
+  const premiumMsg   = document.getElementById("premiumMsg");
+
+  function handlePremiumSubmit() {
+    const entered = (premiumInput.value || "").trim().toLowerCase();
+    const correct = PREMIUM_CODE.toLowerCase();
+
+    if (!entered) {
+      premiumMsg.textContent = "Please enter your premium code.";
+      return;
+    }
+
+    if (entered === correct) {
+      // Premium: no ad, no wait, direct access + localStorage set
+      localStorage.setItem("verifiedAt", Date.now().toString());
+      premiumMsg.textContent = "Premium verified! Redirecting...";
+      // Thoda chhota sa delay for message
+      setTimeout(function () {
+        window.location.href = redirectPage;
+      }, 800);
+    } else {
+      premiumMsg.textContent = "Wrong code. Please try again.";
+    }
+  }
+
+  premiumBtn.addEventListener("click", handlePremiumSubmit);
+
+  // Enter key press se bhi submit ho jaye
+  premiumInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      handlePremiumSubmit();
+    }
   });
-}
-
 </script>
+
 </body>
 </html>
