@@ -142,9 +142,9 @@
     // 2) Button click hua, lekin 75 sec se pehle hi verify kar diya
     else if (!verifyStart || (now - verifyStart) < WAIT_TIME) {
       box.innerHTML = `
-        <h2>Too Early ⏳</h2>
+        <h2> Invalid ⏳</h2>
         <p>You tried to verify too quickly.<br>
-        Please reopen the verification link and wait at least <b>1 minute 15 seconds</b> before completing verification.</p>
+        Please reopen the verification link and wait at least <b> 15 seconds</b> before completing verification.</p>
       `;
       // Is attempt ke liye session data reset
       sessionStorage.removeItem("verifyClicked");
@@ -209,3 +209,4 @@
 
 </body>
 </html>
+
