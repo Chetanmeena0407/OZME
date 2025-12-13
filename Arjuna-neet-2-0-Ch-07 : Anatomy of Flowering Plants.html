@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> BOTANY  </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOTANY</title>
 
-  <!-- ✅ Font Awesome -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -21,12 +21,9 @@
       margin: 30px 0;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
-    /* ===== Tabs ===== */
+    /* Tabs */
     .tabs {
       display: flex;
       justify-content: center;
@@ -39,7 +36,6 @@
       padding: 12px 30px;
       color: #aaa;
       cursor: pointer;
-      font-weight: 500;
       border-bottom: 3px solid transparent;
       transition: 0.3s;
     }
@@ -47,14 +43,9 @@
     .tab.active {
       color: white;
       border-color: #7a5af8;
-      background: linear-gradient(180deg, #161616, #0f0f0f);
     }
 
-    .tab:hover {
-      color: #fff;
-    }
-
-    /* ===== Container ===== */
+    /* Container */
     .content-container {
       padding: 25px;
       display: grid;
@@ -64,12 +55,11 @@
       margin: auto;
     }
 
-    /* ===== Card ===== */
+    /* Card */
     .card {
       background-color: #1b1b1b;
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -84,230 +74,111 @@
     .card h3 {
       font-size: 15px;
       margin-bottom: 15px;
-      color: #fff;
       line-height: 1.4;
     }
 
-    /* ===== Buttons ===== */
+    /* Buttons */
     .btn {
       padding: 10px;
       text-align: center;
       border-radius: 6px;
       font-size: 13px;
       cursor: pointer;
-      transition: 0.3s;
-      font-weight: 500;
-      border: none;
-      display: inline-block;
       color: white;
+      display: inline-block;
     }
 
-    /* 🎥 Lecture */
-    .lec-btn { background-color: #7a5af8; }
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
 
-    /* 📘 Notes */
-    .notes-btn { background-color: #3a9efd; }
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
 
-    /* 🧩 DPP Quiz */
-    .quiz-btn { background-color: #f8a84f; }
-
-    /* 📗 DPP */
-    .dpp-btn { background-color: #00c896; }
-
-    .btn:hover:not(.disabled) {
-      opacity: 0.9;
-      transform: scale(1.04);
-    }
-
-    .disabled {
-      background-color: #333 !important;
-      color: #777;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-
-    /* ===== Hide non-active tab content ===== */
     .tab-content { display: none; }
     .tab-content.active { display: grid; }
 
-    /* ===== Responsive ===== */
     @media (max-width: 600px) {
-      .tab { padding: 10px 15px; font-size: 14px; }
-      .btn { font-size: 12px; padding: 8px; }
+      .tab { padding: 10px 15px; }
     }
   </style>
 </head>
 
 <body>
 
-<!-- ✅ Verification Check -->
+<h2>Ch-07 : Anatomy of Flowering Plants</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- Lectures -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <h3>Anatomy of Flowering Plants 01 : Meristematic Tissue</h3>
+    <a href="https://youtu.be/tcLlblQSyYA" class="btn lec-btn">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Anatomy of Flowering Plants 02 : Permanent Tissue</h3>
+    <a href="https://youtu.be/WFMPYnJ0S9Q" class="btn lec-btn">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Anatomy of Flowering Plants 03</h3>
+    <a href="https://youtu.be/uJekhCB0oeA" class="btn lec-btn">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+</div>
+
+<!-- Notes -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Anatomy of Flowering Plants 01 : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e166233e-cf3f-4189-9043-fc35e6499314.pdf"
+       class="btn notes-btn">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+</div>
+
+<!-- DPP -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3>Anatomy of Flowering Plants DPP 01</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fcf16974-8d7f-438a-94d2-a217c895095d.pdf"
+       class="btn dpp-btn">
+      <i class="fa-solid fa-book"></i> Daily Practice Problem
+    </a>
+  </div>
+
+</div>
+
 <script>
-(function () {
-  const verifiedAt = localStorage.getItem("verifiedAt");
-  const now = Date.now();
-  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-    const currentPage = encodeURIComponent(
-      window.location.pathname.split("/").pop() + window.location.search
-    );
-    window.location.href = "verify.html?redirect=" + currentPage;
-  }
-})();
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
 </script>
-
-  <!-- ===== Chapter Heading ===== -->
-  <h2>Ch-07 : Anatomy of Flowering Plants</h2>
-
-  <!-- ===== Tabs ===== -->
-  <div class="tabs">
-    <div class="tab active" data-target="lectures">Lectures</div>
-    <div class="tab" data-target="notes">Notes</div>
-    <div class="tab" data-target="dppQuiz">DPP Quiz</div>
-    <div class="tab" data-target="dpp">DPP</div>
-  </div>
-
-  <!-- ====== LECTURE CARDS ====== -->
-  <div class="content-container tab-content active" id="lectures">
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 01 : Meristematic Tissue (NO DPP)</h3>
-      <a href="https://youtu.be/tcLlblQSyYA?si=X8ybrNNLOMv2DFul" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-    <h3> Anatomy of Flowering Plants 02 : Permanent Tissue || (NO DPP) || (Recorded Lecture)</h3>
-      <a href="https://youtu.be/WFMPYnJ0S9Q" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-    <h3> Anatomy of Flowering Plants 03 </h3>
-      <a href="https://youtu.be/uJekhCB0oeA" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-
-    <h3> Anatomy of Flowering Plants 04 </h3>
-      <a href="https://youtu.be/bmoRuzGgCLg" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-    <h3> Anatomy of Flowering Plants 05 </h3>
-      <a href="https://youtu.be/GNwjV_fngTM" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-    <h3> Anatomy of Flowering Plants 06 </h3>
-      <a href="https://youtu.be/WMhimKpRRok" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-    <h3> Anatomy of Flowering Plants 07 </h3>
-      <a href="https://youtu.be/BqMiAwsqpTs" class="btn lec-btn">
-        <i class="fa-solid fa-play"></i> Watch Lecture
-      </a>
-    </div>
-
-  </div>
-
-  <!-- ====== NOTES CARDS ====== -->
-  <div class="content-container tab-content" id="notes">
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 01 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e166233e-cf3f-4189-9043-fc35e6499314.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 02 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3bcf5c20-0a2f-4866-93b5-1f38f4b00108.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 03 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8db1560a-a6e8-4ba4-a1b7-55745c883e83.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 04 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3043b478-7a71-42eb-895b-afbdc45c1978.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 05 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/323f326b-de33-4e66-8e0c-807c906b1f9a.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 06 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c04b7d60-da3a-4cdd-87b4-1041492f6e63.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants 07 : Classnotes || Arjuna NEET 2026</h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c6163f73-5413-46f8-a5fd-61c67c4f6592.pdf" class="btn notes-btn">
-        <i class="fa-solid fa-file-lines"></i> View Notes
-      </a>
-    </div>
-  </div>
-
- 
-
-  <!-- ====== DPP CARDS ====== -->
-  <div class="content-container tab-content" id="dpp">
-    <div class="card">
-      <h3>Anatomy of Flowering Plants DPP: 1 </h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fcf16974-8d7f-438a-94d2-a217c895095d.pdf" class="btn dpp-btn">
-        <i class="fa-solid fa-book"></i> Daily Practice Problem
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Anatomy of Flowering Plants DPP: 2 </h3>
-      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1bdd518a-a6cb-48d0-8ab6-76a5cb810c17.pdf" class="btn dpp-btn">
-        <i class="fa-solid fa-book"></i> Daily Practice Problem
-      </a>
-    </div>
-  </div>
-
-  <script>
-    // ===== Disable empty links =====
-    document.querySelectorAll(".btn").forEach(btn => {
-      if (btn.getAttribute("href") === "") {
-        btn.classList.add("disabled");
-        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
-      }
-    });
-
-    // ===== Tab Switching =====
-    const tabs = document.querySelectorAll(".tab");
-    const contents = document.querySelectorAll(".tab-content");
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-
-        const target = tab.getAttribute("data-target");
-        contents.forEach(c => c.classList.remove("active"));
-        document.getElementById(target).classList.add("active");
-      });
-    });
-  </script>
 
 </body>
 </html>
