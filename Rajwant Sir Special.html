@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajwant Sir Special</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    background: #0b1d33;
+    color: #ffffff;
+  }
+
+  .top-banner {
+    background: linear-gradient(90deg, #1b2f55, #243c6b);
+    padding: 24px 20px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+
+  .top-banner h1 {
+    margin: 0;
+    font-size: 26px;
+  }
+
+  .tabs {
+    background: #0f2747;
+    padding: 0 20px;
+    display: flex;
+    gap: 22px;
+    border-bottom: 1px solid #1f3a5f;
+  }
+
+  .tab {
+    padding: 14px 0;
+    font-size: 14px;
+    color: #b8c7e0;
+  }
+
+  .tab.active {
+    color: #ffd500;
+    font-weight: 600;
+  }
+
+  .content {
+    padding: 22px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .subjects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* 🔑 IMPORTANT: link ko card jaisa dikhane ke liye */
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card {
+    background: #112a4d;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    border: 1px solid #1f3a5f;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.6);
+  }
+
+  .icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: #1b3b6f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ffd500;
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .subjects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .subjects {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="top-banner">
+  <h1>Rajwant Sir Special</h1>
+</div>
+
+<div class="tabs">
+  <div class="tab active">All Classes</div>
+</div>
+
+<div class="content">
+  <h2>Subjects</h2>
+
+  <div class="subjects">
+
+    <!-- 🔹 Physics -->
+    <a href="physics.html" class="card-link">
+      <div class="card">
+        <div class="icon">E=mc²</div>
+        <div>
+          <h3>Physics</h3>
+          <span>5 Chapters</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 🔹 I.E. Irodov -->
+    <a href="irodov.html" class="card-link">
+      <div class="card">
+        <div class="icon">📘</div>
+        <div>
+          <h3>I.E. Irodov</h3>
+          <span>6 Chapters</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 🔹 MISC Advance -->
+    <a href="misc.html" class="card-link">
+      <div class="card">
+        <div class="icon">Σ</div>
+        <div>
+          <h3>MISC Advance</h3>
+          <span>1 Chapter</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
