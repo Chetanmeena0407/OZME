@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHY</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
+
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
+
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Ch-01 : Motion in a Straight Line</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- Lectures -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <h3>Motion in a Straight Line 01 : Rest, Motion, Distance and Displacement || Speed, Velocity and acceleration || Kinematics Equation || Graphs || Motion under gravity || NO DPP || Recorded</h3>
+    <a href="https://youtu.be/LNmT9W5JWQU" class="btn lec-btn">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Motion in a Straight Line 02 : Questions on 1D || NO DPP || Extra Lecture || Recorded - by StudySpark.mp4</h3>
+    <a href="https://youtu.be/qsIoHEph9_8" class="btn lec-btn">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
+
+<!-- Notes -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Motion in a Straight Line 01  : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5f293e03-24fc-4560-a7dd-de636281c19d.pdf"
+       class="btn notes-btn">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Motion in a Straight Line 02  : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c306e607-b4d0-4b03-abbd-4cbbb7dd3ade.pdf"
+       class="btn notes-btn">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+</div>
+
+<!-- DPP -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3>Motion in a Straight Line</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cef0c1f6-62f0-4e57-970f-a137ecbe3988.pdf"
+       class="btn dpp-btn">
+      <i class="fa-solid fa-book"></i>  Practice Sheet
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
+
+</body>
+</html>
