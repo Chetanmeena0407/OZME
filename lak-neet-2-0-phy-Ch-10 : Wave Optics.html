@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHY</title>
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+      background: linear-gradient(180deg, #161616, #0f0f0f);
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    /* ===== Container ===== */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      border: none;
+      display: inline-block;
+      color: white;
+    }
+
+    /* 🎥 Lecture */
+    .lec-btn { background-color: #7a5af8; }
+
+    /* 📘 Notes */
+    .notes-btn { background-color: #3a9efd; }
+
+    /* 🧩 DPP Quiz */
+    .quiz-btn { background-color: #f8a84f; }
+
+    /* 📗 DPP */
+    .dpp-btn { background-color: #00c896; }
+
+    .btn:hover:not(.disabled) {
+      opacity: 0.9;
+      transform: scale(1.04);
+    }
+
+    .disabled {
+      background-color: #333 !important;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== Hide non-active tab content ===== */
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; font-size: 14px; }
+      .btn { font-size: 12px; padding: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Verification Check -->
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+  <!-- ===== Chapter Heading ===== -->
+  <h2>Ch-10 : Wave Optics</h2>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <div class="tab active" data-target="lectures">Lectures</div>
+    <div class="tab" data-target="notes">Notes</div>
+    <div class="tab" data-target="dppQuiz">DPP Quiz</div>
+    <div class="tab" data-target="dpp">DPP</div>
+  </div>
+
+  <!-- ====== LECTURE CARDS ====== -->
+  <div class="content-container tab-content active" id="lectures">
+    <div class="card">
+      <h3> Wave Optics 01 : Microscope || Telescope || Wavefront || Rescheduled to 3:30pm || NO DPP || </h3>
+      <a href="https://youtu.be/hZAPrccEgO8" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 02 : Intensity || YDSE || NO DPP ||</h3>
+      <a href="https://youtu.be/KGWDCQTvCeY" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 03 : YDSE </h3>
+      <a href="https://youtu.be/Mwqn-Uo4ano" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 04 : YDSE in Medium || Rescheduled to 4:10pm </h3>
+      <a href="https://youtu.be/mimJKJDsLt4" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+
+     <div class="card">
+      <h3>Wave Optics 05 : Diffraction || NO DPP || Rescheduled 5:55PM </h3>
+      <a href="https://youtu.be/VMk0WHVXpVU" class="btn lec-btn">
+        <i class="fa-solid fa-play"></i> Watch Lecture
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== NOTES CARDS ====== -->
+  <div class="content-container tab-content" id="notes">
+    <div class="card">
+      <h3>Wave Optics 01 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f57ef594-6050-4fc6-a5bf-a5ef8f64da18.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 02 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/89871ef4-1211-4329-a6be-39ba0f875760.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 03 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8d6103b7-3b8a-4f00-a6e3-3a34f882d7a0.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 04 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6ce65750-1c2f-4c13-bd23-f4ebb353409f.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics 05 : Class Notes || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cd74b275-f39f-4414-9399-741347471954.pdf" class="btn notes-btn">
+        <i class="fa-solid fa-file-lines"></i> View Notes
+      </a>
+    </div>
+  </div>
+
+  <!-- ====== DPP CARDS ====== -->
+  <div class="content-container tab-content" id="dpp">
+    <div class="card">
+      <h3>Wave Optics  : DPP 01(of lec 03) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ab0d0185-1489-4abc-ad78-14c680117c67.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics  : DPP 02(of lec 04) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/028042e0-3f21-44d2-a9bd-2ce7a9ca954d.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics  : DPP 03(Extra) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d501cf6d-63cd-421c-b959-bb1fdca317e6.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Wave Optics  : DPP 04(Extra) || Lakshya NEET 2.0 2026</h3>
+      <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e8fbc77f-a764-4563-b3aa-87fb492ff7b3.pdf" class="btn dpp-btn">
+        <i class="fa-solid fa-book"></i> Daily Practice Problem
+      </a>
+    </div>
+   </div>
+
+  <script>
+    // ===== Disable empty links =====
+    document.querySelectorAll(".btn").forEach(btn => {
+      if (btn.getAttribute("href") === "") {
+        btn.classList.add("disabled");
+        btn.innerHTML = '<i class="fa-solid fa-ban"></i> Not Available';
+      }
+    });
+
+    // ===== Tab Switching =====
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const target = tab.getAttribute("data-target");
+        contents.forEach(c => c.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
