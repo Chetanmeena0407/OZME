@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 11th Project</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at top,#141a2e,#05070f);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* Header */
+.header{
+  background:linear-gradient(90deg,#6f6cff,#9a8cff);
+  padding:28px 20px;
+  border-bottom-left-radius:25px;
+  border-bottom-right-radius:25px;
+}
+.header h1{
+  font-size:28px;
+  font-weight:600;
+}
+
+/* Container */
+.container{
+  padding:30px 20px;
+}
+.container h2{
+  margin-bottom:25px;
+  font-size:22px;
+  letter-spacing:0.5px;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+/* Card */
+.card{
+  position:relative;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:28px;
+  text-decoration:none;
+  color:white;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+  overflow:hidden;
+}
+
+/* Glow */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.15),transparent);
+  opacity:0;
+  transition:0.4s;
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  border-color:#8b8cff;
+}
+
+/* Text */
+.card h3{
+  font-size:21px;
+  margin-bottom:12px;
+}
+.card p{
+  color:#b7bce2;
+  font-size:14px;
+}
+
+/* Footer Shadow */
+.shadow{
+  height:40px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .header h1{
+    font-size:22px;
+  }
+  .container{
+    padding:20px 15px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Class 11th Project 45</h1>
+</div>
+
+<!-- Subjects -->
+<div class="container">
+  <h2>Subjects</h2>
+
+  <div class="grid">
+
+    <a href="notices.html" class="card">
+      <h3>📢 Notices</h3>
+      <p>5 Chapters</p>
+    </a>
+
+    <a href="physics.html" class="card">
+      <h3>⚛ Physics</h3>
+      <p>2 Chapters</p>
+    </a>
+
+    <a href="chemistry.html" class="card">
+      <h3>🧪 Chemistry</h3>
+      <p>3 Chapters</p>
+    </a>
+
+    <a href="maths.html" class="card">
+      <h3>📐 Mathematics</h3>
+      <p>3 Chapters</p>
+    </a>
+
+    <a href="biology.html" class="card">
+      <h3>🧬 Biology</h3>
+      <p>3 Chapters</p>
+    </a>
+
+    <a href="english.html" class="card">
+      <h3>📘 English</h3>
+      <p>0 Chapters</p>
+    </a>
+
+    <a href="computer.html" class="card">
+      <h3>💻 Computer Science</h3>
+      <p>0 Chapters</p>
+    </a>
+
+    <a href="pe.html" class="card">
+      <h3>🏃 Physical Education</h3>
+      <p>0 Chapters</p>
+    </a>
+
+  </div>
+</div>
+
+<div class="shadow"></div>
+
+</body>
+</html>
