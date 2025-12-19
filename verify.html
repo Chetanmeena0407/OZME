@@ -6,137 +6,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  * {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-  }
+*{
+  box-sizing:border-box;
+  font-family:"Segoe UI",Arial,sans-serif;
+}
 
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: radial-gradient(circle at top, #162a4a, #0b1629);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    user-select: none;
-  }
+body{
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(circle at top,#162a4a,#0b1629);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  user-select:none;
+}
 
-  .box {
-    width: 100%;
-    max-width: 420px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(14px);
-    border-radius: 18px;
-    padding: 26px 22px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.15);
-  }
+.box{
+  width:100%;
+  max-width:420px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+  padding:26px 22px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.15);
+}
 
-  h2 {
-    margin: 0 0 8px 0;
-    color: #ffd500;
-    font-size: 24px;
-  }
+h2{
+  margin:0 0 8px 0;
+  color:#ffd500;
+  font-size:24px;
+}
 
-  p {
-    font-size: 14px;
-    color: #cfd8f3;
-    line-height: 1.5;
-  }
+p{
+  font-size:14px;
+  color:#cfd8f3;
+  line-height:1.5;
+}
 
-  .btn {
-    width: 100%;
-    margin-top: 14px;
-    padding: 13px;
-    font-size: 14px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+.btn{
+  width:100%;
+  margin-top:14px;
+  padding:13px;
+  font-size:14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  text-align:center;
+  display:block;
+  transition:0.2s;
+}
 
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  }
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
 
-  .btn.primary {
-    background: linear-gradient(90deg, #ffd500, #ffb700);
-    color: #000;
-    font-weight: 600;
-  }
+.btn.primary{
+  background:linear-gradient(90deg,#ffd500,#ffb700);
+  color:#000;
+  font-weight:600;
+}
 
-  .btn.secondary {
-    background: rgba(255,255,255,0.15);
-    color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.25);
-  }
+.btn.secondary{
+  background:rgba(255,255,255,0.15);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.25);
+}
 
-  /* Telegram special */
-  .btn.telegram {
-    background: rgba(0,136,204,0.25);
-    border: 1px solid rgba(0,136,204,0.55);
-    color: #eaf6ff;
-  }
+.btn.telegram{
+  background:rgba(0,136,204,0.25);
+  border:1px solid rgba(0,136,204,0.55);
+  color:#eaf6ff;
+}
 
-  /* ===== Premium Section ===== */
-  .premium-box {
-    margin-top: 28px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-  }
+/* Premium */
+.premium-box{
+  margin-top:28px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,0.15);
+}
 
-  .premium-box h3 {
-    margin: 0 0 6px 0;
-    font-size: 16px;
-    color: #ffd500;
-  }
+.premium-box h3{
+  margin:0 0 6px 0;
+  font-size:16px;
+  color:#ffd500;
+}
 
-  .premium-box p {
-    font-size: 13px;
-    color: #cfd8f3;
-  }
+.premium-box p{
+  font-size:13px;
+  color:#cfd8f3;
+}
 
-  .premium-input-row {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-  }
+.premium-input-row{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+}
 
-  .premium-input-row input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(0,0,0,0.3);
-    color: #fff;
-    font-size: 14px;
-    outline: none;
-  }
+.premium-input-row input{
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.25);
+  background:rgba(0,0,0,0.3);
+  color:#fff;
+  font-size:14px;
+  outline:none;
 
-  .premium-input-row input::placeholder {
-    color: #aab4da;
-  }
+  /* FIX FOR TYPING */
+  user-select:text;
+  -webkit-user-select:text;
+}
 
-  .premium-input-row button {
-    white-space: nowrap;
-  }
+.premium-input-row input::placeholder{
+  color:#aab4da;
+}
 
-  #premiumMsg {
-    margin-top: 8px;
-    font-size: 13px;
-    color: #ffd500;
-  }
+#premiumMsg{
+  margin-top:8px;
+  font-size:13px;
+  color:#ffd500;
+}
 
-  @media (max-width: 480px) {
-    .premium-input-row {
-      flex-direction: column;
-    }
+@media(max-width:480px){
+  .premium-input-row{
+    flex-direction:column;
   }
+}
 </style>
 </head>
 
@@ -144,44 +143,24 @@
 
 <div class="box" id="box">
   <h2>Verification Required</h2>
-  <p>
-    Complete one-time verification to continue.  
-    Ads appear only once every 24 hours.
-  </p>
+  <p>Complete one-time verification to continue.<br>Ads appear only once every 24 hours.</p>
 
-  <!-- Verify -->
   <a id="verifyBtn" class="btn primary">Verify Now</a>
 
-  <!-- Tutorial -->
-  <a
-    href="https://youtu.be/36raSDoGu8Q"
-    target="_blank"
-    class="btn secondary"
-  >
+  <a href="https://youtu.be/36raSDoGu8Q" target="_blank" class="btn secondary">
     ▶ How to Verify (Watch Tutorial)
   </a>
 
-  <!-- Telegram Support -->
-  <a
-    href="https://t.me/+zwxcb10TG1cxNDg1"
-    target="_blank"
-    class="btn telegram"
-  >
+  <a href="https://t.me/+zwxcb10TG1cxNDg1" target="_blank" class="btn telegram">
     💬 Telegram Support
   </a>
 
-  <!-- Premium -->
   <div class="premium-box">
     <h3>Premium Access</h3>
     <p>Have a premium code? Enter it for instant ad-free access.</p>
 
     <div class="premium-input-row">
-      <input
-        type="password"
-        id="premiumCode"
-        placeholder="Enter premium code"
-        autocomplete="off"
-      >
+      <input type="password" id="premiumCode" placeholder="Enter premium code" autocomplete="off">
       <button id="premiumBtn" class="btn primary">Unlock</button>
     </div>
 
@@ -190,67 +169,77 @@
 </div>
 
 <script>
-  function getParam(name) {
-    return new URLSearchParams(window.location.search).get(name);
-  }
+function getParam(n){
+  return new URLSearchParams(window.location.search).get(n);
+}
 
-  const SHORTLINK_URL    = "https://vplink.in/i42DE";
-  const DEFAULT_REDIRECT = "https://ozme.vercel.app";
-  const PREMIUM_CODE     = "28 nov 2009";
-  const WAIT_TIME        = 75 * 1000;
-  const DAY_MS           = 24 * 60 * 60 * 1000;
+/* CONFIG */
+const SHORTLINK_URL    = "https://vplink.in/i42DE";
+const DEFAULT_REDIRECT = "https://ozme.vercel.app";
+const PREMIUM_CODE     = "28 nov 2009";
+const WAIT_TIME        = 75 * 1000;
+const DAY_MS           = 24 * 60 * 60 * 1000;
 
-  const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
-  const done  = getParam("done");
-  const now   = Date.now();
-  const box   = document.getElementById("box");
+/* BLOCK CHECK */
+if(localStorage.getItem("permaBlocked")){
+  document.getElementById("box").innerHTML =
+    "<h2>🚫 Permanently Blocked</h2><p>You attempted to bypass verification rules. Access is permanently denied.</p>";
+  throw new Error("Blocked");
+}
 
-  const lastVerified = localStorage.getItem("verifiedAt");
-  if (!done && lastVerified && (now - lastVerified) < DAY_MS) {
+const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
+const done = getParam("done");
+const now  = Date.now();
+
+/* 24h bypass */
+const lastVerified = localStorage.getItem("verifiedAt");
+if(!done && lastVerified && (now - lastVerified) < DAY_MS){
+  window.location.href = redirectPage;
+}
+
+/* Start timer */
+if(!sessionStorage.getItem("verifyStart")){
+  sessionStorage.setItem("verifyStart", now.toString());
+}
+
+/* Handle verify result */
+if(done === "2811"){
+  const start = parseInt(sessionStorage.getItem("verifyStart") || "0",10);
+
+  if(!start || (now - start) < WAIT_TIME){
+    localStorage.setItem("permaBlocked","1");
+    sessionStorage.clear();
+    document.getElementById("box").innerHTML =
+      "<h2>🚫 Permanently Blocked</h2><p>You tried to verify too early. This action is permanently blocked.</p>";
+  }else{
+    localStorage.setItem("verifiedAt", now.toString());
+    sessionStorage.clear();
     window.location.href = redirectPage;
   }
+}else{
+  document.getElementById("verifyBtn").onclick = ()=>{
+    sessionStorage.setItem("verifyStart",Date.now().toString());
+    window.location.href = SHORTLINK_URL;
+  };
+}
 
-  if (!sessionStorage.getItem("verifyStart")) {
-    sessionStorage.setItem("verifyStart", now.toString());
+/* Premium */
+const premiumInput=document.getElementById("premiumCode");
+const premiumBtn=document.getElementById("premiumBtn");
+const premiumMsg=document.getElementById("premiumMsg");
+
+function premiumSubmit(){
+  if(premiumInput.value.trim().toLowerCase()===PREMIUM_CODE.toLowerCase()){
+    localStorage.setItem("verifiedAt",Date.now().toString());
+    premiumMsg.textContent="Premium verified! Redirecting…";
+    setTimeout(()=>location.href=redirectPage,800);
+  }else{
+    premiumMsg.textContent="Invalid premium code.";
   }
+}
 
-  const verifyStart = parseInt(sessionStorage.getItem("verifyStart"), 10);
-  const clickedAt   = parseInt(sessionStorage.getItem("verifyClicked") || "0", 10);
-
-  if (done === "2811") {
-    if (!clickedAt) {
-      box.innerHTML = "<h2>Access Denied ❌</h2><p>Please use verify button only.</p>";
-    } else if (!verifyStart || (now - verifyStart) < WAIT_TIME) {
-      box.innerHTML = "<h2>Too Fast ⏳</h2><p>Please wait before verifying.</p>";
-      sessionStorage.clear();
-    } else {
-      localStorage.setItem("verifiedAt", now.toString());
-      sessionStorage.clear();
-      window.location.href = redirectPage;
-    }
-  } else {
-    document.getElementById("verifyBtn").onclick = function () {
-      sessionStorage.setItem("verifyClicked", Date.now().toString());
-      window.location.href = SHORTLINK_URL;
-    };
-  }
-
-  const premiumInput = document.getElementById("premiumCode");
-  const premiumBtn   = document.getElementById("premiumBtn");
-  const premiumMsg   = document.getElementById("premiumMsg");
-
-  function handlePremiumSubmit() {
-    if (premiumInput.value.trim().toLowerCase() === PREMIUM_CODE.toLowerCase()) {
-      localStorage.setItem("verifiedAt", Date.now().toString());
-      premiumMsg.textContent = "Premium verified! Redirecting…";
-      setTimeout(() => window.location.href = redirectPage, 900);
-    } else {
-      premiumMsg.textContent = "Invalid premium code.";
-    }
-  }
-
-  premiumBtn.onclick = handlePremiumSubmit;
-  premiumInput.onkeydown = e => e.key === "Enter" && handlePremiumSubmit();
+premiumBtn.onclick=premiumSubmit;
+premiumInput.onkeydown=e=>e.key==="Enter"&&premiumSubmit();
 </script>
 
 </body>
