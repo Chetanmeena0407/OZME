@@ -11,6 +11,7 @@
   font-family:"Segoe UI",Arial,sans-serif;
 }
 
+/* ❌ BODY se user-select REMOVE */
 body{
   margin:0;
   min-height:100vh;
@@ -19,6 +20,10 @@ body{
   align-items:center;
   justify-content:center;
   color:#fff;
+}
+
+/* ✅ Content protection (safe) */
+.box, h2, p, a{
   user-select:none;
 }
 
@@ -61,7 +66,6 @@ p{
 
 .btn:hover{
   transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 
 .btn.primary{
@@ -95,17 +99,13 @@ p{
   color:#ffd500;
 }
 
-.premium-box p{
-  font-size:13px;
-  color:#cfd8f3;
-}
-
 .premium-input-row{
   display:flex;
   gap:8px;
   margin-top:10px;
 }
 
+/* ✅ INPUT fully unlocked */
 .premium-input-row input{
   flex:1;
   padding:10px;
@@ -116,13 +116,8 @@ p{
   font-size:14px;
   outline:none;
 
-  /* FIX FOR TYPING */
   user-select:text;
-  -webkit-user-select:text;
-}
-
-.premium-input-row input::placeholder{
-  color:#aab4da;
+  pointer-events:auto;
 }
 
 #premiumMsg{
@@ -143,12 +138,12 @@ p{
 
 <div class="box" id="box">
   <h2>Verification Required</h2>
-  <p>Complete one-time verification to continue.<br>Ads appear only once every 24 hours.</p>
+  <p>Complete one-time verification to continue.</p>
 
   <a id="verifyBtn" class="btn primary">Verify Now</a>
 
   <a href="https://youtu.be/36raSDoGu8Q" target="_blank" class="btn secondary">
-    ▶ How to Verify (Watch Tutorial)
+    ▶ How to Verify
   </a>
 
   <a href="https://t.me/+zwxcb10TG1cxNDg1" target="_blank" class="btn telegram">
@@ -157,89 +152,51 @@ p{
 
   <div class="premium-box">
     <h3>Premium Access</h3>
-    <p>Have a premium code? Enter it for instant ad-free access.</p>
-
     <div class="premium-input-row">
-      <input type="password" id="premiumCode" placeholder="Enter premium code" autocomplete="off">
+      <input type="password" id="premiumCode" placeholder="Enter premium code">
       <button id="premiumBtn" class="btn primary">Unlock</button>
     </div>
-
     <div id="premiumMsg"></div>
   </div>
 </div>
 
 <script>
-function getParam(n){
-  return new URLSearchParams(window.location.search).get(n);
+const SHORTLINK_URL="https://vplink.in/i42DE";
+const REDIRECT="https://ozme.vercel.app";
+const PREMIUM_CODE="28 nov 2009";
+const WAIT=75000;
+
+/* PERMANENT BLOCK */
+if(localStorage.getItem("blocked")){
+  box.innerHTML="<h2>🚫 Permanently Blocked</h2><p>Verification rules violated.</p>";
+  throw "";
 }
 
-/* CONFIG */
-const SHORTLINK_URL    = "https://vplink.in/i42DE";
-const DEFAULT_REDIRECT = "https://ozme.vercel.app";
-const PREMIUM_CODE     = "28 nov 2009";
-const WAIT_TIME        = 75 * 1000;
-const DAY_MS           = 24 * 60 * 60 * 1000;
+const done=new URLSearchParams(location.search).get("done");
+const now=Date.now();
 
-/* BLOCK CHECK */
-if(localStorage.getItem("permaBlocked")){
-  document.getElementById("box").innerHTML =
-    "<h2>🚫 Permanently Blocked</h2><p>You attempted to bypass verification rules. Access is permanently denied.</p>";
-  throw new Error("Blocked");
-}
-
-const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
-const done = getParam("done");
-const now  = Date.now();
-
-/* 24h bypass */
-const lastVerified = localStorage.getItem("verifiedAt");
-if(!done && lastVerified && (now - lastVerified) < DAY_MS){
-  window.location.href = redirectPage;
-}
-
-/* Start timer */
-if(!sessionStorage.getItem("verifyStart")){
-  sessionStorage.setItem("verifyStart", now.toString());
-}
-
-/* Handle verify result */
-if(done === "2811"){
-  const start = parseInt(sessionStorage.getItem("verifyStart") || "0",10);
-
-  if(!start || (now - start) < WAIT_TIME){
-    localStorage.setItem("permaBlocked","1");
-    sessionStorage.clear();
-    document.getElementById("box").innerHTML =
-      "<h2>🚫 Permanently Blocked</h2><p>You tried to verify too early. This action is permanently blocked.</p>";
+if(done==="2811"){
+  const start=+sessionStorage.getItem("start");
+  if(!start || now-start<WAIT){
+    localStorage.setItem("blocked","1");
+    box.innerHTML="<h2>🚫 Permanently Blocked</h2><p>You verified too early.</p>";
   }else{
-    localStorage.setItem("verifiedAt", now.toString());
-    sessionStorage.clear();
-    window.location.href = redirectPage;
+    localStorage.setItem("verifiedAt",now);
+    location.href=REDIRECT;
   }
 }else{
-  document.getElementById("verifyBtn").onclick = ()=>{
-    sessionStorage.setItem("verifyStart",Date.now().toString());
-    window.location.href = SHORTLINK_URL;
+  verifyBtn.onclick=()=>{
+    sessionStorage.setItem("start",Date.now());
+    location.href=SHORTLINK_URL;
   };
 }
 
-/* Premium */
-const premiumInput=document.getElementById("premiumCode");
-const premiumBtn=document.getElementById("premiumBtn");
-const premiumMsg=document.getElementById("premiumMsg");
-
-function premiumSubmit(){
-  if(premiumInput.value.trim().toLowerCase()===PREMIUM_CODE.toLowerCase()){
-    localStorage.setItem("verifiedAt",Date.now().toString());
-    premiumMsg.textContent="Premium verified! Redirecting…";
-    setTimeout(()=>location.href=redirectPage,800);
-  }else{
-    premiumMsg.textContent="Invalid premium code.";
-  }
-}
-
-premiumBtn.onclick=premiumSubmit;
-premiumInput.onkeydown=e=>e.key==="Enter"&&premiumSubmit();
+/* PREMIUM */
+premiumBtn.onclick=()=>{
+  if(premiumCode.value.trim().toLowerCase()===PREMIUM_CODE){
+    location.href=REDIRECT;
+  }else premiumMsg.textContent="Invalid premium code";
+};
 </script>
 
 </body>
