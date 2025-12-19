@@ -18,11 +18,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
-}
-
-/* protect text only */
-.box, h2, p, a{
+  color:#ffffff;
   user-select:none;
 }
 
@@ -85,7 +81,6 @@ p{
   color:#eaf6ff;
 }
 
-/* Premium */
 .premium-box{
   margin-top:28px;
   padding-top:18px;
@@ -113,20 +108,12 @@ p{
   color:#fff;
   font-size:14px;
   outline:none;
-
-  user-select:text;
 }
 
 #premiumMsg{
   margin-top:8px;
   font-size:13px;
   color:#ffd500;
-}
-
-#timerText{
-  margin-top:10px;
-  font-size:13px;
-  color:#7CFFB2;
 }
 
 @media(max-width:480px){
@@ -141,14 +128,12 @@ p{
 
 <div class="box" id="box">
   <h2>Verification Required</h2>
-  <p>Complete one-time verification to continue.</p>
-
-  <p id="timerText"></p>
+  <p>Complete one-time verification to continue. Ads appear only once every 24 hours.</p>
 
   <a id="verifyBtn" class="btn primary">Verify Now</a>
 
   <a href="https://youtu.be/36raSDoGu8Q" target="_blank" class="btn secondary">
-    ▶ How to Verify
+    ▶ How to Verify (Watch Tutorial)
   </a>
 
   <a href="https://t.me/+zwxcb10TG1cxNDg1" target="_blank" class="btn telegram">
@@ -157,89 +142,77 @@ p{
 
   <div class="premium-box">
     <h3>Premium Access</h3>
+    <p>Have a premium code? Enter it for instant ad-free access.</p>
+
     <div class="premium-input-row">
       <input type="password" id="premiumCode" placeholder="Enter premium code">
       <button id="premiumBtn" class="btn primary">Unlock</button>
     </div>
+
     <div id="premiumMsg"></div>
   </div>
 </div>
 
 <script>
-/* ================= CONFIG ================= */
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name);
+}
+
 const SHORTLINK_URL = "https://vplink.in/i42DE";
-const REDIRECT_URL  = "https://ozme.vercel.app";
-const PREMIUM_CODE  = "28 nov 2009";
-const WAIT_TIME     = 75 * 1000;
-const DAY_MS        = 24 * 60 * 60 * 1000;
+const DEFAULT_REDIRECT = "https://ozme.vercel.app";
+const PREMIUM_CODE = "28 nov 2009";
+const WAIT_TIME = 75 * 1000;
+const DAY_MS = 24 * 60 * 60 * 1000;
 
-/* ================= PERMA BLOCK ================= */
-if(localStorage.getItem("permaBlocked")){
-  document.getElementById("box").innerHTML =
-    "<h2>🚫 Permanently Blocked</h2><p>You violated verification rules.</p>";
-  throw "";
+const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
+const done = getParam("done");
+const now = Date.now();
+const box = document.getElementById("box");
+
+/* ✅ FIXED: force number */
+const lastVerified = Number(localStorage.getItem("verifiedAt"));
+
+/* ✅ Already verified → direct redirect */
+if(!done && lastVerified && (now - lastVerified) < DAY_MS){
+  window.location.replace(redirectPage);
 }
 
-/* ================= TIMER ================= */
-const timerText = document.getElementById("timerText");
-
-function startTimer(){
-  const verifiedAt = localStorage.getItem("verifiedAt");
-  if(!verifiedAt) return;
-
-  function update(){
-    const diff = DAY_MS - (Date.now() - verifiedAt);
-    if(diff <= 0){
-      localStorage.removeItem("verifiedAt");
-      timerText.textContent = "⏳ Verification expired. Please verify again.";
-      return;
-    }
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    timerText.textContent = `✅ Verified — expires in ${h}h ${m}m ${s}s`;
-  }
-
-  update();
-  setInterval(update,1000);
+/* Start timer */
+if(!sessionStorage.getItem("verifyStart")){
+  sessionStorage.setItem("verifyStart", now.toString());
 }
 
-/* ================= AUTO REDIRECT IF VERIFIED ================= */
-const lastVerified = localStorage.getItem("verifiedAt");
-if(lastVerified && (Date.now() - lastVerified) < DAY_MS){
-  startTimer();
-  setTimeout(()=>location.replace(REDIRECT_URL),1200);
-}
-
-/* ================= VERIFY FLOW ================= */
-const done = new URLSearchParams(location.search).get("done");
+const verifyStart = Number(sessionStorage.getItem("verifyStart"));
+const clickedAt = Number(sessionStorage.getItem("verifyClicked") || 0);
 
 if(done === "2811"){
-  const start = +sessionStorage.getItem("verifyStart");
-  if(!start || Date.now() - start < WAIT_TIME){
-    localStorage.setItem("permaBlocked","1");
-    document.getElementById("box").innerHTML =
-      "<h2>🚫 Permanently Blocked</h2><p>You verified too early.</p>";
-  }else{
-    localStorage.setItem("verifiedAt",Date.now());
+  if(!clickedAt){
+    box.innerHTML="<h2>Access Denied ❌</h2><p>Please use verify button only.</p>";
+  }
+  else if(!verifyStart || (now - verifyStart) < WAIT_TIME){
+    box.innerHTML="<h2>Too Fast ⏳</h2><p>Please wait before verifying.</p>";
     sessionStorage.clear();
-    location.replace(REDIRECT_URL);
+  }
+  else{
+    localStorage.setItem("verifiedAt", now.toString());
+    sessionStorage.clear();
+    window.location.replace(redirectPage);
   }
 }else{
-  document.getElementById("verifyBtn").onclick = ()=>{
-    sessionStorage.setItem("verifyStart",Date.now());
-    location.href = SHORTLINK_URL;
+  verifyBtn.onclick = ()=>{
+    sessionStorage.setItem("verifyClicked",Date.now().toString());
+    window.location.href = SHORTLINK_URL;
   };
 }
 
-/* ================= PREMIUM ================= */
+/* Premium */
 premiumBtn.onclick = ()=>{
-  if(premiumCode.value.trim().toLowerCase() === PREMIUM_CODE){
-    localStorage.setItem("verifiedAt",Date.now());
-    premiumMsg.textContent = "Premium verified! Redirecting…";
-    setTimeout(()=>location.replace(REDIRECT_URL),800);
+  if(premiumCode.value.trim().toLowerCase() === PREMIUM_CODE.toLowerCase()){
+    localStorage.setItem("verifiedAt",Date.now().toString());
+    premiumMsg.textContent="Premium verified! Redirecting…";
+    setTimeout(()=>window.location.replace(redirectPage),800);
   }else{
-    premiumMsg.textContent = "Invalid premium code.";
+    premiumMsg.textContent="Invalid premium code.";
   }
 };
 </script>
