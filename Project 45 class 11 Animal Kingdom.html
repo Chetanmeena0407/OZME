@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
+
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    /* Thumbnail */
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
+
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Animal Kingdom</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- ================= LECTURES ================= -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a9c3eba8-07e3-4c77-a40e-4e29a183d2ad.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+       Zoology - Animal kingdom 01 : Part 01 
+    </h3>
+    <a href="https://www.youtube.com/watch?v=WgRQFl-shhQ" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1c7172e2-2fc1-45ed-aae7-f18f61bf567b.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+       Zoology - Animal kingdom 02 : Part 02
+    </h3>
+    <a href="" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
+
+<!-- ================= NOTES ================= -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Zoology - Animal kingdom 01 : Class Notes || Class 11th Project 45</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/686e23c5-c304-4773-a31a-0d5ec421344c.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Zoology - Animal kingdom 02 : Class Notes || Class 11th Project 45</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9ff8a474-7890-4c35-b701-fa350509346b.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+</div>
+
+<!-- ================= DPP ================= -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3>Kinetic Theory : DPP 01 (Of Lecture 02) || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2945f339-4750-4d1e-a56b-acf7f49b5547.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
+
+</body>
+</html>
