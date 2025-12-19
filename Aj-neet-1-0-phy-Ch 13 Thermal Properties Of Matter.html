@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHY</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
+
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    /* Thumbnail */
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
+
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+
+<h2>Ch 13 Thermal Properties Of Matter</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- ================= LECTURES ================= -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/07116394-3f9d-4e20-bb07-b6d0fd8b7645.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+       Thermal Properties of matter 01 : Heat || Temperature || Thermal Expansion || (NO DPP) 
+    </h3>
+    <a href="https://www.youtube.com/watch?v=WgRQFl-shhQ" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/23738074-018a-4f1d-94e2-3cedf35c5f88.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+       Thermal Properties of matter 02 : Calorimetry || (NO DPP) 
+    </h3>
+    <a href="" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+    <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/06e4b1d1-3e7f-41f3-8f1c-ffee187e8a41.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>Thermal Properties of Matter 03 : Calorimetry (Part-02) || (NO DPP) 
+    </h3>
+    <a href="" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+    <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b8f4cf54-1438-431c-89ed-45bcddde9402.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>Thermal Properties of Matter 04 : Thermal Expansion || (NO DPP) 
+    </h3>
+    <a href="" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+    <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/af3f4625-244d-4b22-8f5c-635ef571ba14.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>Thermal Properties of Matter 05 : Heat Transfer
+    </h3>
+    <a href="" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+    <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0944b7de-6c0c-4313-b3a7-feeff4919a03.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3> Thermal Properties of Matter 06 : Convection 
+    </h3>
+    <a href="" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
+
+<!-- ================= NOTES ================= -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Thermal Properties of Matter 01: Classnotes || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f7afca90-7284-4fa4-9e2c-fa0bc2c790b7.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Thermal Properties of Matter 02: Classnotes || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fe0459f2-e079-4c07-beaa-437d48520055.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Thermal Properties of Matter 03: Classnotes || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2aa2672c-16fb-4df4-a5a3-1b9b42d82643.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Thermal Properties of Matter 04: Classnotes || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/be0e2548-e046-470f-9a5a-8a20e8506cd2.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Thermal Properties of Matter 05: Classnotes || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2cfdb84c-5c89-4607-8cf3-bfdff83bf2a6.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Thermal Properties of Matter 06: Classnotes || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c358169e-6c5c-4b0d-a75e-aca78b81a087.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+</div>
+
+<!-- ================= DPP ================= -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3>Thermal Properties of Matter : DPP 01 (Of Lecture 05)|| Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/bf0134bc-8d0d-423c-8a37-426a832fb92f.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+    <div class="card">
+    <h3>Thermal Properties of Matter : DPP 02 (Of Lecture 06) || Arjuna NEET 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4b83607a-f740-44b1-810f-c8c1bb10ccae.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
+
+</body>
+</html>
