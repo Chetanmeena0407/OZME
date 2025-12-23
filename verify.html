@@ -158,10 +158,11 @@ function getParam(name){
   return new URLSearchParams(window.location.search).get(name);
 }
 
+/* SETTINGS */
 const SHORTLINK_URL = "https://vplink.in/i42DE";
 const DEFAULT_REDIRECT = "https://ozme.vercel.app";
 const PREMIUM_CODE = "28 nov 2009";
-const WAIT_TIME = 75 * 1000;
+const WAIT_TIME = 75 * 1000; // 75 sec
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
@@ -169,46 +170,45 @@ const done = getParam("done");
 const now = Date.now();
 const box = document.getElementById("box");
 
-/* ✅ FIXED: force number */
+/* Already verified */
 const lastVerified = Number(localStorage.getItem("verifiedAt"));
-
-/* ✅ Already verified → direct redirect */
 if(!done && lastVerified && (now - lastVerified) < DAY_MS){
   window.location.replace(redirectPage);
 }
 
-/* Start timer */
-if(!sessionStorage.getItem("verifyStart")){
-  sessionStorage.setItem("verifyStart", now.toString());
+/* Start verification timer (LOCAL STORAGE) */
+if(!localStorage.getItem("verifyStart")){
+  localStorage.setItem("verifyStart", now.toString());
 }
 
-const verifyStart = Number(sessionStorage.getItem("verifyStart"));
-const clickedAt = Number(sessionStorage.getItem("verifyClicked") || 0);
+const verifyStart = Number(localStorage.getItem("verifyStart"));
+const clickedAt = Number(localStorage.getItem("verifyClicked") || 0);
 
+/* DONE CHECK */
 if(done === "2811"){
   if(!clickedAt){
-    box.innerHTML="<h2>Access Denied ❌</h2><p>Please use verify button only.</p>";
+    box.innerHTML="<h2>Access Denied ❌</h2><p>Please click Verify button first.</p>";
   }
-  else if(!verifyStart || (now - verifyStart) < WAIT_TIME){
+  else if((now - verifyStart) < WAIT_TIME){
     box.innerHTML="<h2>Too Fast ⏳</h2><p>Please wait before verifying.</p>";
-    sessionStorage.clear();
   }
   else{
     localStorage.setItem("verifiedAt", now.toString());
-    sessionStorage.clear();
+    localStorage.removeItem("verifyStart");
+    localStorage.removeItem("verifyClicked");
     window.location.replace(redirectPage);
   }
 }else{
   verifyBtn.onclick = ()=>{
-    sessionStorage.setItem("verifyClicked",Date.now().toString());
+    localStorage.setItem("verifyClicked", Date.now().toString());
     window.location.href = SHORTLINK_URL;
   };
 }
 
-/* Premium */
+/* PREMIUM */
 premiumBtn.onclick = ()=>{
   if(premiumCode.value.trim().toLowerCase() === PREMIUM_CODE.toLowerCase()){
-    localStorage.setItem("verifiedAt",Date.now().toString());
+    localStorage.setItem("verifiedAt", Date.now().toString());
     premiumMsg.textContent="Premium verified! Redirecting…";
     setTimeout(()=>window.location.replace(redirectPage),800);
   }else{
