@@ -116,10 +116,76 @@ p{
   color:#ffd500;
 }
 
-@media(max-width:480px){
-  .premium-input-row{
-    flex-direction:column;
-  }
+/* TELEGRAM POPUP ANIMATION */
+.tg-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s ease;
+}
+
+.tg-popup.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.tg-card{
+  width:90%;
+  max-width:360px;
+  background:#0f1f3a;
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  transform:scale(.85) translateY(30px);
+  opacity:0;
+  transition:all .35s ease;
+}
+
+.tg-popup.show .tg-card{
+  transform:scale(1) translateY(0);
+  opacity:1;
+}
+
+.tg-card h3{
+  margin:0 0 10px;
+  color:#ffd500;
+}
+
+.tg-card p{
+  font-size:14px;
+  color:#cfd8f3;
+}
+
+.tg-actions{
+  margin-top:18px;
+  display:flex;
+  gap:10px;
+}
+
+.tg-actions a,
+.tg-actions button{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.tg-join{
+  background:#0088cc;
+  color:#fff;
+}
+
+.tg-close{
+  background:rgba(255,255,255,0.15);
+  color:#fff;
 }
 </style>
 </head>
@@ -153,6 +219,21 @@ p{
   </div>
 </div>
 
+<!-- TELEGRAM POPUP -->
+<div id="tgPopup" class="tg-popup">
+  <div class="tg-card">
+    <h3>Join Our Telegram</h3>
+    <p>Updates, support aur premium alerts ke liye join karein.</p>
+
+    <div class="tg-actions">
+      <a href="https://t.me/+zwxcb10TG1cxNDg1" target="_blank" class="tg-join">
+        Join Now
+      </a>
+      <button class="tg-close" onclick="closeTg()">Later</button>
+    </div>
+  </div>
+</div>
+
 <script>
 function getParam(name){
   return new URLSearchParams(window.location.search).get(name);
@@ -162,21 +243,32 @@ function getParam(name){
 const SHORTLINK_URL = "https://vplink.in/i42DE";
 const DEFAULT_REDIRECT = "https://ozme.vercel.app";
 const PREMIUM_CODE = "28 nov 2009";
-const WAIT_TIME = 75 * 1000; // 75 sec
-const DAY_MS = 24 * 60 * 60 * 1000;
+const WAIT_TIME = 75 * 1000;
 
 const redirectPage = getParam("redirect") || DEFAULT_REDIRECT;
 const done = getParam("done");
 const now = Date.now();
 const box = document.getElementById("box");
 
+/* TELEGRAM POPUP – EVERY TIME */
+const tgPopup = document.getElementById("tgPopup");
+
+function closeTg(){
+  tgPopup.classList.remove("show");
+}
+
+/* ALWAYS SHOW WITH ANIMATION */
+setTimeout(()=>{
+  tgPopup.classList.add("show");
+}, 800);
+
 /* Already verified */
 const lastVerified = Number(localStorage.getItem("verifiedAt"));
-if(!done && lastVerified && (now - lastVerified) < DAY_MS){
+if(!done && lastVerified && (now - lastVerified) < 24*60*60*1000){
   window.location.replace(redirectPage);
 }
 
-/* Start verification timer (LOCAL STORAGE) */
+/* Verification logic */
 if(!localStorage.getItem("verifyStart")){
   localStorage.setItem("verifyStart", now.toString());
 }
@@ -184,7 +276,6 @@ if(!localStorage.getItem("verifyStart")){
 const verifyStart = Number(localStorage.getItem("verifyStart"));
 const clickedAt = Number(localStorage.getItem("verifyClicked") || 0);
 
-/* DONE CHECK */
 if(done === "2811"){
   if(!clickedAt){
     box.innerHTML="<h2>Access Denied ❌</h2><p>Please click Verify button first.</p>";
