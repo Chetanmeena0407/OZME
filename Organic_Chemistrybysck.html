@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organic Chemistry</title>
 
-<!-- 🔐 Verification Script -->
 <script>
 (function () {
   const verifiedAt = localStorage.getItem("verifiedAt");
@@ -24,41 +23,39 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f6fa;
+    background: #f5f6fa;
 }
 
+/* Top */
 .topbar {
     display: flex;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 40px;
     background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.back {
-    font-weight: 500;
-    cursor: pointer;
-    color: #333;
+.topbar a {
     text-decoration: none;
+    color: #333;
+    margin-right: 15px;
 }
 
 .title {
-    margin-left: 20px;
     font-weight: 600;
-    font-size: 18px;
 }
 
+/* Tabs */
 .tabs {
     display: flex;
-    gap: 30px;
-    padding: 15px 30px;
+    gap: 25px;
+    padding: 15px 40px;
     background: white;
     border-bottom: 1px solid #eee;
 }
 
 .tab {
-    cursor: pointer;
     padding-bottom: 8px;
+    cursor: pointer;
     color: #666;
 }
 
@@ -67,51 +64,64 @@ body {
     border-bottom: 3px solid #6c5ce7;
 }
 
+/* Proper Container Width */
 .container {
-    padding: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
+/* Card */
 .card {
     background: white;
+    padding: 18px;
     border-radius: 12px;
-    padding: 20px;
     border: 1px solid #eee;
     transition: 0.3s;
     cursor: pointer;
 }
 
 .card:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transform: translateY(-3px);
 }
 
 .chapter-tag {
     font-size: 12px;
-    color: #6c5ce7;
     font-weight: 600;
-    margin-bottom: 8px;
+    color: #6c5ce7;
 }
 
 .card h3 {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 8px 0;
+    font-size: 15px;
     font-weight: 600;
-    color: #333;
 }
 
 .lecture {
     font-size: 13px;
     color: #777;
-    margin-top: 8px;
 }
 
 .arrow {
     float: right;
-    font-weight: bold;
-    color: #999;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
@@ -119,7 +129,7 @@ body {
 <body>
 
 <div class="topbar">
-    <a href="index.html" class="back">← Back</a>
+    <a href="index.html">← Back</a>
     <div class="title">Organic Chemistry</div>
 </div>
 
@@ -130,63 +140,65 @@ body {
 
 <div class="container">
 
+    <!-- Repeat for all 10 chapters -->
+
     <div class="card" onclick="openPage('ch1.html')">
         <div class="chapter-tag">CH - 01</div>
-        <h3>Ch-01 : IUPAC Naming <span class="arrow">›</span></h3>
+        <h3>IUPAC Naming <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch2.html')">
         <div class="chapter-tag">CH - 02</div>
-        <h3>Ch-02 : GOC <span class="arrow">›</span></h3>
+        <h3>GOC <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch3.html')">
         <div class="chapter-tag">CH - 03</div>
-        <h3>Ch-03 : Isomerism <span class="arrow">›</span></h3>
+        <h3>Isomerism <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch4.html')">
         <div class="chapter-tag">CH - 04</div>
-        <h3>Ch-04 : Optical Isomerism <span class="arrow">›</span></h3>
+        <h3>Optical Isomerism <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch5.html')">
         <div class="chapter-tag">CH - 05</div>
-        <h3>Ch-05 : Hydrocarbon <span class="arrow">›</span></h3>
+        <h3>Hydrocarbon <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1 • DPP: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch6.html')">
         <div class="chapter-tag">CH - 06</div>
-        <h3>Ch-06 : Haloalkanes & Haloarenes <span class="arrow">›</span></h3>
+        <h3>Haloalkanes & Haloarenes <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1 • DPP: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch7.html')">
         <div class="chapter-tag">CH - 07</div>
-        <h3>Ch-07 : Alcohols, Ethers & Phenols <span class="arrow">›</span></h3>
+        <h3>Alcohols, Ethers & Phenols <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch8.html')">
         <div class="chapter-tag">CH - 08</div>
-        <h3>Ch-08 : Aldehydes & Ketones <span class="arrow">›</span></h3>
+        <h3>Aldehydes & Ketones <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch9.html')">
         <div class="chapter-tag">CH - 09</div>
-        <h3>Ch-09 : Amines <span class="arrow">›</span></h3>
+        <h3>Amines <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
     <div class="card" onclick="openPage('ch10.html')">
         <div class="chapter-tag">CH - 10</div>
-        <h3>Ch-10 : Biomolecules & POC <span class="arrow">›</span></h3>
+        <h3>Biomolecules & POC <span class="arrow">›</span></h3>
         <div class="lecture">Lecture: 0/1</div>
     </div>
 
@@ -197,73 +209,6 @@ function openPage(page) {
     window.location.href = page;
 }
 </script>
-
-</body>
-</html>      <div class="stats">Lectures: 10 || Notes: 10 || DPP Videos: 0 || Exercises: 0</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-    <div class="card" onclick="openPage('lakneet-organic-3-0-2026-Lecture.html')">
-      <h3>Summary Lecture</h3>
-      <div class="stats">Lectures: 2 || Notes: 2 || DPP Videos: 0 || Exercises: 0</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-    <div class="card" onclick="openPage('lakneet-organic-3-0-2026ch01.html')">
-      <h3>Ch 01 : Optical Isomerism</h3>
-      <div class="stats">Lectures: 12 || Notes: 19 || DPP Videos: 0 || Exercises: 7</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-    <div class="card" onclick="openPage('lakneet-organic-3-0-2026Ch-02-Haloalkanes and Haloarenes.html')">
-      <h3>Ch 02 : Haloalkanes and Haloarenes</h3>
-      <div class="stats">Lectures: 20 || Notes: 34 || DPP Videos: 0 || Exercises: 14</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-    <div class="card" onclick="openPage('lakneet2-0-organic- Ch 03 : Alcohols, Phenols and Ethers.html')">
-      <h3>Ch 03 : Alcohols, Phenols and Ethers</h3>
-      <div class="stats">Lectures: 8 || Notes: 11 || DPP Videos: 0 || Exercises: 4</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-    <div class="card" onclick="openPage('lakneet2-0-organic-Ch 04 - Aldehydes Ketones and Carboxylic Acids.html')">
-      <h3>Ch 04 : Aldehydes, Ketones and Carboxylic Acids</h3>
-      <div class="stats">Lectures: 0 || Notes: 0 || DPP Videos: 0 || Exercises: 0</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-    <div class="card" onclick="openPage('lakneet2-0-organic-Ch 05 : Amines.html')">
-      <h3>Ch 05 : Amines </h3>
-      <div class="stats">Lectures: 0 || Notes: 0 || DPP Videos: 0 || Exercises: 0</div>
-      <div class="progress"><div class="progress-fill" style="width:0%"></div></div>
-      <div class="percent">0%</div>
-    </div>
-
-
-  </div>
-
-  <script>
-    function openPage(page){
-      window.location.href = page;
-    }
-
-    // Simple search filter
-    function filterCards(value) {
-      const cards = document.querySelectorAll('.card');
-      value = value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(value) ? 'block' : 'none';
-      });
-    }
-  </script>
 
 </body>
 </html>
