@@ -68,13 +68,17 @@ padding:18px 20px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-transition:0.2s;
+transition:0.25s;
 cursor:pointer;
+user-select:none;
 }
 
+/* HOVER EFFECT */
+
 .card:hover{
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
-transform:translateY(-2px);
+box-shadow:0 12px 28px rgba(0,0,0,0.15);
+transform:translateY(-6px);
+border-color:#5b5cff;
 }
 
 /* LEFT */
@@ -96,13 +100,9 @@ font-weight:600;
 .subject{
 display:flex;
 flex-direction:column;
-}
-
-.subject a{
-text-decoration:none;
-color:#333;
 font-weight:600;
 font-size:15px;
+color:#333;
 }
 
 /* RIGHT */
@@ -119,14 +119,14 @@ color:#777;
 }
 
 .arrow{
-font-size:18px;
+font-size:20px;
 color:#999;
 }
 
 /* PROGRESS */
 
 .progress{
-width:80px;
+width:90px;
 height:4px;
 background:#ddd;
 border-radius:20px;
@@ -146,24 +146,6 @@ gap:8px;
 
 </style>
 
-<!-- ✅ Verification Check (better in head) -->
-<script>
-(function () {
-const verifiedAt = localStorage.getItem("verifiedAt");
-const now = Date.now();
-
-if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
-
-const currentPage = encodeURIComponent(
-window.location.pathname.split("/").pop() + window.location.search
-);
-
-window.location.href = "verify.html?redirect=" + currentPage;
-
-}
-})();
-</script>
-
 </head>
 
 <body>
@@ -181,14 +163,16 @@ Complete Organic Chemistry by SKC Sir
 
 <div class="container">
 
-<div class="card">
+<!-- CLICKABLE CARD -->
+
+<div class="card" onclick="window.location.href='organic.html'">
 
 <div class="left">
 
 <div class="icon">Or</div>
 
 <div class="subject">
-<a href="organic.html">Organic Chemistry</a>
+Organic Chemistry
 <div class="progress"></div>
 </div>
 
