@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Subjects</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+background:#f5f6fa;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(90deg,#6c63ff,#7d6df6);
+color:white;
+padding:25px 40px;
+font-size:28px;
+font-weight:600;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+}
+
+/* TABS */
+
+.tabs{
+display:flex;
+gap:30px;
+background:white;
+padding:16px 40px;
+border-bottom:1px solid #e3e3e3;
+}
+
+.tabs a{
+text-decoration:none;
+color:#666;
+font-size:15px;
+}
+
+.tabs a.active{
+color:#5b5cff;
+border-bottom:3px solid #5b5cff;
+padding-bottom:8px;
+}
+
+/* MAIN */
+
+.container{
+padding:40px;
+}
+
+/* SUBJECT CARD */
+
+.card{
+width:380px;
+background:white;
+border:1px solid #e5e5e5;
+border-radius:12px;
+padding:18px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+transition:0.2s;
+cursor:pointer;
+}
+
+.card:hover{
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transform:translateY(-2px);
+}
+
+/* LEFT */
+
+.left{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.icon{
+background:#e8ebff;
+color:#5a5cff;
+padding:10px 13px;
+border-radius:8px;
+font-weight:600;
+}
+
+.subject a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+font-size:15px;
+}
+
+/* RIGHT */
+
+.right{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.percent{
+font-size:14px;
+color:#777;
+}
+
+.arrow{
+font-size:18px;
+color:#999;
+}
+
+/* PROGRESS */
+
+.progress{
+width:80px;
+height:4px;
+background:#ddd;
+border-radius:20px;
+margin-top:5px;
+}
+
+/* INFO */
+
+.info{
+margin-top:15px;
+font-size:14px;
+color:#777;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+Complete Organic Chemistry by SKC Sir
+</div>
+
+<div class="tabs">
+<a href="#">Description</a>
+<a class="active" href="#">Subjects</a>
+<a href="#">Resources</a>
+<a href="#">Announcements</a>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="left">
+
+<div class="icon">Or</div>
+
+<div class="subject">
+<a href="organic.html">Organic Chemistry</a>
+<div class="progress"></div>
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="percent">0%</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+</div>
+
+<div class="info">
+ℹ Completion % depends on lecture and DPP progress!
+</div>
+
+</div>
+
+</body>
+</html>
