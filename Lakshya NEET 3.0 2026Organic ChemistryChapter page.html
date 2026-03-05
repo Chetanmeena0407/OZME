@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Organic Chemistry</title>
 
 <style>
@@ -16,7 +17,7 @@ font-family:Segoe UI, Arial;
 body{
 background:#0b1622;
 color:white;
-padding:25px;
+padding:20px;
 }
 
 /* Title */
@@ -27,7 +28,7 @@ font-weight:600;
 margin-bottom:20px;
 }
 
-/* Grid */
+/* GRID */
 
 .grid{
 display:grid;
@@ -35,15 +36,7 @@ grid-template-columns:repeat(2,1fr);
 gap:16px;
 }
 
-/* Link wrapper */
-
-.link{
-text-decoration:none;
-color:inherit;
-display:block;
-}
-
-/* Card */
+/* CARD */
 
 .card{
 background:#0f1e2d;
@@ -51,21 +44,20 @@ border:1px solid #23374d;
 border-radius:10px;
 padding:16px;
 cursor:pointer;
-transition:0.2s;
+transition:0.18s;
 position:relative;
 padding-left:18px;
 user-select:none;
 }
 
-/* Hover */
+/* HOVER */
 
 .card:hover{
 border-color:#3c82ff;
 transform:translateY(-3px);
-box-shadow:0 6px 16px rgba(0,0,0,0.3);
 }
 
-/* Card Title */
+/* TITLE */
 
 .card h3{
 font-size:14px;
@@ -73,7 +65,7 @@ margin-bottom:8px;
 font-weight:600;
 }
 
-/* Card Stats */
+/* STATS */
 
 .stats{
 font-size:12px;
@@ -84,7 +76,7 @@ color:#9fb3c8;
 margin-right:10px;
 }
 
-/* Blue indicator */
+/* BLUE INDICATOR */
 
 .card::before{
 content:"";
@@ -97,6 +89,28 @@ background:#3c82ff;
 border-radius:2px;
 }
 
+/* 📱 MOBILE */
+
+@media (max-width:700px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+body{
+padding:15px;
+}
+
+.card{
+padding:14px;
+}
+
+.card h3{
+font-size:15px;
+}
+
+}
+
 </style>
 </head>
 
@@ -106,8 +120,7 @@ border-radius:2px;
 
 <div class="grid">
 
-<a href="all-contents.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='all-contents.html'">
 <h3>All Contents</h3>
 <div class="stats">
 <span>76 Videos</span> |
@@ -115,10 +128,8 @@ border-radius:2px;
 <span>155 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="mindmaps.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='mindmaps.html'">
 <h3>Mind Maps || (Only PDF)</h3>
 <div class="stats">
 <span>0 Videos</span> |
@@ -126,10 +137,8 @@ border-radius:2px;
 <span>6 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="short-notes.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='short-notes.html'">
 <h3>Short Notes || (Only PDF)</h3>
 <div class="stats">
 <span>0 Videos</span> |
@@ -137,10 +146,8 @@ border-radius:2px;
 <span>5 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ncert.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ncert.html'">
 <h3>NCERT Discussion</h3>
 <div class="stats">
 <span>8 Videos</span> |
@@ -148,10 +155,8 @@ border-radius:2px;
 <span>8 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="pyq.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='pyq.html'">
 <h3>PYQ's || (Only PDF)</h3>
 <div class="stats">
 <span>0 Videos</span> |
@@ -159,10 +164,8 @@ border-radius:2px;
 <span>5 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="handwritten.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='handwritten.html'">
 <h3>Handwritten Notes || Only PDF</h3>
 <div class="stats">
 <span>0 Videos</span> |
@@ -170,10 +173,8 @@ border-radius:2px;
 <span>7 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="interaction.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='interaction.html'">
 <h3>Interaction Session</h3>
 <div class="stats">
 <span>1 Videos</span> |
@@ -181,10 +182,8 @@ border-radius:2px;
 <span>0 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="revision11.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='revision11.html'">
 <h3>Revision 11th</h3>
 <div class="stats">
 <span>14 Videos</span> |
@@ -192,10 +191,8 @@ border-radius:2px;
 <span>14 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="Lakshya NEET 3_0-2026Organic ChemistryCh 01 Optical Isomerism.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='Lakshya NEET 3_0-2026Organic ChemistryCh 01 Optical Isomerism.html'">
 <h3>Ch - 01: Optical Isomerism</h3>
 <div class="stats">
 <span>9 Videos</span> |
@@ -203,10 +200,8 @@ border-radius:2px;
 <span>18 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ch2.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ch2.html'">
 <h3>Ch - 02: Hydrocarbon + Haloalkanes</h3>
 <div class="stats">
 <span>13 Videos</span> |
@@ -214,10 +209,8 @@ border-radius:2px;
 <span>23 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ch3.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ch3.html'">
 <h3>Ch - 03: Alcohols, Phenols and Ethers</h3>
 <div class="stats">
 <span>6 Videos</span> |
@@ -225,10 +218,8 @@ border-radius:2px;
 <span>11 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ch4.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ch4.html'">
 <h3>Ch - 04: Aldehydes, Ketones and Carboxylic Acids</h3>
 <div class="stats">
 <span>7 Videos</span> |
@@ -236,10 +227,8 @@ border-radius:2px;
 <span>13 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ch5.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ch5.html'">
 <h3>Ch - 05: Amines</h3>
 <div class="stats">
 <span>3 Videos</span> |
@@ -247,10 +236,8 @@ border-radius:2px;
 <span>5 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ch6.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ch6.html'">
 <h3>Ch - 06: Biomolecules</h3>
 <div class="stats">
 <span>2 Videos</span> |
@@ -258,10 +245,8 @@ border-radius:2px;
 <span>4 Notes</span>
 </div>
 </div>
-</a>
 
-<a href="ch7.html" class="link">
-<div class="card">
+<div class="card" onclick="location.href='ch7.html'">
 <h3>Ch - 07: Purification and Analysis of Organic Compound</h3>
 <div class="stats">
 <span>2 Videos</span> |
@@ -269,7 +254,6 @@ border-radius:2px;
 <span>3 Notes</span>
 </div>
 </div>
-</a>
 
 </div>
 
