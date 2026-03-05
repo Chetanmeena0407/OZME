@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORG</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
+
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    /* Thumbnail */
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
+
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Ch 01 Optical Isomerism</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- ================= LECTURES ================= -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/27635cfc-e685-4f4e-b8d0-aa422c2108a5.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Optical Isomerism 01 :  Basics of Optical Isomerism || (NO DPP)
+    </h3>
+    <a href="https://youtu.be/kFB8z7aLHXE" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8bdf0c70-bd2e-42a4-aeaa-0751373b0635.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Optical Isomerism 02 : Conditions  for Optical Activity
+    </h3>
+    <a href="https://youtu.be/nmTcQ40f1rc" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/29299009-38ee-4cef-9730-75f1271547fd.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Optical Isomerism 03 : Symmetry Elements
+    </h3>
+    <a href="https://youtu.be/i7AiDvl4ako" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0e826b71-bd4f-4219-813c-633a28419d14.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Optical Isomerism 04 : Axis of Symmetry
+    </h3>
+    <a href="https://youtu.be/YnerJ3BuTns" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a9aa0ec2-f170-4fe4-a971-5840f66c374d.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Optical isomerism 05 : Meso compound
+    </h3>
+    <a href="https://youtu.be/PipoYA6DICg" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/28b09670-c14e-4a75-9437-4d12d27880f0.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+     Optical isomerism 06 : Racemic Mixture
+    </h3>
+    <a href="https://youtu.be/rbHrIP3eZVg" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/732751e9-1458-4e40-9db0-3ba0618b8776.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+     Optical isomerism 07 : Representation of  Optical Isomerism  || NO DPP || Extra Lecture
+    </h3>
+    <a href="https://youtu.be/8LRFFEf6gdI" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d1577ef4-eb71-44dd-9498-c1a711983867.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+     Optical isomerism 08 : Sawhorse Projection into Fischer Projection Formula || Newman Projection Into Fischer || Configuration of Optical Isomerism || D- L-configuration (Relative configuration) || R- S-Configuration || Calculation of Optical Isomers
+    </h3>
+    <a href="https://youtu.be/chrONc06Vko" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/feb426a4-aa39-4c56-930d-813333626e16.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+     Optical isomerism 09 : Amine Flipping
+    </h3>
+    <a href="https://youtu.be/e5cH-yto0-U" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
+
+<!-- ================= NOTES ================= -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Optical isomerism 01 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/0d52e085-ebf4-4421-b096-6b1e331aa838.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 02 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/2f68d591-b0e8-4e1b-b3f9-f4977e97d739.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 03 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6181cf07-7f44-46a2-96a4-e555f8730b6b.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 04 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/fbd220cd-1d8f-4b66-8760-75a4342735ae.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 05 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7d0860d9-63d1-47df-a4bd-1ffab4c679ab.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 06 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/188f054c-b55b-4f3d-b973-46f72f080d00.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 07 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a76a50df-6a0c-431b-a5f3-c04dfa40dd84.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 08 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b96fa6b6-d35b-4d90-8109-e9ec83fad99a.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism 09 : Class Notes || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/06fbb701-5a08-4d2f-92e4-c195bde023a4.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+</div>
+
+<!-- ================= DPP ================= -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 01 (Of Lecture 02) || Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a64dcc74-4403-4a47-871d-693791c44a33.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 02 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/07b6d43c-fd94-45db-b1db-6dd9347fe35d.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 03 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a6dca791-8f6a-47ce-86ae-a789dc0dcc65.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 04 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/7f777ea2-8e1a-4d31-acf5-e279026d040f.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 05 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d36cba6f-35b9-4e20-b823-fe17c78171a5.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 06 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a9799077-4120-40ae-a4dd-584035eb3552.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 07 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1d927236-fc11-412b-b47a-a11c4364f80a.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Optical isomerism : DPP 08 Lakshya NEET 3.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/33617fd6-9a9d-40c1-a818-843afe9e22de.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
+
+</body>
+</html>
