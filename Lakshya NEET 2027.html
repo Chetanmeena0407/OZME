@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lakshya NEET 2027</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0b1020;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #6d5dfc, #8a7bff);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 0 0 18px 18px;
+  text-align: center;
+}
+
+/* MAIN */
+.main {
+  padding: 15px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* GRID (mobile first) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  text-decoration: none;
+  color: white;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.card:hover {
+  background: #1e293b;
+  transform: translateY(-3px);
+}
+
+/* ICON */
+.icon {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card p {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 3px;
+}
+
+/* 📱 Tablet */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 💻 Laptop */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header {
+    font-size: 22px;
+  }
+}
+
+/* 🖥️ Large screen */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .header {
+    font-size: 24px;
+    padding: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  Lakshya NEET 2027
+</div>
+
+<div class="main">
+  <div class="title">Subjects</div>
+
+  <div class="grid">
+
+    <!-- Notices -->
+    <a href="notices.html" class="card">
+      <div class="icon">📢</div>
+      <div>
+        <h3>Notices</h3>
+        <p>7 Chapters</p>
+      </div>
+    </a>
+
+    <!-- PHYSICS -->
+    <a href="ln2027-physics-mr.html" class="card">
+      <div class="icon">⚛️</div>
+      <div>
+        <h3>Physics by MR Sir</h3>
+        <p>5 Chapters</p>
+      </div>
+    </a>
+
+    <a href="ln2027-physics-satyam.html" class="card">
+      <div class="icon">📘</div>
+      <div>
+        <h3>Physics by Satyam Mudaliar Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <!-- BOTANY -->
+    <a href="ln2027-botany-vipin.html" class="card">
+      <div class="icon">🌱</div>
+      <div>
+        <h3>Botany by Vipin Sharma Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <a href="ln2027-botany-akanksha.html" class="card">
+      <div class="icon">🌿</div>
+      <div>
+        <h3>Botany by Dr Akanksha Agarwal Ma'am</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <!-- ZOOLOGY -->
+    <a href="ln2027-zoology-samapti.html" class="card">
+      <div class="icon">🧬</div>
+      <div>
+        <h3>Zoology by Samapti Sinha Ma'am</h3>
+        <p>5 Chapters</p>
+      </div>
+    </a>
+
+    <a href="ln2027-zoology-sujeet.html" class="card">
+      <div class="icon">🧬</div>
+      <div>
+        <h3>Zoology by Sujeet Tripathi Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <!-- PHYSICAL CHEM -->
+    <a href="ln2027-physical-sudhanshu.html" class="card">
+      <div class="icon">🧪</div>
+      <div>
+        <h3>Physical Chemistry by Sudhanshu Kumar Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <a href="ln2027-physical-manoj.html" class="card">
+      <div class="icon">⚗️</div>
+      <div>
+        <h3>Physical Chemistry by Manoj Kumar Singh Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <!-- ORGANIC -->
+    <a href="ln2027-organic-amit.html" class="card">
+      <div class="icon">🧫</div>
+      <div>
+        <h3>Organic Chemistry by Amit Mahajan Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <a href="ln2027-organic-ShubhKaran.html" class="card">
+      <div class="icon">🧫</div>
+      <div>
+        <h3>Organic Chemistry By Shubh Karan Choudhary Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+    <!-- INORGANIC -->
+    <a href="ln2027-inorganic-Mohit.html" class="card">
+      <div class="icon">⚛️</div>
+      <div>
+        <h3>Inorganic Chemistry By Mohit Dadheech Sir</h3>
+        <p>4 Chapters</p>
+      </div>
+    </a>
+
+    <a href="ln2027-inorganic-Manoj.html" class="card">
+      <div class="icon">⚛️</div>
+      <div>
+        <h3>Inorganic Chemistry By Manoj Kumar Singh Sir</h3>
+        <p>3 Chapters</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
