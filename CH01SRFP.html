@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHY</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
+
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    /* Thumbnail */
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
+
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+<h2>Ch 01 Sexual Reproduction In Flowering Plant</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- ================= LECTURES ================= -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6dfa87a9-a819-4876-a797-66a4e388897f.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Sexual Reproduction in Flowering Plant 01 : Introduction to Reproduction unit
+    </h3>
+    <a href="https://youtu.be/N0GwZ5J-_jo" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e35108cb-13d9-4b16-88c8-e19b0c533733.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Sexual Reproduction in Flowering Plant 02 : Events in Reproduction 
+    </h3>
+    <a href="https://youtu.be/rHfw7L_R3BI" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9f65cd0e-d45a-43a6-ae3f-c520fada005d.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Sexual Reproduction in Flowering Plant 03 
+    </h3>
+    <a href="https://youtu.be/hiYPyj8GFpA" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/3836ff6f-7941-41fe-9691-f735f60d7ae8.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Sexual Reproduction in Flowering Plant 04 
+    </h3>
+    <a href="https://youtu.be/cn6OjMTXqb0" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/45ee5b59-4a00-4a54-977c-cea29c43838a.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Sexual Reproduction in Flowering Plant 05 
+    </h3>
+    <a href="https://youtu.be/2QDe4qnqobA" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/893e3506-847f-4098-b9f0-2e642111c2fb.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Sexual Reproduction in Flowering Plant 06 
+    </h3>
+    <a href="https://youtu.be/D_SmwwrCk6M" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
+
+<!-- ================= NOTES ================= -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 01 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/6a298ac4-289d-4a95-9830-260b6f7aa764.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 02 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/318bbb24-fb89-4abf-a326-a32db0ee83ae.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 03 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/af2c5d8b-658f-4553-9aa4-68171ee03f35.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 04 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/dd3557b0-7c6e-4fb0-bbf5-60a3ef1b82b0.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 05 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9c1ab558-f229-4bfd-b614-6f9ea2fdb201.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 06 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c926a93a-916c-4eaa-86d6-788ed78f7f9c.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 07 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/bee3f903-dcb1-4254-b9be-3fc47f057505.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 08 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/d6dc4782-5e89-45fa-9871-a2c119846db9.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 09 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cfb6e1b9-1677-4621-998a-60f6c73a2610.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 10 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5be288cd-2705-4b5f-bcbb-815343ae8b02.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 11 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/ff17019b-5bd8-4f15-97e8-92833f507817.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant 12 : Class Notes || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/440a5b60-cc88-4d9a-b0a3-1c865be46115.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+</div>
+
+<!-- ================= DPP ================= -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 01 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/87d35e16-715e-4497-95b9-4cc3c81ea345.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 02 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/18d65d96-4623-40ca-88c5-08cd15d8ced1.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 03 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/80d2dccd-84ca-4413-af7e-a6fd4563d7a0.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 04 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/df7b4d35-1a0d-4628-b29b-648e8d8af35b.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 05 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/cb386535-5b42-4b47-a253-f270c0630dda.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 06 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1fe80f1a-3a91-4cf8-8ac9-50579c5dbdbb.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 07 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e08f3b5c-8bba-4a4b-8b54-ab16c557c0da.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 08 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8b2075d8-1735-4738-9005-1124ee3748c6.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 09 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/e9c12366-1323-429c-935a-977086980d76.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Sexual Reproduction in Flowering Plant : DPP 10 || Lakshya NEET 2.0 2026</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/04228008-20ac-43ae-8330-ff1abc8aeed8.pdf"
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
+
+</body>
+</html>
