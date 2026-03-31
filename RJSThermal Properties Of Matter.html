@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHY</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
+
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
+
+    /* Thumbnail */
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
+
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+<h2>Ch 11 Thermal Properties Of Matter</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
+</div>
+
+<!-- ================= LECTURES ================= -->
+<div class="content-container tab-content active" id="lectures">
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/8f815333-d36d-4aa8-92b1-80cd3e2efec2.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Thermal Properties of Matter 01 : Temperature scales and Thermometric Identity || Thermal Expansion || Questions || NO DPP
+    </h3>
+    <a href="https://youtu.be/vaKlz8P4lDg" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/849c2c89-1d73-4ad3-aa75-5619c36d43e9.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Thermal Properties of Matter 02 : Specific Heat and Latent Heat || Heat For Temperature change and Phase Change || Water Equivalent and Calorimeter || Questions || NO DPP
+    </h3>
+    <a href="https://youtu.be/LffxaKG1jfo" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/4448cb4d-097b-4cb2-bd6f-f2e1d6f297ce.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Thermal Properties of Matter 03 : Steady State in Conduction || Ohms Law Analogy || Questions || NO DPP
+    </h3>
+    <a href="https://youtu.be/PEAQ91190BY" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/de84dda6-c8e4-449c-8026-b77bb8eb660b.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>
+      Thermal Properties of Matter 04 : Prevost Theory || Stefan's Law, Emissivity and Absorptivity || Newton's Law of Cooling || Weins Displacement Law || Questions || NO DPP
+    </h3>
+    <a href="https://youtu.be/792QQ8NmGko" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
+
+<!-- ================= NOTES ================= -->
+<div class="content-container tab-content" id="notes">
+
+  <div class="card">
+    <h3>Thermal Properties of Matter 01 : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/89c754a5-1ad4-4607-835a-522d0a1f5311.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Thermal Properties of Matter 02 : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/9bad8f1b-375e-4701-8aa5-71778b926c5f.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Thermal Properties of Matter 03 : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/22576083-e2df-41f8-9182-eda4bd532968.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Thermal Properties of Matter 04 : Class Notes</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/55c8a7b3-c281-4e64-949a-30bbb6c99da9.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
+</div>
+
+<!-- ================= DPP ================= -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3></h3>
+    <a href=""
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
+
+</body>
+</html>
