@@ -1,9 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lecture Concise Notes || (Only PDF)</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -70,14 +74,6 @@
       box-shadow: 0 0 15px rgba(122,90,248,0.4);
     }
 
-    /* Thumbnail */
-    .thumbnail {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      object-fit: cover;
-    }
-
     .card h3 {
       font-size: 14px;
       margin-bottom: 15px;
@@ -100,10 +96,19 @@
     .notes-btn { background: #3a9efd; }
     .dpp-btn { background: #00c896; }
 
-    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+    .btn:hover {
+      opacity: 0.9;
+      transform: scale(1.04);
+    }
 
     .tab-content { display: none; }
     .tab-content.active { display: grid; }
+
+    .empty {
+      text-align: center;
+      color: #777;
+      grid-column: 1/-1;
+    }
 
     @media (max-width: 600px) {
       .tab { padding: 10px 15px; }
@@ -137,6 +142,8 @@
 
 <!-- ================= LECTURES ================= -->
 <div class="content-container tab-content active" id="lectures">
+  <p class="empty">No lectures available yet</p>
+</div>
 
 <!-- ================= NOTES ================= -->
 <div class="content-container tab-content" id="notes">
@@ -153,7 +160,7 @@
 
 <!-- ================= DPP ================= -->
 <div class="content-container tab-content" id="dpp">
-
+  <p class="empty">No DPP available yet</p>
 </div>
 
 <script>
@@ -172,3 +179,4 @@
 
 </body>
 </html>
+```
