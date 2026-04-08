@@ -1,141 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Charges And Fields</title>
 
-<title>Physics By MR Sir</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+    }
 
-body {
-  background: #0b1020;
-  color: white;
-}
+    a { text-decoration: none; color: inherit; }
 
-/* PAGE TITLE */
-.header {
-  padding: 20px;
-  font-size: 22px;
-  font-weight: 600;
-}
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
 
-/* GRID */
-.container {
-  padding: 15px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-}
+    .tab {
+      padding: 12px 30px;
+      color: #aaa;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
 
-/* CARD */
-.card {
-  position: relative;
-  padding: 18px;
-  border-radius: 14px;
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  text-decoration: none;
-  color: white;
-  transition: 0.25s;
-}
+    .tab.active {
+      color: white;
+      border-color: #7a5af8;
+    }
 
-/* LEFT BLUE LINE */
-.card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 15px;
-  height: 70%;
-  width: 4px;
-  background: #7c6cff;
-  border-radius: 4px;
-}
+    /* Container */
+    .content-container {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
 
-/* HOVER */
-.card:hover {
-  background: #1e293b;
-}
+    /* Card */
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
 
-/* TITLE */
-.card h3 {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(122,90,248,0.4);
+    }
 
-/* SUB TEXT */
-.card p {
-  font-size: 13px;
-  color: #9ca3af;
-}
+    /* Thumbnail */
+    .thumbnail {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
 
-/* 3 DOT MENU */
-.menu {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  color: #9ca3af;
-  font-size: 18px;
-}
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
 
-/* RESPONSIVE */
-@media (min-width: 700px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    /* Buttons */
+    .btn {
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+    }
 
-</style>
+    .lec-btn { background: #7a5af8; }
+    .notes-btn { background: #3a9efd; }
+    .dpp-btn { background: #00c896; }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.04); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; }
+
+    @media (max-width: 600px) {
+      .tab { padding: 10px 15px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="header">
-  Physics By MR Sir
+<script>
+(function () {
+  const verifiedAt = localStorage.getItem("verifiedAt");
+  const now = Date.now();
+  if (!verifiedAt || (now - parseInt(verifiedAt)) > 24*60*60*1000) {
+    const currentPage = encodeURIComponent(
+      window.location.pathname.split("/").pop() + window.location.search
+    );
+    window.location.href = "verify.html?redirect=" + currentPage;
+  }
+})();
+</script>
+
+<h2>Electric Charges And Fields</h2>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" data-target="lectures">Lectures</div>
+  <div class="tab" data-target="notes">Notes</div>
+  <div class="tab" data-target="dpp">DPP</div>
 </div>
 
-<div class="container">
+<!-- ================= LECTURES ================= -->
+<div class="content-container tab-content active" id="lectures">
 
-  <a href="SOON.html" class="card">
-    <div class="menu">⋮</div>
-    <h3>Short Notes || (Only PDF)</h3>
-    <p>0 Videos | 0 Exercises | 14 Notes</p>
-  </a>
+  <div class="card">
+    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/5721aa3d-2da5-40fe-9389-8898d25d2a93.png" class="thumbnail" alt="Lecture Thumbnail">
+    <h3>Electric Charges and Fields 01 : Feel of Electric Charge || (NO DPP) </h3>
+    <a href="https://youtu.be/fSqoq1icUxo" class="btn lec-btn" target="_blank">
+      <i class="fa-solid fa-play"></i> Watch Lecture
+    </a>
+  </div>
+</div>
 
-  <a href="SOON.html" class="card">
-    <div class="menu">⋮</div>
-    <h3>Mind Map || (Only PDF)</h3>
-    <p>0 Videos | 0 Exercises | 14 Notes</p>
-  </a>
+<!-- ================= NOTES ================= -->
+<div class="content-container tab-content" id="notes">
 
-  <a href="SOON.html" class="card">
-    <div class="menu">⋮</div>
-    <h3>PYQ's || (Only PDF)</h3>
-    <p>0 Videos | 0 Exercises | 14 Notes</p>
-  </a>
+  <div class="card">
+    <h3>Electric Charges and Fields 01 : Class Notes || Physics by MR Sir</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f20a53dc-9611-47fc-ace1-560f7e9297d0.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
 
-  <a href="SOON.html" class="card">
-    <div class="menu">⋮</div>
-    <h3>Bridge Course Lecture</h3>
-    <p>1 Videos | 0 Exercises | 1 Notes</p>
-  </a>
-
-  <a href="ln2027-physics-mr-Ch01-Electric-Charges-And-Fields.html" class="card">
-    <div class="menu">⋮</div>
-    <h3>Ch01 Electric Charges And Fields</h3>
-    <p> Videos |  Exercises | Notes</p>
-  </a>
+  <div class="card">
+    <h3>Electric Charges and Fields 01 : Concise Notes || Physics by MR Sir</h3>
+    <a href="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/1081e012-e944-47c4-a8d8-641c75c6dcbb.pdf"
+       class="btn notes-btn" target="_blank">
+      <i class="fa-solid fa-file-lines"></i> View Notes
+    </a>
+  </div>
 
 </div>
+
+<!-- ================= DPP ================= -->
+<div class="content-container tab-content" id="dpp">
+
+  <div class="card">
+    <h3></h3>
+    <a href=""
+       class="btn dpp-btn" target="_blank">
+      <i class="fa-solid fa-book"></i> Practice Sheet
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    };
+  });
+</script>
 
 </body>
 </html>
