@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M3U8 Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    video {
+      width: 90%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<video id="video" controls autoplay></video>
+
+<script>
+  var video = document.getElementById('video');
+
+  var videoSrc = "https://hls.pwxavengers.xyz/hls/eyJvcmlnaW4iOiJodHRwczovL3NlYy1wcm9kLW1lZGlhY2RuLnB3LmxpdmUiLCJiYXNlUGF0aCI6Ii9kZTFmMTEzMi03YzhjLTRmNzktYjFjYi03MjVmYzkxNDYwYWUvaGxzIiwicXVlcnlQYXJhbXMiOiI_VVJMUHJlZml4PWFIUjBjSE02THk5elpXTXRjSEp2WkMxdFpXUnBZV05rYmk1d2R5NXNhWFpsTDJSbE1XWXhNVE15TFRkak9HTXROR1kzT1MxaU1XTmlMVGN5Tldaak9URTBOakJoWlEmRXhwaXJlcz0xNzc1NzYzNjIyJktleU5hbWU9cHctcHJvZC1rZXkmU2lnbmF0dXJlPU8tZ19KRzJXVlZXVUdoQ1ZoMFZKRExmWFlGQ3hxTXlUNXdNb1h1V2g5RVdwMnpmOV9IRklSOGM0TUFCZkVESDFmY0FZRVZybHZfY2dnSXlCaEgxV0FRIiwib3JpZ2luYWxGaWxlTmFtZSI6Im1haW4ubTN1OCIsImRldGVjdGVkUXVhbGl0eSI6IjcyMCIsInN1cHBvcnRzTXVsdGlRdWFsaXR5Ijp0cnVlLCJjdXN0b21UaXRsZSI6IkVsZWN0cmljIENoYXJnZXMgYW5kIEZpZWxkcyAwMyA6IENvdWxvbWIncyBsYXcgIn0/720/main.m3u8";
+
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
+    });
+  } 
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    video.addEventListener('loadedmetadata', function() {
+      video.play();
+    });
+  }
+</script>
+
+</body>
+</html>
